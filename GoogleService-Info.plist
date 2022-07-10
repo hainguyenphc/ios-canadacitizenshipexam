@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>866361876859-m7c76qmrj24idd4jlahsta929dmfneo8.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.866361876859-m7c76qmrj24idd4jlahsta929dmfneo8</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBOc0w4xqYt-QesfiEwT4525ax9CdttvPc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>866361876859</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.haiphcnguyen.canadacitizenshipexam</string>
+	<key>PROJECT_ID</key>
+	<string>ios-canadacitizenship</string>
+	<key>STORAGE_BUCKET</key>
+	<string>ios-canadacitizenship.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:866361876859:ios:b92234ce8fe4eb59dd1dde</string>
+</dict>
+</plist>

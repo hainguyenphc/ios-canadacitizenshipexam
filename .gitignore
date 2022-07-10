@@ -1,0 +1,9 @@
+.vscode/
+
+*.mp4
+.mov
+.vlc
+
+node_modules
+
+.DS_Store

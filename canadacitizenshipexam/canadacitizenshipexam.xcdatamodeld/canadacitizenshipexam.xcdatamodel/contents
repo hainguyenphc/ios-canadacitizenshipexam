@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="State" representedClassName="State" syncable="YES" codeGenerationType="class">
+        <attribute name="duration" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="questionID" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="testID" attributeType="String"/>
+        <attribute name="userAnswer" optional="YES" attributeType="String"/>
+        <relationship name="stateToTest" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Test" inverseName="testToState" inverseEntity="Test"/>
+    </entity>
+    <entity name="Test" representedClassName="Test" syncable="YES" codeGenerationType="class">
+        <attribute name="startedAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="testID" optional="YES" attributeType="String"/>
+        <relationship name="testToState" toMany="YES" deletionRule="Cascade" destinationEntity="State" inverseName="stateToTest" inverseEntity="State"/>
+    </entity>
+    <elements>
+        <element name="State" positionX="-90.86328125" positionY="108.41015625" width="128" height="118"/>
+        <element name="Test" positionX="-330.16015625" positionY="57.6640625" width="128" height="88"/>
+    </elements>
+</model>
