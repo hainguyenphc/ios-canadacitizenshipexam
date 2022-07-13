@@ -82,6 +82,7 @@ enum CCEErrorMessage {
 
   // Initialization failures
   static let cceCompoundSectionArraysSizesMismatchFailure = "Arrays to construct CCECompoundSection must have equal sizes."
+  static let chapterLoadingFailure = "Something went wrong loading chapter."
 
 }
 
@@ -106,13 +107,11 @@ struct Chapters {
   static let storage = [
     [
       "id": "947E5DF8-A14D-4A59-BA4E-CBC5BC1F5F6F",
-      "title": "Applying for citizenship",
-      "content": "When you apply for citizenship, officials will check your status, verify that you are not prohibited from applying, and ensure that you meet the requirements.\nYour application may take several months. Please ensure that the Call Centre always has your correct address while your application is being processed.",
+      "title": "Applying for citizenship"
     ],
     [
       "id": "60EBFD59-74CC-439B-B25A-5CB90222FAA4",
-      "title": "Rights and responsibilities",
-      "content": "Canadian citizens have rights and responsibilities. These come to us from our history, are secured by Canadian law, and reflect our shared traditions, identity, and values.",
+      "title": "Rights and responsibilities"
     ]
   ]
 

@@ -23,6 +23,10 @@ class CCEScreenCollectiveProgressView: UIView {
 
   var progress: Float = 0
 
+  // ===========================================================================
+  // Initializer
+  // ===========================================================================
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     self.configureUI()

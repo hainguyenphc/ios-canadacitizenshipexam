@@ -11,14 +11,10 @@ import FirebaseFirestore
 
 class NetworkManager {
 
-  // TODO: query an API endpoint as an alternative for Firebase?
-  private let BaseUrl = ""
-
   private let firestore = Firestore.firestore()
 
   // Singleton pattern.
   static let shared = NetworkManager()
-  // static let cache = NSCache<NSString, CCEUsersData>()
 
   private init() {
     // Leaves empty.
@@ -26,8 +22,8 @@ class NetworkManager {
 
   /* Fetches all online tests. */
   func getTests(completed: @escaping(Result<[CCETest], CCEFailure>) -> Void) {
-    let tests = firestore.collection(CCECollections.tests)
-    tests.getDocuments { querySnapshot, error in
+    firestore.collection(CCECollections.tests)
+      .getDocuments { querySnapshot, error in
       if let err = error {
         print("Error getting documents: \(err)")
       }
@@ -91,8 +87,9 @@ class NetworkManager {
 
   /* Gets a test by a given test ID. */
   func getTest(with testID: String, completed: @escaping(Result<CCETest, CCEFailure>) -> Void) {
-    let test = firestore.collection(CCECollections.tests).document(testID)
-    test.getDocument() { document, error in
+    firestore.collection(CCECollections.tests)
+      .document(testID)
+      .getDocument() { document, error in
       if error != nil {
         completed(.failure(.getTestByIdFailure))
         return
@@ -175,10 +172,6 @@ class NetworkManager {
   // ===========================================================================
   // USER-SPECIFIC
   // ===========================================================================
-
-  // func removedCachedUsersData(userID: String) {
-  //   NetworkManager.cache.removeObject(forKey: userID as NSString)
-  // }
 
   func generateUsersDataOnServerIfNil(userID: String) {
     firestore.collection(CCECollections.Users_Data)

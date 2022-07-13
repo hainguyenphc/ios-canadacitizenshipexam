@@ -51,7 +51,8 @@ class ChapterVC: UIViewController {
   // Helper functions
   // ===========================================================================
 
-  func updateReadChaptersOnServer() {
+  /* Updates the user profile to acknowledge that he has read this chapter. */
+  func updateReadChaptersOnServer() -> Void {
     guard let userID = Auth.auth().currentUser?.uid else {
       return
     }
@@ -85,20 +86,31 @@ class ChapterVC: UIViewController {
   // UI configurations, constraints, etc.
   // ===========================================================================
 
-  func configureTextView() {
+  /* Handles the content for the whole chapter. */
+  func configureTextView() -> Void {
+    self.textView.isEditable = false
     self.textView.contentInsetAdjustmentBehavior = .automatic
     self.textView.center = self.view.center
     self.textView.textAlignment = .justified
     self.textView.textColor = .label
     self.textView.showsVerticalScrollIndicator = false
     self.textView.showsHorizontalScrollIndicator = false
-    self.textView.font = .systemFont(ofSize: 20)
+    self.textView.font = .systemFont(ofSize: 15)
     self.textView.backgroundColor = .systemBackground
-    self.textView.text = Chapters.storage[self.chapterIndex]["content"]!
-
     self.textView.translatesAutoresizingMaskIntoConstraints = false
-
     self.view.addSubview(self.textView)
+
+    // E.g., "/Users/admin/Library/Developer/CoreSimulator/Devices/B2E4BFBC-8542-4CE5-8690-6C41CA12687A/data/Containers/Bundle/Application/C7B563D6-85F1-49BF-8F21-A60EDE981A2A/canadacitizenshipexam.app/en.lproj/947E5DF8-A14D-4A59-BA4E-CBC5BC1F5F6F.txt"
+    let path = Bundle.main.path(forResource: Chapters.storage[chapterIndex]["id"], ofType: "txt")
+    do {
+      let content = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
+      self.textView.text = content
+    }
+    catch {
+      //TODO: handle error
+      self.textView.text = CCEErrorMessage.chapterLoadingFailure
+    }
+
   }
 
   // ===========================================================================

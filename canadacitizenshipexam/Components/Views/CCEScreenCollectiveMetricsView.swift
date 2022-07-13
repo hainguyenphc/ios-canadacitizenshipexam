@@ -19,6 +19,10 @@ class CCEScreenCollectiveMetricsView: UIView {
   var bodyOne: CCEBodyLabel!
   var bodyTwo: CCEBodyLabel!
 
+  // ===========================================================================
+  // Initializer
+  // ===========================================================================
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     self.configureUI()
