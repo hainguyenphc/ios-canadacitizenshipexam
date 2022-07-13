@@ -10,9 +10,12 @@
 		8436CBEC281EEB5C007668DC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBEB281EEB5C007668DC /* CardView.swift */; };
 		8436CBEE281F00B8007668DC /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBED281F00B8007668DC /* UIView+Ext.swift */; };
 		8436CBF3281F4621007668DC /* CCESectionCell_Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBF2281F4621007668DC /* CCESectionCell_Complex.swift */; };
-		8436CBF5281F465D007668DC /* CCESection_Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBF4281F465D007668DC /* CCESection_Complex.swift */; };
+		8436CBF5281F465D007668DC /* CCECompoundSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBF4281F465D007668DC /* CCECompoundSection.swift */; };
 		84428C0328502E4F00C22BC9 /* TestResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84428C0228502E4F00C22BC9 /* TestResultVC.swift */; };
 		84502C94286AA0A000E86367 /* CCEDatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84502C93286AA0A000E86367 /* CCEDatePickerVC.swift */; };
+		8450BC31287F02080079E016 /* CCECompoundSectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450BC30287F02080079E016 /* CCECompoundSectionTests.swift */; };
+		8450BC33287F07C90079E016 /* FatalErrorUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450BC32287F07C90079E016 /* FatalErrorUtil.swift */; };
+		8450BC35287F09F60079E016 /* XCTestCase+FatalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8450BC34287F09F60079E016 /* XCTestCase+FatalError.swift */; };
 		845B46E0287A7B0500AC58B0 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B46DF287A7B0500AC58B0 /* RegisterVC.swift */; };
 		845B46E2287A8FD000AC58B0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B46E1287A8FD000AC58B0 /* LoginVC.swift */; };
 		845BF3DD286E9562003952CF /* CCESeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BF3DC286E9562003952CF /* CCESeeder.swift */; };
@@ -95,9 +98,12 @@
 		8436CBEB281EEB5C007668DC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8436CBED281F00B8007668DC /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		8436CBF2281F4621007668DC /* CCESectionCell_Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionCell_Complex.swift; sourceTree = "<group>"; };
-		8436CBF4281F465D007668DC /* CCESection_Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESection_Complex.swift; sourceTree = "<group>"; };
+		8436CBF4281F465D007668DC /* CCECompoundSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCECompoundSection.swift; sourceTree = "<group>"; };
 		84428C0228502E4F00C22BC9 /* TestResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultVC.swift; sourceTree = "<group>"; };
 		84502C93286AA0A000E86367 /* CCEDatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEDatePickerVC.swift; sourceTree = "<group>"; };
+		8450BC30287F02080079E016 /* CCECompoundSectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCECompoundSectionTests.swift; sourceTree = "<group>"; };
+		8450BC32287F07C90079E016 /* FatalErrorUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatalErrorUtil.swift; sourceTree = "<group>"; };
+		8450BC34287F09F60079E016 /* XCTestCase+FatalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+FatalError.swift"; sourceTree = "<group>"; };
 		845B46DF287A7B0500AC58B0 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
 		845B46E1287A8FD000AC58B0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		845BF3DC286E9562003952CF /* CCESeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESeeder.swift; sourceTree = "<group>"; };
@@ -200,6 +206,14 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		8450BC2F287F01E00079E016 /* CCECompoundSectionTests */ = {
+			isa = PBXGroup;
+			children = (
+				8450BC30287F02080079E016 /* CCECompoundSectionTests.swift */,
+			);
+			path = CCECompoundSectionTests;
+			sourceTree = "<group>";
+		};
 		847DDCA3287E55AA00A77199 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +272,7 @@
 				84A184E7281D8BA20074D5AB /* Utils */,
 				84A184E8281D8D4C0074D5AB /* Components */,
 				84A184E6281D8B7C0074D5AB /* ScreenLevelVC */,
+				8450BC32287F07C90079E016 /* FatalErrorUtil.swift */,
 				84A184A5281D72EC0074D5AB /* AppDelegate.swift */,
 				84A184A7281D72EC0074D5AB /* SceneDelegate.swift */,
 				84A184B3281D72ED0074D5AB /* LaunchScreen.storyboard */,
@@ -274,7 +289,9 @@
 			isa = PBXGroup;
 			children = (
 				84979B6C287EF6A1002675A6 /* CCESectionTests */,
+				8450BC2F287F01E00079E016 /* CCECompoundSectionTests */,
 				84A184BF281D72ED0074D5AB /* canadacitizenshipexamTests.swift */,
+				8450BC34287F09F60079E016 /* XCTestCase+FatalError.swift */,
 			);
 			path = canadacitizenshipexamTests;
 			sourceTree = "<group>";
@@ -370,7 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				84A184FF281DF4EE0074D5AB /* CCESection.swift */,
-				8436CBF4281F465D007668DC /* CCESection_Complex.swift */,
+				8436CBF4281F465D007668DC /* CCECompoundSection.swift */,
 				849539E8283BE15E00260E85 /* CCETest.swift */,
 				84CC3F2F287B098A005AFF0F /* CCEUsersData.swift */,
 				847DDCAE287E5FEF00A77199 /* CCEQuestion.swift */,
@@ -717,10 +734,11 @@
 				847DDCA5287E55DF00A77199 /* TestsVC+Ext.swift in Sources */,
 				849539E7283BDABC00260E85 /* CCEButton.swift in Sources */,
 				847DDCA9287E574B00A77199 /* HomeVC+Ext.swift in Sources */,
-				8436CBF5281F465D007668DC /* CCESection_Complex.swift in Sources */,
+				8436CBF5281F465D007668DC /* CCECompoundSection.swift in Sources */,
 				84A184EF281D94ED0074D5AB /* CCEHeadingView.swift in Sources */,
 				84A184DF281D88D10074D5AB /* CCEConstants.swift in Sources */,
 				84502C94286AA0A000E86367 /* CCEDatePickerVC.swift in Sources */,
+				8450BC33287F07C90079E016 /* FatalErrorUtil.swift in Sources */,
 				84A184E1281D8A330074D5AB /* BookVC.swift in Sources */,
 				84A184F3281D95CD0074D5AB /* CCEScreenCollectiveProgressView.swift in Sources */,
 				84B8DABC285F9572008DDAFE /* CardCell.swift in Sources */,
@@ -733,7 +751,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8450BC31287F02080079E016 /* CCECompoundSectionTests.swift in Sources */,
 				84A184C0281D72ED0074D5AB /* canadacitizenshipexamTests.swift in Sources */,
+				8450BC35287F09F60079E016 /* XCTestCase+FatalError.swift in Sources */,
 				84979B6E287EF6DC002675A6 /* CCESectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
