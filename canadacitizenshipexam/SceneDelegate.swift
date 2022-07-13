@@ -60,13 +60,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     return navController
   }
 
-  // func createProgressNC() -> UINavigationController {
-  //   let navController        = UINavigationController(rootViewController: ProgressVC())
-  //   navController.title      = "Study Progress"
-  //   navController.tabBarItem = UITabBarItem(title: "Progress", image: UIImage(systemName: SFSymbols.progress), tag: 3)
-  //   return navController
-  // }
-  
+  func createProgressNC() -> UINavigationController {
+    // Old way: programmatic UI
+    // let navController        = UINavigationController(rootViewController: ProgressVC())
+
+    // New way: storyboard
+    let storyboard = UIStoryboard(name: "ProgressVC", bundle: nil)
+    let navController        = UINavigationController(rootViewController: storyboard.instantiateViewController(withIdentifier: "ProgressVC"))
+
+    navController.title      = "Study Progress"
+    navController.tabBarItem = UITabBarItem(title: "Progress", image: UIImage(systemName: SFSymbols.progress), tag: 3)
+    return navController
+  }
+
   func createSettingsNC() -> UINavigationController {
     let navController        = UINavigationController(rootViewController: SettingsVC())
     navController.title      = "Settings"
@@ -81,7 +87,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       createHomeNC(),
       createTestsNC(),
       createBookNC(),
-      // createProgressNC(),
+      createProgressNC(),
       createSettingsNC()
     ]
     return tabBarController

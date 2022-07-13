@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationWillTerminate(_ application: UIApplication) {
-    print("applicationWillTerminate")
+    print("\(#file) \(#function) runs")
     do {
       if let _ = Auth.auth().currentUser?.uid {
         try Auth.auth().signOut()
@@ -41,11 +41,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
 
   func applicationWillResignActive(_ application: UIApplication) {
-    print("applicationWillResignActive")
+    print("\(#file) \(#function) runs")
   }
 
   func applicationDidEnterBackground(_ application: UIApplication) {
-    print("applicationDidEnterBackground")
+    print("\(#file) \(#function) runs")
   }
 
   // MARK: - UISceneSession Lifecycle
