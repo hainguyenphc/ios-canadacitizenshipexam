@@ -24,7 +24,7 @@ extension BookVC: UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let section = sections[indexPath.row]
-    let count = section.primaryTitleTexts.count
+    let count = section.titles.count
     let characterCount = self.sections[indexPath.row].bodyTexts[0].count
     let numberOfRowsNeeded = (Double) (characterCount / K.standardCharacterCountForTableCell).rounded(.up)
     if count == 1 {
@@ -47,7 +47,7 @@ extension BookVC: UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let chapterVC = ChapterVC(chapterIndex: indexPath.row)
-    chapterVC.title = sections[indexPath.row].primaryTitleTexts[0]
+    chapterVC.title = sections[indexPath.row].titles[0]
     self.navigationController?.pushViewController(chapterVC, animated: true)
   }
 

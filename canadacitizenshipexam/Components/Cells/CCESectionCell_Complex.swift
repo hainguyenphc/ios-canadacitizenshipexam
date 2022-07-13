@@ -133,7 +133,7 @@ class CCESectionCell_Complex: UITableViewCell {
     self.icons.removeAll()
     // Populates the arrays with fresh data.
     counter = 0
-    for (each) in cceSection.primaryTitleTexts {
+    for (each) in cceSection.titles {
       self.primaryTitleTexts.append(each)
       self.bodyTexts.append(cceSection.bodyTexts[counter])
       self.iconNames.append(cceSection.iconNames[counter])

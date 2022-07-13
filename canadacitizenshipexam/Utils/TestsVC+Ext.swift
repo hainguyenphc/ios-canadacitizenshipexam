@@ -23,7 +23,7 @@ extension TestsVC: UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let section = sections[indexPath.row]
-    let count = section.primaryTitleTexts.count
+    let count = section.titles.count
     let characterCount = self.sections[indexPath.row].bodyTexts[0].count
     let numberOfRowsNeeded = (Double) (characterCount / K.standardCharacterCountForTableCell).rounded(.up)
     if count == 1 {
@@ -47,7 +47,7 @@ extension TestsVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     let tryToResume = self.sections[indexPath.row].iconNames[0] == SFSymbols.restart
     let testvc = TestVC(with: self.tests[indexPath.row].id, tryToResume: tryToResume)
-    testvc.title = sections[indexPath.row].primaryTitleTexts[0]
+    testvc.title = sections[indexPath.row].titles[0]
     self.navigationController?.pushViewController(testvc, animated: true)
   }
 

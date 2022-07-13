@@ -9,13 +9,13 @@ import Foundation
 
 struct CCESection_Complex {
 
-  var primaryTitleTexts = [String]()
-  var bodyTexts = [String]()
-  var iconNames = [String]()
+  var titles: [String]!
+  var bodyTexts: [String]!
+  var iconNames: [String]!
 
   init(primaryTitleTexts: [String], bodyTexts: [String], iconNames: [String]) {
     for each in primaryTitleTexts {
-      self.primaryTitleTexts.append(each)
+      self.titles.append(each)
     }
     for each in bodyTexts {
       self.bodyTexts.append(each)

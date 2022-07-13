@@ -23,7 +23,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
   /* Dynamically determines the table row height. */
   func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
     let section = sections[indexPath.row]
-    let count = section.primaryTitleTexts.count
+    let count = section.titles.count
     let characterCount = self.sections[indexPath.row].bodyTexts[0].count
     let numberOfRowsNeeded = (Double) (characterCount / K.standardCharacterCountForTableCell).rounded(.up)
     if count == 1 {
