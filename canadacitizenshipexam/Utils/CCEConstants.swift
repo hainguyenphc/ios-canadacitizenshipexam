@@ -20,6 +20,14 @@ struct CCECollections {
 
 }
 
+struct K {
+
+  static let passingScoreInPercent                = 75
+  static let sectionCellIdentifier                = "cceSectionCell"
+  static let standardCharacterCountForTableCell   = 72
+
+}
+
 enum Dimensions {
 
   static let cardViewTopPadding: CGFloat            = 20
@@ -70,17 +78,19 @@ enum CCEScreens {
 
 }
 
-struct K {
+enum CCEErrorMessage {
 
-  static let passingScoreInPercent                = 75
-  static let sectionCellIdentifier                = "cceSectionCell"
-  static let standardCharacterCountForTableCell   = 72
+  // Initialization failures
+  static let cceCompoundSectionArraysSizesMismatchFailure = "Arrays to construct CCECompoundSection must have equal sizes."
 
 }
 
-enum CCEError: String, Error {
+enum CCEFailure: String, Error {
 
+  // Networking failures
   case getTestByIdFailure = "There was probleam loading the test with that ID."
+
+  // Parsing failures
   case parseTestDataFailure = "There was problem parsing test data to correct format."
   case questionsMissingFailure = "Questions were missing from the test data."
   case communityAverageScoreMissingFailure = "Community average score was missing from the test data."

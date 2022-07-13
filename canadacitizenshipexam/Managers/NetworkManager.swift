@@ -25,7 +25,7 @@ class NetworkManager {
   }
 
   /* Fetches all online tests. */
-  func getTests(completed: @escaping(Result<[CCETest], CCEError>) -> Void) {
+  func getTests(completed: @escaping(Result<[CCETest], CCEFailure>) -> Void) {
     let tests = firestore.collection(CCECollections.tests)
     tests.getDocuments { querySnapshot, error in
       if let err = error {
@@ -90,7 +90,7 @@ class NetworkManager {
   }
 
   /* Gets a test by a given test ID. */
-  func getTest(with testID: String, completed: @escaping(Result<CCETest, CCEError>) -> Void) {
+  func getTest(with testID: String, completed: @escaping(Result<CCETest, CCEFailure>) -> Void) {
     let test = firestore.collection(CCECollections.tests).document(testID)
     test.getDocument() { document, error in
       if error != nil {

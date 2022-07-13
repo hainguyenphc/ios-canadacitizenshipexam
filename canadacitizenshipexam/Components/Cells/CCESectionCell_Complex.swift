@@ -115,7 +115,7 @@ class CCESectionCell_Complex: UITableViewCell {
     self.layer.borderWidth = 0.1
   }
 
-  func configureCell(section cceSection: CCESection_Complex, at index: Int) -> Void {
+  func configureCell(section cceSection: CCECompoundSection, at index: Int) -> Void {
     // Resets all labels and images to nil.
     var counter = 0
     for (_, _) in self.primaryTitleTexts.enumerated() {

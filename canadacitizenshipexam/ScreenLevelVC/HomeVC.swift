@@ -26,21 +26,21 @@ class HomeVC: UIViewController {
   // Logic variables
   // ===========================================================================
 
-  var sections: [CCESection_Complex] = [
-    CCESection_Complex(
-      primaryTitleTexts: ["Create a Study Schedule"],
+  var sections: [CCECompoundSection] = [
+    CCECompoundSection(
+      titles: ["Create a Study Schedule"],
       bodyTexts: ["Make a schedule to meet your goals. Turn on notifications for reminders."],
       iconNames: [SFSymbols.notifications]),
-    CCESection_Complex(
-      primaryTitleTexts: ["Start Practicing"],
+    CCECompoundSection(
+      titles: ["Start Practicing"],
       bodyTexts: ["Practice makes perfect. Test your knowledge now."],
       iconNames: [SFSymbols.tests]),
-    CCESection_Complex(
-      primaryTitleTexts: ["Test Exemptions"],
+    CCECompoundSection(
+      titles: ["Test Exemptions"],
       bodyTexts: ["You do not need to take the test if you are under the age of 18 or 55 and over."],
       iconNames: [SFSymbols.info]),
-    CCESection_Complex(
-      primaryTitleTexts: ["Read the Study Book"],
+    CCECompoundSection(
+      titles: ["Read the Study Book"],
       bodyTexts: ["Detailed excerpts from the official Discover Canada study guide."],
       iconNames: [SFSymbols.book])
     ]

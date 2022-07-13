@@ -18,7 +18,7 @@ class BookVC: UIViewController {
 
   var tableView: UITableView = UITableView()
 
-  var sections: [CCESection_Complex] = []
+  var sections: [CCECompoundSection] = []
 
   // ===========================================================================
   // Logic variables
@@ -50,8 +50,8 @@ class BookVC: UIViewController {
   func loadChapters() {
     self.sections = []
     for (index, chapter) in self.chapters.enumerated() {
-      self.sections.append(CCESection_Complex(
-        primaryTitleTexts: ["Chapter \(index)"],
+      self.sections.append(CCECompoundSection(
+        titles: ["Chapter \(index)"],
         bodyTexts: [chapter["title"]!],
         iconNames: [SFSymbols.read]
       ))

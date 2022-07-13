@@ -9,9 +9,9 @@ import Foundation
 
 struct CCECompoundSection {
 
-  var titles: [String]!
-  var bodyTexts: [String]!
-  var iconNames: [String]!
+  var titles = [String]()
+  var bodyTexts = [String]()
+  var iconNames = [String]()
 
   init(titles: [String], bodyTexts: [String], iconNames: [String]) {
     if (titles.count == bodyTexts.count && bodyTexts.count == iconNames.count) {
@@ -26,7 +26,7 @@ struct CCECompoundSection {
       }
     }
     else {
-      fatalError("")
+      fatalError(CCEErrorMessage.cceCompoundSectionArraysSizesMismatchFailure)
     }
   }
 

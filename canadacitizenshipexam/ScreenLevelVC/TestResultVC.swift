@@ -310,7 +310,6 @@ class TestResultVC: UIViewController {
       text.append(NSMutableAttributedString(string: "\n\n"))
       for (answerIndex, answer) in dirtyQuestion.question.answers.enumerated() {
         if self.dirtyQuestions[questionIndex].userAnswer == answer {
-          // self.dirtyQuestions[qIndex].question.stats
           if (answerIndex == 0 && self.test.questions[questionIndex].stats["countA"] != nil) {
             self.test.questions[questionIndex].stats["countA"]!! += 1
           }

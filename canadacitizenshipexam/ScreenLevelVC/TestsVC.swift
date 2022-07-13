@@ -20,7 +20,7 @@ class TestsVC: UIViewController {
 
   var tableView: UITableView = UITableView()
 
-  var sections: [CCESection_Complex] = []
+  var sections: [CCECompoundSection] = []
 
   // ===========================================================================
   // Logic variables
@@ -66,15 +66,15 @@ class TestsVC: UIViewController {
               request.predicate = NSPredicate(format: "testID CONTAINS[cd] %@", test.id)
               let inprogressTest = try self?.context.fetch(request)
               if inprogressTest!.count > 0 {
-                self?.sections.append(CCESection_Complex(
-                  primaryTitleTexts: [test.name],
+                self?.sections.append(CCECompoundSection(
+                  titles: [test.name],
                   bodyTexts: ["\(test.questions.count) Exam Questions.\nResume the in-proress test."],
                   iconNames: [SFSymbols.restart])
                 )
               }
               else {
-                self?.sections.append(CCESection_Complex(
-                  primaryTitleTexts: [test.name],
+                self?.sections.append(CCECompoundSection(
+                  titles: [test.name],
                   bodyTexts: ["\(test.questions.count) Exam Questions."],
                   iconNames: [SFSymbols.lock])
                 )
