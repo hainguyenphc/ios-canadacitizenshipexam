@@ -14,7 +14,7 @@ extension TestResultVC: UITableViewDataSource {
 
     var attributedText = NSMutableAttributedString()
 
-    if let heading = self.storage[indexPath.row].primaryTitleText {
+    if let heading = self.storage[indexPath.row].title {
       let attributedHeading = NSMutableAttributedString(
         string: heading,
         attributes: [

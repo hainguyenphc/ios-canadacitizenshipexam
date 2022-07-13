@@ -9,7 +9,7 @@ import Foundation
 
 struct CCESection {
 
-  var primaryTitleText: String!
+  var title: String!
   var bodyText: String? = nil
   var attributedBodyText: NSMutableAttributedString? = nil
   var iconName: String? = nil

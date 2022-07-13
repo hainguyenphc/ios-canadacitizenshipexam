@@ -27,13 +27,13 @@ class TestResultVC: UIViewController {
 
   var storage: [CCESection] = [
     CCESection(
-      primaryTitleText: "Return to Main Menu",
+      title: "Return to Main Menu",
       bodyText: "", iconName: SFSymbols.home),
     CCESection(
-      primaryTitleText: "Try Again",
+      title: "Try Again",
       bodyText: "Restart this test", iconName: SFSymbols.tryAgain),
     CCESection(
-      primaryTitleText: "How am I doing?",
+      title: "How am I doing?",
       bodyText: "See your progress metric", iconName: SFSymbols.progress),
   ]
 
@@ -364,7 +364,7 @@ class TestResultVC: UIViewController {
       text.append(NSMutableAttributedString(string: "\n\n"))
     }
 
-    return CCESection(primaryTitleText: "Review", attributedBodyText: text, iconName: nil)
+    return CCESection(title: "Review", attributedBodyText: text, iconName: nil)
   }
 
   // ===========================================================================
