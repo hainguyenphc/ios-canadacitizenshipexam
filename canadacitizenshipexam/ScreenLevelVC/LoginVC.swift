@@ -54,6 +54,7 @@ class LoginVC: UIViewController {
         }
         else {
           let homeVC = HomeVC()
+          // self.navigationController?.popToRootViewController(animated: false)
           self.navigationController?.pushViewController(homeVC, animated: true)
         }
       }

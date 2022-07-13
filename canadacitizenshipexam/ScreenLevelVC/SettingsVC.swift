@@ -32,6 +32,7 @@ class SettingsVC: UIViewController {
         // Upon landing on the Home VC, as there is no active session for any user,
         // he will be redirected to Register VC.
         self.navigationController?.pushViewController(HomeVC(), animated: true)
+        self.navigationController?.popToRootViewController(animated: false)
       }
     }
     catch {

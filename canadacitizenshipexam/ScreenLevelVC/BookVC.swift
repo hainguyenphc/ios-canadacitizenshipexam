@@ -76,6 +76,7 @@ class BookVC: UIViewController {
       )
       self.configureTableView()
       self.configureHeadingView()
+      self.tableView.reloadData()
     }
   }
 

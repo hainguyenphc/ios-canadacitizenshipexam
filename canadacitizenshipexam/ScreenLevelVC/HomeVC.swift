@@ -91,7 +91,7 @@ class HomeVC: UIViewController {
     DispatchQueue.main.async {
       self.headingView = CCEHeadingView(
         progress: progress,
-        title: "Practice Progress",
+        title: "Overall Progress",
         bodyOne: "\(totalChaptersRead) out of \(totalChapters) chapters read",
         bodyTwo: "Progress: \(progress)%"
       )

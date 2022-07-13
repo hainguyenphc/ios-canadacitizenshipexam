@@ -82,8 +82,9 @@ class TestsVC: UIViewController {
             }
             catch {
               // TODO: properly handle error
+              print(error)
             }
-          }
+          } // end for
           // Any UI-related updates are done on the main thread.
           DispatchQueue.main.async {
             guard let currentUser = Auth.auth().currentUser else {
@@ -92,18 +93,18 @@ class TestsVC: UIViewController {
             guard let usersData = NetworkManager.shared.getUsersData(userID: currentUser.uid) else {
               return
             }
-            let totalChaptersRead = usersData.readChapters.count
-            let totalChapters = Chapters.storage.count
-            let progress = Float(totalChaptersRead * 100 / totalChapters)
+            let totalTestsFinished = usersData.finishedTests.count
+            let totalTests = cceTests.count
+            let progress = Float(totalTestsFinished * 100 / totalTests)
             self?.headingView = CCEHeadingView(
               progress: progress,
               title: "Practice Progress",
-              bodyOne: "\(totalChaptersRead) out of \(totalChapters) chapters read",
+              bodyOne: "\(totalTestsFinished) out of \(totalTests) tests finished",
               bodyTwo: "Progress: \(progress)%"
             )
-            self?.tableView.reloadData()
             self?.configureTableView()
             self?.configureHeadingView()
+            self?.tableView.reloadData()
           }
         case .failure(let error):
           // TODO: properly handle error - a modal?
