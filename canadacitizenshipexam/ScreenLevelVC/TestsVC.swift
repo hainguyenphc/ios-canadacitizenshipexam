@@ -90,21 +90,26 @@ class TestsVC: UIViewController {
             guard let currentUser = Auth.auth().currentUser else {
               return
             }
-            guard let usersData = NetworkManager.shared.getUsersData(userID: currentUser.uid) else {
-              return
+            NetworkManager.shared.getUsersData(userID: currentUser.uid) { [weak self] result in
+              guard let self = self else { return }
+              switch (result) {
+                case .success(let usersData):
+                  let totalTestsFinished = usersData.finishedTests.count
+                  let totalTests = cceTests.count
+                  let progress = Float(totalTestsFinished * 100 / totalTests)
+                  self.headingView = CCEHeadingView(
+                    progress: progress,
+                    title: "Practice Progress",
+                    bodyOne: "\(totalTestsFinished) out of \(totalTests) tests finished",
+                    bodyTwo: "Progress: \(progress)%"
+                  )
+                  self.configureTableView()
+                  self.configureHeadingView()
+                  self.tableView.reloadData()
+                case .failure(let error):
+                  print(error)
+              }
             }
-            let totalTestsFinished = usersData.finishedTests.count
-            let totalTests = cceTests.count
-            let progress = Float(totalTestsFinished * 100 / totalTests)
-            self?.headingView = CCEHeadingView(
-              progress: progress,
-              title: "Practice Progress",
-              bodyOne: "\(totalTestsFinished) out of \(totalTests) tests finished",
-              bodyTwo: "Progress: \(progress)%"
-            )
-            self?.configureTableView()
-            self?.configureHeadingView()
-            self?.tableView.reloadData()
           }
         case .failure(let error):
           // TODO: properly handle error - a modal?

@@ -26,16 +26,16 @@ class SettingsVC: UIViewController {
 
   @objc func logoutButtonPressed() -> Void {
     do {
-      if let userID = Auth.auth().currentUser?.uid {
+      if let _ = Auth.auth().currentUser?.uid {
+        // User would like to sign out.
         try Auth.auth().signOut()
-        NetworkManager.shared.removedCachedUsersData(userID: userID)
-        // Upon landing on the Home VC, as there is no active session for any user,
+        // Upon landing on the Home VC, as there is no active session any more,
         // he will be redirected to Register VC.
-        self.navigationController?.pushViewController(HomeVC(), animated: true)
-        self.navigationController?.popToRootViewController(animated: false)
+        self.tabBarController?.selectedIndex = 0
       }
     }
     catch {
+      // @TODO: handle error
       print("Error signing user out.")
     }
   }

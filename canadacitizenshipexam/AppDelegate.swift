@@ -31,9 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func applicationWillTerminate(_ application: UIApplication) {
     print("applicationWillTerminate")
     do {
-      if let userID = Auth.auth().currentUser?.uid {
+      if let _ = Auth.auth().currentUser?.uid {
         try Auth.auth().signOut()
-        NetworkManager.shared.removedCachedUsersData(userID: userID)
       }
     }
     catch {

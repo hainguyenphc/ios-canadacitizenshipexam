@@ -276,26 +276,31 @@ class TestResultVC: UIViewController {
       "questions": questions
     ])
 
-    // Updates the list of taken test of user if necessary.
-    if let userID = Auth.auth().currentUser?.uid {
-      // Loads the logged in user data from cache.
-      let usersData = NetworkManager.shared.getUsersData(userID: userID)
-      // Checks if this is a test user has done before.
-      let redoTest = usersData?.finishedTests.contains(self.test.id) ?? false
-      // Only if this is a fresh new test (1st time user takes it), updates the
-      // list of taken tests for user.
-      if (!redoTest) {
-        usersData?.finishedTests.append(self.test.id)
-        let fields: [String: Any] = [
-          "finishedTests": usersData?.finishedTests ?? []
-        ]
-        NetworkManager.shared.updateUsersData(
-          userID: userID,
-          fields: fields
-        )
-      }
+    guard let userID = Auth.auth().currentUser?.uid else {
+      return
     }
-  }
+    NetworkManager.shared.getUsersData(userID: userID) { [weak self] result in
+      guard let self = self else { return }
+      switch (result) {
+        case .success(let usersData):
+          let redoTest = usersData.finishedTests.contains(self.test.id)
+            // Only if this is a fresh new test (1st time user takes it), updates the
+            // list of taken tests for user.
+          if (!redoTest) {
+            usersData.finishedTests.append(self.test.id)
+            let fields: [String: Any] = [
+              "finishedTests": usersData.finishedTests!
+            ]
+            NetworkManager.shared.updateUsersData(
+              userID: userID,
+              fields: fields
+            )
+          }
+        case .failure(let error):
+          print(error)
+      } // end switch
+    } // end closure
+  } // end func
 
   func buildTestReviewSection() -> CCESection {
     let text = NSMutableAttributedString(string: "")

@@ -57,26 +57,31 @@ class BookVC: UIViewController {
       ))
     } // end for
 
-    guard let currentUser = Auth.auth().currentUser else {
+    guard let userID = Auth.auth().currentUser?.uid else {
       self.navigationController?.pushViewController(RegisterVC(), animated: true)
       return
     }
-    guard let usersData = NetworkManager.shared.getUsersData(userID: currentUser.uid) else {
-      return
-    }
-    let totalRead = usersData.readChapters.count
-    let total = self.sections.count
-    let progress = Float(totalRead * 100 / total)
-    DispatchQueue.main.async {
-      self.headingView = CCEHeadingView(
-        progress: progress,
-        title: "Reading Progress",
-        bodyOne: "\(totalRead) out of \(total) sections read",
-        bodyTwo: "Progress: \(Int(progress))%"
-      )
-      self.configureTableView()
-      self.configureHeadingView()
-      self.tableView.reloadData()
+    
+    NetworkManager.shared.getUsersData(userID: userID) { [weak self] result in
+      guard let self = self else { return }
+      switch (result) {
+        case .success(let usersData):
+          let totalChaptersRead = usersData.readChapters.count
+          let totalChapters = Chapters.storage.count
+          let progress = Float(totalChaptersRead * 100 / totalChapters)
+          DispatchQueue.main.async {
+            self.headingView = CCEHeadingView(
+              progress: progress,
+              title: "Overall Progress",
+              bodyOne: "\(totalChaptersRead) out of \(totalChapters) chapters read",
+              bodyTwo: "Progress: \(progress)%"
+            )
+            self.configureTableView()
+            self.configureHeadingView()
+          }
+        case .failure(let error):
+          print(error)
+      }
     }
   }
 

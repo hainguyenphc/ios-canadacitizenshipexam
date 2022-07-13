@@ -91,6 +91,7 @@ enum CCEFailure: String, Error {
   case getTestByIdFailure = "There was probleam loading the test with that ID."
 
   // Parsing failures
+  case parseUsersDataFailure = "There was problem parsing users data to correct format."
   case parseTestDataFailure = "There was problem parsing test data to correct format."
   case questionsMissingFailure = "Questions were missing from the test data."
   case communityAverageScoreMissingFailure = "Community average score was missing from the test data."

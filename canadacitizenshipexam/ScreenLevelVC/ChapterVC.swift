@@ -52,25 +52,33 @@ class ChapterVC: UIViewController {
   // ===========================================================================
 
   func updateReadChaptersOnServer() {
-    if let userID = Auth.auth().currentUser?.uid {
-      // Loads the logged in user data from cache.
-      let usersData = NetworkManager.shared.getUsersData(userID: userID)
-      let chapterID = Chapters.storage[self.chapterIndex]["id"]!
-      // Checks if this is a chapter user has read before.
-      let redoTest = usersData?.readChapters.contains(chapterID) ?? false
-      // Only if this is a fresh new chapter (1st time user visits it), updates
-      // the list of read chapters for user.
-      if (!redoTest) {
-        usersData?.readChapters.append(chapterID)
-        let fields: [String: Any] = [
-          "readChapters": usersData?.readChapters ?? []
-        ]
-        NetworkManager.shared.updateUsersData(
-          userID: userID,
-          fields: fields
-        )
-      }
+    guard let userID = Auth.auth().currentUser?.uid else {
+      return
     }
+    // Loads the logged in user data from cache.
+    NetworkManager.shared.getUsersData(userID: userID) { [weak self] result in
+      guard let self = self else { return }
+      switch (result) {
+        case .success(let usersData):
+          let chapterID = Chapters.storage[self.chapterIndex]["id"]!
+          // Checks if this is a chapter user has read before.
+          let redoTest = usersData.readChapters.contains(chapterID)
+          // Only if this is a fresh new chapter (1st time user visits it), updates
+          // the list of read chapters for user.
+          if (!redoTest) {
+            usersData.readChapters.append(chapterID)
+            let fields: [String: Any] = [
+              "readChapters": usersData.readChapters!
+            ]
+            NetworkManager.shared.updateUsersData(
+              userID: userID,
+              fields: fields
+            )
+          }
+        case .failure(let error):
+          print(error)
+      } // end switch
+    } // end closure
   }
 
   // ===========================================================================

@@ -58,10 +58,16 @@ class HomeVC: UIViewController {
       return
     }
     // This is a good chance to cache the logged in user data.
-    NetworkManager.shared.cacheUsersData(userID: currentUser.uid)
+    NetworkManager.shared.generateUsersDataOnServerIfNil(userID: currentUser.uid)
+    // Allows one second for the network request completes.
+    self.loadProgress()
   }
 
   override func viewWillAppear(_ animated: Bool) {
+    guard let _ = Auth.auth().currentUser else {
+      self.navigationController?.pushViewController(RegisterVC(), animated: true)
+      return
+    }
     // When user is back to Home tab, this deselects the currently selected row.
     if let indexPath = self.tableView.indexPathForSelectedRow {
       self.tableView.deselectRow(at: indexPath, animated: false)
@@ -69,9 +75,7 @@ class HomeVC: UIViewController {
     self.tabBarController?.tabBar.isHidden = false
     self.navigationItem.setHidesBackButton(true, animated: false)
     // Allows one second for the network request completes.
-    DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-      self.loadProgress()
-    }
+    self.loadProgress()
   }
 
   // ===========================================================================
@@ -79,24 +83,29 @@ class HomeVC: UIViewController {
   // ===========================================================================
 
   func loadProgress() -> Void {
-    guard let currentUser = Auth.auth().currentUser else {
+    guard let userID = Auth.auth().currentUser?.uid else {
       return
     }
-    guard let usersData = NetworkManager.shared.getUsersData(userID: currentUser.uid) else {
-      return
-    }
-    let totalChaptersRead = usersData.readChapters.count
-    let totalChapters = Chapters.storage.count
-    let progress = Float(totalChaptersRead * 100 / totalChapters)
-    DispatchQueue.main.async {
-      self.headingView = CCEHeadingView(
-        progress: progress,
-        title: "Overall Progress",
-        bodyOne: "\(totalChaptersRead) out of \(totalChapters) chapters read",
-        bodyTwo: "Progress: \(progress)%"
-      )
-      self.configureTableView()
-      self.configureHeadingView()
+    NetworkManager.shared.getUsersData(userID: userID) { [weak self] result in
+      guard let self = self else { return }
+      switch (result) {
+        case .success(let usersData):
+          let totalChaptersRead = usersData.readChapters.count
+          let totalChapters = Chapters.storage.count
+          let progress = Float(totalChaptersRead * 100 / totalChapters)
+          DispatchQueue.main.async {
+            self.headingView = CCEHeadingView(
+              progress: progress,
+              title: "Overall Progress",
+              bodyOne: "\(totalChaptersRead) out of \(totalChapters) chapters read",
+              bodyTwo: "Progress: \(progress)%"
+            )
+            self.configureTableView()
+            self.configureHeadingView()
+          }
+        case .failure(let error):
+          print(error)
+      }
     }
   }
 
@@ -125,7 +134,7 @@ class HomeVC: UIViewController {
     let uuidString = UUID().uuidString
     let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
     center.add(request) { error in
-      // code
+      // @TODO: handle errors
     }
   }
 

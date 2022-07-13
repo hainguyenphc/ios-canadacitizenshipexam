@@ -18,7 +18,7 @@ class NetworkManager {
 
   // Singleton pattern.
   static let shared = NetworkManager()
-  static let cache = NSCache<NSString, CCEUsersData>()
+  // static let cache = NSCache<NSString, CCEUsersData>()
 
   private init() {
     // Leaves empty.
@@ -176,38 +176,23 @@ class NetworkManager {
   // USER-SPECIFIC
   // ===========================================================================
 
-  func removedCachedUsersData(userID: String) {
-    NetworkManager.cache.removeObject(forKey: userID as NSString)
-  }
+  // func removedCachedUsersData(userID: String) {
+  //   NetworkManager.cache.removeObject(forKey: userID as NSString)
+  // }
 
-  func cacheUsersData(userID: String) {
+  func generateUsersDataOnServerIfNil(userID: String) {
     firestore.collection(CCECollections.Users_Data)
       .document(userID)
       .getDocument(source: .server) { (documentSnapshot, error) in
         if let documentSnapshot = documentSnapshot {
-          if let data = documentSnapshot.data() {
-            let cceUsersData = CCEUsersData()
-            guard let readChapters = data["readChapters"] as? [String] else {
-              return
-            }
-            guard let finishedTests = data["finishedTests"] as? [String] else {
-              return
-            }
-            cceUsersData.readChapters = readChapters
-            cceUsersData.finishedTests = finishedTests
-            NetworkManager.cache.setObject(cceUsersData, forKey: userID as NSString)
-          }
-          else {
+          guard let _ = documentSnapshot.data() else {
             self.firestore.collection(CCECollections.Users_Data)
               .document(userID)
               .setData([
                 "finishedTests": [],
                 "readChapters": [],
               ])
-            let cceUsersData = CCEUsersData()
-            cceUsersData.readChapters = []
-            cceUsersData.finishedTests = []
-            NetworkManager.cache.setObject(cceUsersData, forKey: userID as NSString)
+            return
           }
         }
         else {
@@ -217,9 +202,27 @@ class NetworkManager {
       }
   }
 
-  func getUsersData(userID: String) -> CCEUsersData? {
-    let usersData = NetworkManager.cache.object(forKey: userID as NSString)
-    return usersData
+  func getUsersData(userID: String, completed: @escaping(Result<CCEUsersData, CCEFailure>) -> Void) {
+    let usersData = firestore.collection(CCECollections.Users_Data).document(userID)
+    usersData.getDocument() { document, error in
+      if error != nil {
+        completed(.failure(.getTestByIdFailure))
+        return
+      }
+      guard let data = document?.data() else {
+        completed(.success(CCEUsersData()))
+        return
+      }
+      guard let finishedTests = data["finishedTests"] as? [String] else {
+        completed(.failure(.parseUsersDataFailure))
+        return
+      }
+      guard let readChapters = data["readChapters"] as? [String] else {
+        completed(.failure(.parseUsersDataFailure))
+        return
+      }
+      completed(.success(CCEUsersData(finishedTests: finishedTests, readChapters: readChapters)))
+    }
   }
 
   func updateUsersData(userID: String, fields: [AnyHashable: Any]) {
