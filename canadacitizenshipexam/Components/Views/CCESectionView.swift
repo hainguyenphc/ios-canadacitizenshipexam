@@ -9,11 +9,21 @@ import UIKit
 
 class CCESectionView: UIView {
 
+  // ===========================================================================
+  // UI variables
+  // ===========================================================================
+
   var titleLabel = CCELevelTwoTitleLabel()
-  var symbolImageView = UIImageView() // icon
-  // var horizontalStackView = UIStackView()
-  var subtitleLabel = CCEBodyLabel() // In red
-  var infoLabel = CCEBodyLabel() // In grey
+
+  var symbolImageView = UIImageView()
+
+  var subtitleLabel = CCEBodyLabel()
+
+  var infoLabel = CCEBodyLabel()
+
+  // ===========================================================================
+  // Initializer
+  // ===========================================================================
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -25,11 +35,13 @@ class CCESectionView: UIView {
     self.titleLabel.text = title ?? ""
     self.subtitleLabel.text = subtitle ?? ""
     self.infoLabel.text = info ?? ""
-    let imageName = symbol ?? SFSymbols.sectionFallbackImageName
-    let image = UIImage(systemName: imageName)
-    self.symbolImageView.image = image
+    self.symbolImageView.image = UIImage(systemName: symbol ?? SFSymbols.sectionFallbackImageName)
     self.configureUI()
   }
+
+  // ===========================================================================
+  // UI configurations, constraints, etc.
+  // ===========================================================================
 
   func configureUI() -> Void {
     self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -60,6 +72,10 @@ class CCESectionView: UIView {
     ])
 
   }
+
+  // ===========================================================================
+  // DO NOT CHANGE ANYTHING BELOW THIS LINE
+  // ===========================================================================
 
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")

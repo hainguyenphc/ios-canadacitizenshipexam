@@ -9,9 +9,9 @@ import Foundation
 
 struct CCESection_Complex {
 
-  var primaryTitleTexts: [String] = []
-  var bodyTexts: [String] = []
-  var iconNames: [String] = []
+  var primaryTitleTexts = [String]()
+  var bodyTexts = [String]()
+  var iconNames = [String]()
 
   init(primaryTitleTexts: [String], bodyTexts: [String], iconNames: [String]) {
     for each in primaryTitleTexts {

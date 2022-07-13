@@ -17,6 +17,10 @@ class CCEScreenCollectiveSummary: UIView {
   var metricsView: CCEScreenCollectiveMetricsView!    // right
   var progressView: CCEScreenCollectiveProgressView!  // left
 
+  // ===========================================================================
+  // Initializer
+  // ===========================================================================
+
   override init(frame: CGRect) {
     super.init(frame: frame)
     self.configureUI()
@@ -40,13 +44,11 @@ class CCEScreenCollectiveSummary: UIView {
 
   func configureUI() -> Void {
     self.stackView.translatesAutoresizingMaskIntoConstraints = false
-
-    self.addSubview(self.stackView)
-
     self.stackView.axis           = .horizontal
     self.stackView.distribution   = .fillProportionally
     self.stackView.addArrangedSubview(self.progressView)
     self.stackView.addArrangedSubview(self.metricsView)
+    self.addSubview(self.stackView)
 
     NSLayoutConstraint.activate([
       self.stackView.centerXAnchor.constraint(equalTo: self.centerXAnchor),

@@ -14,14 +14,13 @@ class CCEDatePickerVC: UIViewController {
   // UI variables
   // ===========================================================================
 
-  var titleLabel: CCELevelOneTitleLabel! = CCELevelOneTitleLabel(
-    text: "Set Practice Reminder", textAlignment: .center)
+  var titleLabel = CCELevelOneTitleLabel(text: "Set Practice Reminder", textAlignment: .center)
 
-  let datePicker: UIDatePicker! = UIDatePicker()
+  let datePicker = UIDatePicker()
 
-  let confirmButton: CCEButton! = CCEButton(backgroundColor: .systemBlue, title: "Confirm")
+  let confirmButton = CCEButton(backgroundColor: .systemBlue, title: "Confirm")
 
-  var parentVC: HomeVC! = HomeVC()
+  var parentVC = HomeVC()
 
   // ===========================================================================
   // Lifecycle methods
@@ -31,6 +30,10 @@ class CCEDatePickerVC: UIViewController {
     confirmButton.addTarget(self, action: #selector(confirm), for: .touchUpInside)
     configureUI()
   }
+
+  // ===========================================================================
+  // Helper functions
+  // ===========================================================================
 
   @objc func confirm() {
     self.dismiss(animated: true) {

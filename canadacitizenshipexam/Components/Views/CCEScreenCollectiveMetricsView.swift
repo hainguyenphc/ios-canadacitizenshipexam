@@ -26,13 +26,9 @@ class CCEScreenCollectiveMetricsView: UIView {
 
   init(title: String = "", bodyOne: String = "", bodyTwo: String = "") {
     super.init(frame: .zero)
-    //
     self.titleLabel = CCELevelTwoTitleLabel(text: title, textAlignment: .left)
-    // self.titleLabel.text = title
     self.bodyOne = CCEBodyLabel(text: bodyOne, textAlignment: .left)
-    // self.bodyOne.text = bodyOne
     self.bodyTwo = CCEBodyLabel(text: bodyTwo, textAlignment: .left)
-    // self.bodyTwo.text = bodyTwo
     self.configureUI()
   }
 

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		8436CBEC281EEB5C007668DC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBEB281EEB5C007668DC /* CardView.swift */; };
 		8436CBEE281F00B8007668DC /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBED281F00B8007668DC /* UIView+Ext.swift */; };
-		8436CBF1281F120E007668DC /* CCESectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBF0281F120E007668DC /* CCESectionCell.swift */; };
 		8436CBF3281F4621007668DC /* CCESectionCell_Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBF2281F4621007668DC /* CCESectionCell_Complex.swift */; };
 		8436CBF5281F465D007668DC /* CCESection_Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBF4281F465D007668DC /* CCESection_Complex.swift */; };
 		84428C0328502E4F00C22BC9 /* TestResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84428C0228502E4F00C22BC9 /* TestResultVC.swift */; };
@@ -18,6 +17,13 @@
 		845B46E2287A8FD000AC58B0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B46E1287A8FD000AC58B0 /* LoginVC.swift */; };
 		845BF3DD286E9562003952CF /* CCESeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BF3DC286E9562003952CF /* CCESeeder.swift */; };
 		845BF3DF286E9783003952CF /* ChapterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BF3DE286E9783003952CF /* ChapterVC.swift */; };
+		847DDCA5287E55DF00A77199 /* TestsVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCA4287E55DF00A77199 /* TestsVC+Ext.swift */; };
+		847DDCA7287E570B00A77199 /* BookVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCA6287E570B00A77199 /* BookVC+Ext.swift */; };
+		847DDCA9287E574B00A77199 /* HomeVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCA8287E574B00A77199 /* HomeVC+Ext.swift */; };
+		847DDCAD287E5AB600A77199 /* TestResultVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCAC287E5AB600A77199 /* TestResultVC+Ext.swift */; };
+		847DDCAF287E5FEF00A77199 /* CCEQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCAE287E5FEF00A77199 /* CCEQuestion.swift */; };
+		847DDCB1287E601A00A77199 /* CCEDirtyQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCB0287E601A00A77199 /* CCEDirtyQuestion.swift */; };
+		847DDCB3287E605100A77199 /* CCEChapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCB2287E605100A77199 /* CCEChapter.swift */; };
 		849539E5283BCD4F00260E85 /* TestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539E4283BCD4F00260E85 /* TestVC.swift */; };
 		849539E7283BDABC00260E85 /* CCEButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539E6283BDABC00260E85 /* CCEButton.swift */; };
 		849539E9283BE15E00260E85 /* CCETest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539E8283BE15E00260E85 /* CCETest.swift */; };
@@ -46,7 +52,6 @@
 		84A184FB281DDEA50074D5AB /* CCECircularProgressLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184FA281DDEA50074D5AB /* CCECircularProgressLabel.swift */; };
 		84A184FD281DF1630074D5AB /* CCESectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184FC281DF1630074D5AB /* CCESectionView.swift */; };
 		84A18500281DF4EE0074D5AB /* CCESection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184FF281DF4EE0074D5AB /* CCESection.swift */; };
-		84A18502281E05570074D5AB /* CCESectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A18501281E05570074D5AB /* CCESectionVC.swift */; };
 		84AE1BC528280F9300075F53 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84AE1BC428280F9300075F53 /* GoogleService-Info.plist */; };
 		84B8DAB5285F6C6B008DDAFE /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DAB4285F6C6B008DDAFE /* Int+Ext.swift */; };
 		84B8DABC285F9572008DDAFE /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DABA285F9572008DDAFE /* CardCell.swift */; };
@@ -88,7 +93,6 @@
 		840998D732D835275330E792 /* Pods_canadacitizenshipexamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8436CBEB281EEB5C007668DC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8436CBED281F00B8007668DC /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
-		8436CBF0281F120E007668DC /* CCESectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionCell.swift; sourceTree = "<group>"; };
 		8436CBF2281F4621007668DC /* CCESectionCell_Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionCell_Complex.swift; sourceTree = "<group>"; };
 		8436CBF4281F465D007668DC /* CCESection_Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESection_Complex.swift; sourceTree = "<group>"; };
 		84428C0228502E4F00C22BC9 /* TestResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultVC.swift; sourceTree = "<group>"; };
@@ -97,6 +101,13 @@
 		845B46E1287A8FD000AC58B0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		845BF3DC286E9562003952CF /* CCESeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESeeder.swift; sourceTree = "<group>"; };
 		845BF3DE286E9783003952CF /* ChapterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterVC.swift; sourceTree = "<group>"; };
+		847DDCA4287E55DF00A77199 /* TestsVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestsVC+Ext.swift"; sourceTree = "<group>"; };
+		847DDCA6287E570B00A77199 /* BookVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookVC+Ext.swift"; sourceTree = "<group>"; };
+		847DDCA8287E574B00A77199 /* HomeVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+Ext.swift"; sourceTree = "<group>"; };
+		847DDCAC287E5AB600A77199 /* TestResultVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestResultVC+Ext.swift"; sourceTree = "<group>"; };
+		847DDCAE287E5FEF00A77199 /* CCEQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEQuestion.swift; sourceTree = "<group>"; };
+		847DDCB0287E601A00A77199 /* CCEDirtyQuestion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEDirtyQuestion.swift; sourceTree = "<group>"; };
+		847DDCB2287E605100A77199 /* CCEChapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEChapter.swift; sourceTree = "<group>"; };
 		849539E4283BCD4F00260E85 /* TestVC.swift */ = {isa = PBXFileReference; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TestVC.swift; sourceTree = "<group>"; };
 		849539E6283BDABC00260E85 /* CCEButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEButton.swift; sourceTree = "<group>"; };
 		849539E8283BE15E00260E85 /* CCETest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCETest.swift; sourceTree = "<group>"; };
@@ -129,7 +140,6 @@
 		84A184FA281DDEA50074D5AB /* CCECircularProgressLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCECircularProgressLabel.swift; sourceTree = "<group>"; };
 		84A184FC281DF1630074D5AB /* CCESectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionView.swift; sourceTree = "<group>"; };
 		84A184FF281DF4EE0074D5AB /* CCESection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESection.swift; sourceTree = "<group>"; };
-		84A18501281E05570074D5AB /* CCESectionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionVC.swift; sourceTree = "<group>"; };
 		84AE1BC428280F9300075F53 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84B8DAB4285F6C6B008DDAFE /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		84B8DABA285F9572008DDAFE /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
@@ -183,10 +193,16 @@
 		8436CBEF281F11FB007668DC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8436CBF0281F120E007668DC /* CCESectionCell.swift */,
 				8436CBF2281F4621007668DC /* CCESectionCell_Complex.swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		847DDCA3287E55AA00A77199 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		849539EA283BE3DC00260E85 /* Managers */ = {
@@ -225,6 +241,7 @@
 		84A184A4281D72EC0074D5AB /* canadacitizenshipexam */ = {
 			isa = PBXGroup;
 			children = (
+				847DDCA3287E55AA00A77199 /* Extensions */,
 				849539EA283BE3DC00260E85 /* Managers */,
 				8436CBEA281EEB1B007668DC /* beta */,
 				84A184FE281DF4CB0074D5AB /* Models */,
@@ -285,6 +302,10 @@
 				8436CBED281F00B8007668DC /* UIView+Ext.swift */,
 				84B8DAB4285F6C6B008DDAFE /* Int+Ext.swift */,
 				84B8DABE285FDD65008DDAFE /* String+Ext.swift */,
+				847DDCA4287E55DF00A77199 /* TestsVC+Ext.swift */,
+				847DDCA6287E570B00A77199 /* BookVC+Ext.swift */,
+				847DDCA8287E574B00A77199 /* HomeVC+Ext.swift */,
+				847DDCAC287E5AB600A77199 /* TestResultVC+Ext.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -329,7 +350,6 @@
 		84A184ED281D94700074D5AB /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				84A18501281E05570074D5AB /* CCESectionVC.swift */,
 				84502C93286AA0A000E86367 /* CCEDatePickerVC.swift */,
 			);
 			path = ViewControllers;
@@ -342,6 +362,9 @@
 				8436CBF4281F465D007668DC /* CCESection_Complex.swift */,
 				849539E8283BE15E00260E85 /* CCETest.swift */,
 				84CC3F2F287B098A005AFF0F /* CCEUsersData.swift */,
+				847DDCAE287E5FEF00A77199 /* CCEQuestion.swift */,
+				847DDCB0287E601A00A77199 /* CCEDirtyQuestion.swift */,
+				847DDCB2287E605100A77199 /* CCEChapter.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -650,6 +673,7 @@
 			files = (
 				84A184FB281DDEA50074D5AB /* CCECircularProgressLabel.swift in Sources */,
 				84428C0328502E4F00C22BC9 /* TestResultVC.swift in Sources */,
+				847DDCB1287E601A00A77199 /* CCEDirtyQuestion.swift in Sources */,
 				84A184FD281DF1630074D5AB /* CCESectionView.swift in Sources */,
 				84A184A6281D72EC0074D5AB /* AppDelegate.swift in Sources */,
 				84B8DAB5285F6C6B008DDAFE /* Int+Ext.swift in Sources */,
@@ -661,23 +685,27 @@
 				849539E5283BCD4F00260E85 /* TestVC.swift in Sources */,
 				84A184DD281D87CD0074D5AB /* TestsVC.swift in Sources */,
 				84A184F9281D98930074D5AB /* CCEBodyLabel.swift in Sources */,
+				847DDCA7287E570B00A77199 /* BookVC+Ext.swift in Sources */,
 				845BF3DD286E9562003952CF /* CCESeeder.swift in Sources */,
 				845BF3DF286E9783003952CF /* ChapterVC.swift in Sources */,
 				845B46E0287A7B0500AC58B0 /* RegisterVC.swift in Sources */,
-				8436CBF1281F120E007668DC /* CCESectionCell.swift in Sources */,
 				84A184A8281D72EC0074D5AB /* SceneDelegate.swift in Sources */,
 				84A184EB281D8DB40074D5AB /* CCELevelOneTitleLabel.swift in Sources */,
 				849539EC283BE3EC00260E85 /* NetworkManager.swift in Sources */,
 				8436CBEE281F00B8007668DC /* UIView+Ext.swift in Sources */,
 				84CC3F30287B098A005AFF0F /* CCEUsersData.swift in Sources */,
 				8436CBF3281F4621007668DC /* CCESectionCell_Complex.swift in Sources */,
+				847DDCAD287E5AB600A77199 /* TestResultVC+Ext.swift in Sources */,
+				847DDCB3287E605100A77199 /* CCEChapter.swift in Sources */,
 				845B46E2287A8FD000AC58B0 /* LoginVC.swift in Sources */,
 				84A184F7281D96740074D5AB /* CCEScreenCollectiveSummary.swift in Sources */,
 				84A184B0281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld in Sources */,
+				847DDCAF287E5FEF00A77199 /* CCEQuestion.swift in Sources */,
 				84B8DABF285FDD65008DDAFE /* String+Ext.swift in Sources */,
 				84A184E5281D8AB90074D5AB /* SettingsVC.swift in Sources */,
+				847DDCA5287E55DF00A77199 /* TestsVC+Ext.swift in Sources */,
 				849539E7283BDABC00260E85 /* CCEButton.swift in Sources */,
-				84A18502281E05570074D5AB /* CCESectionVC.swift in Sources */,
+				847DDCA9287E574B00A77199 /* HomeVC+Ext.swift in Sources */,
 				8436CBF5281F465D007668DC /* CCESection_Complex.swift in Sources */,
 				84A184EF281D94ED0074D5AB /* CCEHeadingView.swift in Sources */,
 				84A184DF281D88D10074D5AB /* CCEConstants.swift in Sources */,
