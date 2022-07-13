@@ -108,7 +108,7 @@ class BookVC: UIViewController {
     self.tableView.delegate   = self
     self.tableView.dataSource = self
     self.tableView.register(
-      CCESectionCell_Complex.self,
+      CCESectionCompoundCell.self,
       forCellReuseIdentifier: K.sectionCellIdentifier)
     self.tableView.pin(to: self.view)
     self.tableView.backgroundColor = .secondarySystemBackground

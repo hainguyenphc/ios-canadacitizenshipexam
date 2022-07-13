@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CCESectionCell_Complex: UITableViewCell {
+class CCESectionCompoundCell: UITableViewCell {
 
   // ===========================================================================
   // Logic variables

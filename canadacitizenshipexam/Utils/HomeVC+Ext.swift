@@ -15,7 +15,7 @@ extension HomeVC: UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let rcell = self.tableView.dequeueReusableCell(
-      withIdentifier: K.sectionCellIdentifier, for: indexPath) as! CCESectionCell_Complex
+      withIdentifier: K.sectionCellIdentifier, for: indexPath) as! CCESectionCompoundCell
     rcell.configureCell(section: sections[indexPath.row], at: 0)
     return rcell
   }

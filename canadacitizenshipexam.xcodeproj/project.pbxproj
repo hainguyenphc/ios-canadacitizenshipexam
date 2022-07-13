@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		8436CBEC281EEB5C007668DC /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBEB281EEB5C007668DC /* CardView.swift */; };
 		8436CBEE281F00B8007668DC /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBED281F00B8007668DC /* UIView+Ext.swift */; };
-		8436CBF3281F4621007668DC /* CCESectionCell_Complex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBF2281F4621007668DC /* CCESectionCell_Complex.swift */; };
+		8436CBF3281F4621007668DC /* CCESectionCompoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBF2281F4621007668DC /* CCESectionCompoundCell.swift */; };
 		8436CBF5281F465D007668DC /* CCECompoundSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8436CBF4281F465D007668DC /* CCECompoundSection.swift */; };
 		84428C0328502E4F00C22BC9 /* TestResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84428C0228502E4F00C22BC9 /* TestResultVC.swift */; };
 		84502C94286AA0A000E86367 /* CCEDatePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84502C93286AA0A000E86367 /* CCEDatePickerVC.swift */; };
@@ -98,7 +98,7 @@
 		840998D732D835275330E792 /* Pods_canadacitizenshipexamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8436CBEB281EEB5C007668DC /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		8436CBED281F00B8007668DC /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
-		8436CBF2281F4621007668DC /* CCESectionCell_Complex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionCell_Complex.swift; sourceTree = "<group>"; };
+		8436CBF2281F4621007668DC /* CCESectionCompoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionCompoundCell.swift; sourceTree = "<group>"; };
 		8436CBF4281F465D007668DC /* CCECompoundSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCECompoundSection.swift; sourceTree = "<group>"; };
 		84428C0228502E4F00C22BC9 /* TestResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestResultVC.swift; sourceTree = "<group>"; };
 		84502C93286AA0A000E86367 /* CCEDatePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEDatePickerVC.swift; sourceTree = "<group>"; };
@@ -203,7 +203,7 @@
 		8436CBEF281F11FB007668DC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				8436CBF2281F4621007668DC /* CCESectionCell_Complex.swift */,
+				8436CBF2281F4621007668DC /* CCESectionCompoundCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -733,7 +733,7 @@
 				849539EC283BE3EC00260E85 /* NetworkManager.swift in Sources */,
 				8436CBEE281F00B8007668DC /* UIView+Ext.swift in Sources */,
 				84CC3F30287B098A005AFF0F /* CCEUsersData.swift in Sources */,
-				8436CBF3281F4621007668DC /* CCESectionCell_Complex.swift in Sources */,
+				8436CBF3281F4621007668DC /* CCESectionCompoundCell.swift in Sources */,
 				847DDCAD287E5AB600A77199 /* TestResultVC+Ext.swift in Sources */,
 				847DDCB3287E605100A77199 /* CCEChapter.swift in Sources */,
 				845B46E2287A8FD000AC58B0 /* LoginVC.swift in Sources */,

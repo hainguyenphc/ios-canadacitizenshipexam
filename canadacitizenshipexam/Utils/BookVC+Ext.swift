@@ -16,7 +16,7 @@ extension BookVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let rcell = self.tableView.dequeueReusableCell(
       withIdentifier: K.sectionCellIdentifier, for: indexPath)
-    as! CCESectionCell_Complex
+    as! CCESectionCompoundCell
     rcell.selectionStyle = .none
     rcell.configureCell(section: sections[indexPath.row], at: 0)
     return rcell
