@@ -19,11 +19,9 @@ struct CCEQuestion: Codable {
 
   var question: String!
 
-    // TODO: Deals with statistics.
   var stats: Dictionary<String, Int?>!
 
   init(answers: [String],
-       name: String = "",
        correctAnswer: String,
        isMultipleChoice: Bool,
        explanation: String,

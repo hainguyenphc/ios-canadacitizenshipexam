@@ -1,35 +1,83 @@
-//
-//  CCETestTests.swift
-//  canadacitizenshipexamTests
-//
-//  Created by hainguyen on 2022-07-13.
-//
+  //
+  //  CCETestTests.swift
+  //  canadacitizenshipexamTests
+  //
+  //  Created by hainguyen on 2022-07-13.
+  //
 
 import XCTest
 
+@testable import canadacitizenshipexam
 class CCETestTests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+  private static let ID = "A0D1E030-D738-4370-86D1-ADF408955CA5"
+  private static let Name = "Sample Free Test"
+  private static let Questions: [CCEQuestion] = [
+    CCEQuestion(
+      answers: [
+        "1989",
+        "1999",
+        "2000",
+        "2001"
+      ],
+      correctAnswer: "1999.",
+      isMultipleChoice: false,
+      explanation: "Nunavut became a territory in 1999.",
+      question: "When did Nunavut become a territory?",
+      stats: [
+        "countA": 10,
+        "countB": 11,
+        "countC": 12,
+        "countD": 13,
+      ])
+  ]
+  private static let TimeOnTest = 10
+  private static let TotalSubmissions = 100
+  private static let CommunityAverageScore = 76
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+  override func setUp() {
+    super.setUp()
+  }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
+  override func tearDown() {
+    super.tearDown()
+  }
 
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+  func test_CCETest_init_with_details() {
+    let cceTest = CCETest(
+      id: CCETestTests.ID,
+      name: CCETestTests.Name,
+      questions: CCETestTests.Questions,
+      timeOnTest: CCETestTests.TimeOnTest,
+      totalSubmissions: CCETestTests.TotalSubmissions,
+      communityAverageScore: CCETestTests.CommunityAverageScore)
+    XCTAssertNotNil(cceTest)
+    XCTAssertEqual(cceTest.id, CCETestTests.ID)
+    XCTAssertEqual(cceTest.name, CCETestTests.Name)
+    XCTAssertEqual(cceTest.questions.count, CCETestTests.Questions.count)
+    XCTAssertEqual(cceTest.timeOnTest, CCETestTests.TimeOnTest)
+    XCTAssertEqual(cceTest.totalSubmissions, CCETestTests.TotalSubmissions)
+    XCTAssertEqual(cceTest.communityAverageScore, CCETestTests.CommunityAverageScore)
+
+    for question in cceTest.questions {
+      XCTAssertNotNil(question.answers)
+      XCTAssertEqual(question.answers.count, 4)
+
+      XCTAssertNotNil(question.stats)
+      XCTAssertEqual(question.stats.count, 4)
+
+      XCTAssertNotNil(question.isMultipleChoice, "`CCEQuestion.isMultipleChoice` property must be a `Bool`.")
+
+      XCTAssertNotNil(question.correctAnswer)
+      XCTAssertTrue(!question.correctAnswer.isEmpty, "`CCEQuestion.correctAnswer` must not be empty.")
+
+      XCTAssertNotNil(question.explanation)
+      XCTAssertTrue(!question.explanation.isEmpty, "`CCEQuestion.explanation` must not be empty.")
+
+      XCTAssertNotNil(question.question)
+      XCTAssertTrue(!question.question.isEmpty, "`CCEQuestion.question` must not be empty.")
     }
+  }
+
 
 }

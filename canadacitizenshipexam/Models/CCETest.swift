@@ -26,15 +26,6 @@ struct CCETest: Codable {
   // On average, how do people perform on the test?
   var communityAverageScore: Int!
 
-  init() {
-    self.id = ""
-    self.name = ""
-    self.questions = []
-    self.timeOnTest = 0
-    self.totalSubmissions = 0
-    self.communityAverageScore = 0
-  }
-
   init(id: String,
        name: String,
        questions: [CCEQuestion],

@@ -51,12 +51,13 @@ class NetworkManager {
             completed(.failure(.totalSubmissionsMissingFailure))
             return
           }
-          var cceTest = CCETest()
-          cceTest.id = document.documentID
-          cceTest.name = name
-          cceTest.questions = []
-          cceTest.communityAverageScore = communityAverageScore
-          cceTest.totalSubmissions = totalSubmissions
+          var cceTest = CCETest(
+            id: document.documentID,
+            name: name,
+            questions: [],
+            timeOnTest: 0,
+            totalSubmissions: totalSubmissions,
+            communityAverageScore: communityAverageScore)
           // (total - 1) is to adjust for 0-based indexing.
           for counter in 0...(questions.count - 1) {
             if let questionObject = questions[counter] as? NSDictionary {
@@ -71,7 +72,6 @@ class NetworkManager {
               // Constructs CCEQuestion object.
               let cceQuestion = CCEQuestion(
                 answers: answerLabels,
-                name: name,
                 correctAnswer: correctAnswer,
                 isMultipleChoice: isMultipleChoice,
                 explanation: explanation,
