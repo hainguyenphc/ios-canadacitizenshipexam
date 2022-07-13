@@ -35,4 +35,19 @@ struct CCETest: Codable {
     self.communityAverageScore = 0
   }
 
+  init(id: String,
+       name: String,
+       questions: [CCEQuestion],
+       timeOnTest: Int,
+       totalSubmissions: Int,
+       communityAverageScore: Int
+  ) {
+    self.id = id
+    self.name = name
+    self.questions = questions
+    self.timeOnTest = timeOnTest
+    self.totalSubmissions = totalSubmissions
+    self.communityAverageScore = communityAverageScore
+  }
+
 }
