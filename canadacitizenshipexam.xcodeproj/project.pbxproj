@@ -28,6 +28,7 @@
 		849539E7283BDABC00260E85 /* CCEButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539E6283BDABC00260E85 /* CCEButton.swift */; };
 		849539E9283BE15E00260E85 /* CCETest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539E8283BE15E00260E85 /* CCETest.swift */; };
 		849539EC283BE3EC00260E85 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539EB283BE3EC00260E85 /* NetworkManager.swift */; };
+		84979B6E287EF6DC002675A6 /* CCESectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B6D287EF6DC002675A6 /* CCESectionTests.swift */; };
 		84A184A6281D72EC0074D5AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184A5281D72EC0074D5AB /* AppDelegate.swift */; };
 		84A184A8281D72EC0074D5AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184A7281D72EC0074D5AB /* SceneDelegate.swift */; };
 		84A184B0281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84A184AE281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld */; };
@@ -112,6 +113,7 @@
 		849539E6283BDABC00260E85 /* CCEButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEButton.swift; sourceTree = "<group>"; };
 		849539E8283BE15E00260E85 /* CCETest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCETest.swift; sourceTree = "<group>"; };
 		849539EB283BE3EC00260E85 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		84979B6D287EF6DC002675A6 /* CCESectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionTests.swift; sourceTree = "<group>"; };
 		84A184A2281D72EC0074D5AB /* canadacitizenshipexam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = canadacitizenshipexam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A184A5281D72EC0074D5AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A184A7281D72EC0074D5AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -213,6 +215,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		84979B6C287EF6A1002675A6 /* CCESectionTests */ = {
+			isa = PBXGroup;
+			children = (
+				84979B6D287EF6DC002675A6 /* CCESectionTests.swift */,
+			);
+			path = CCESectionTests;
+			sourceTree = "<group>";
+		};
 		84A18499281D72EC0074D5AB = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +273,7 @@
 		84A184BE281D72ED0074D5AB /* canadacitizenshipexamTests */ = {
 			isa = PBXGroup;
 			children = (
+				84979B6C287EF6A1002675A6 /* CCESectionTests */,
 				84A184BF281D72ED0074D5AB /* canadacitizenshipexamTests.swift */,
 			);
 			path = canadacitizenshipexamTests;
@@ -723,6 +734,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A184C0281D72ED0074D5AB /* canadacitizenshipexamTests.swift in Sources */,
+				84979B6E287EF6DC002675A6 /* CCESectionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

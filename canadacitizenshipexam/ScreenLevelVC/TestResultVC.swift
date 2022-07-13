@@ -28,13 +28,16 @@ class TestResultVC: UIViewController {
   var storage: [CCESection] = [
     CCESection(
       title: "Return to Main Menu",
-      bodyText: "", iconName: SFSymbols.home),
+      bodyText: "",
+      iconName: SFSymbols.home),
     CCESection(
       title: "Try Again",
-      bodyText: "Restart this test", iconName: SFSymbols.tryAgain),
+      bodyText: "Restart this test",
+      iconName: SFSymbols.tryAgain),
     CCESection(
       title: "How am I doing?",
-      bodyText: "See your progress metric", iconName: SFSymbols.progress),
+      bodyText: "See your progress metric",
+      iconName: SFSymbols.progress),
   ]
 
   // ===========================================================================
