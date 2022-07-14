@@ -102,6 +102,7 @@ class ChapterVC: UIViewController {
 
     // E.g., "/Users/admin/Library/Developer/CoreSimulator/Devices/B2E4BFBC-8542-4CE5-8690-6C41CA12687A/data/Containers/Bundle/Application/C7B563D6-85F1-49BF-8F21-A60EDE981A2A/canadacitizenshipexam.app/en.lproj/947E5DF8-A14D-4A59-BA4E-CBC5BC1F5F6F.txt"
     let path = Bundle.main.path(forResource: Chapters.storage[chapterIndex]["id"], ofType: "txt")
+    // let bundle = Bundle(for: Self.self)
     do {
       let content = try String(contentsOfFile: path!, encoding: String.Encoding.utf8)
       self.textView.text = content

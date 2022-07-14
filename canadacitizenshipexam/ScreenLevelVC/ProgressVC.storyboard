@@ -16,17 +16,144 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hai nguyen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ias-FQ-Vz3">
-                                <rect key="frame" x="166" y="438" width="83" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="equalSpacing" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="cNs-W0-0PD">
+                                <rect key="frame" x="-28.5" y="268" width="471" height="360"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1KD-AF-Pb2" userLabel="Practice Progress View">
+                                        <rect key="frame" x="115.5" y="0.0" width="240" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="BEj-Ls-EAS"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zer-Co-hOF" userLabel="Reading Progress View">
+                                        <rect key="frame" x="115.5" y="130" width="240" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemMintColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="h13-hy-eMC"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="i7F-yJ-52X" userLabel="Score Statistics Stack">
+                                        <rect key="frame" x="0.0" y="260" width="471" height="100"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rlC-nj-WNh" userLabel="Last Test Stack">
+                                                <rect key="frame" x="0.0" y="0.0" width="471" height="40"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsx-nd-vXc">
+                                                        <rect key="frame" x="0.0" y="10" width="99.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C2T-60-X6g" userLabel="Progress Bar" customClass="CCEProgressBar" customModule="canadacitizenshipexam" customModuleProvider="target">
+                                                        <rect key="frame" x="109.5" y="7.5" width="125" height="25"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="125" id="2Bu-hx-asH"/>
+                                                            <constraint firstAttribute="height" constant="25" id="a2M-Je-QcI"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                <color key="value" red="0.98039215690000003" green="0.72941176470000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmA-uR-Lvq">
+                                                        <rect key="frame" x="244.5" y="10" width="226.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9GK-yP-BRS" userLabel="Last 5 Tests Stack">
+                                                <rect key="frame" x="0.0" y="45" width="471" height="25"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last 5 Tests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wD-gW-Rmi">
+                                                        <rect key="frame" x="0.0" y="2.5" width="99.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oqr-aI-JsI" userLabel="Progress Bar" customClass="CCEProgressBar" customModule="canadacitizenshipexam" customModuleProvider="target">
+                                                        <rect key="frame" x="109.5" y="0.0" width="308" height="25"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="h2t-1p-hjp"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                <color key="value" red="0.98039215686274506" green="0.72941176470588232" blue="0.85490196078431369" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qRw-c7-P1O">
+                                                        <rect key="frame" x="427.5" y="2.5" width="43.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="oqr-aI-JsI" firstAttribute="top" secondItem="9GK-yP-BRS" secondAttribute="top" id="SPI-5f-Y5y"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2FT-Fj-WF6" userLabel="Last 10 Tests Stack">
+                                                <rect key="frame" x="0.0" y="75" width="471" height="25"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last 10 Tests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQb-SK-Bk2">
+                                                        <rect key="frame" x="0.0" y="2.5" width="99.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kCg-po-qys" userLabel="Progress Bar" customClass="CCEProgressBar" customModule="canadacitizenshipexam" customModuleProvider="target">
+                                                        <rect key="frame" x="109.5" y="0.0" width="308" height="25"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="25" id="6ke-rz-SBO"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                                                <color key="value" red="0.98039215690000003" green="0.72941176470000002" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5M-Yq-Uys">
+                                                        <rect key="frame" x="427.5" y="2.5" width="43.5" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="kCg-po-qys" firstAttribute="top" secondItem="2FT-Fj-WF6" secondAttribute="top" id="7Lm-y7-Wvh"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="GOA-gF-l5o" userLabel="height = 300"/>
+                                            <constraint firstItem="9wD-gW-Rmi" firstAttribute="trailing" secondItem="Gsx-nd-vXc" secondAttribute="trailing" id="Mp7-nv-DUT"/>
+                                            <constraint firstItem="iQb-SK-Bk2" firstAttribute="trailing" secondItem="9wD-gW-Rmi" secondAttribute="trailing" id="WRc-D9-gfc"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cNs-W0-0PD" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="AeS-7W-8xz"/>
+                            <constraint firstItem="cNs-W0-0PD" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="RtW-Ae-08S"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lastFiveTestsScoreLabel" destination="qRw-c7-P1O" id="tau-d3-H48"/>
+                        <outlet property="lastTenTestsScoreLabel" destination="h5M-Yq-Uys" id="6fV-a1-wTt"/>
+                        <outlet property="lastTestScoreLabel" destination="jmA-uR-Lvq" id="Eqj-3e-WiF"/>
+                        <outlet property="practiceProgressView" destination="1KD-AF-Pb2" id="jWQ-9X-nw2"/>
+                        <outlet property="readingProgressView" destination="Zer-Co-hOF" id="0Ry-h6-0Or"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -36,6 +163,12 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
