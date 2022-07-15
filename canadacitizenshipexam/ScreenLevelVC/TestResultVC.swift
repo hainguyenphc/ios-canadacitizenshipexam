@@ -310,7 +310,8 @@ class TestResultVC: UIViewController {
           for (_, each) in usersData.finishedTests.enumerated() {
             finishedTestsRawArray.append([
               "score": each.score!,
-              "testID": each.testID!
+              "testID": each.testID!,
+              "timestamp": NSDate().timeIntervalSince1970
             ])
           }
           NetworkManager.shared.updateUsersData(

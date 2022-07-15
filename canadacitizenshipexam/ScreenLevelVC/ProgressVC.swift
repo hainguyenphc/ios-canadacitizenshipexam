@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ProgressVC: UIViewController {
 
@@ -41,12 +42,33 @@ class ProgressVC: UIViewController {
     self.configureHeadingView()
   }
 
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
+    self.configureScoreStatsView()
+  }
+
   // ===========================================================================
   // UI configurations, constraints, etc.
   // ===========================================================================
 
   func configureHeadingView() -> Void {
+    //TODO: deal with the heading
+  }
 
+  func configureScoreStatsView() -> Void {
+    guard let userID = Auth.auth().currentUser?.uid else {
+      return
+    }
+    ScoreStatsManager.shared.getLastTestScore(userID: userID) { [weak self] result in
+      guard let self = self else { return }
+      switch (result) {
+        case .success(let score):
+          self.lastTestScoreLabel.text = "\(score)%"
+        case .failure(let error):
+          //TODO: handle error
+          print(error)
+      }
+    }
   }
 
   func configureUI() {

@@ -218,7 +218,8 @@ class NetworkManager {
       for (_, each) in finishedTestsRawArray.enumerated() {
         let testID = each["testID"] as? String
         let score = each["score"] as? Float
-        finishedTests.append(CCEFinishedTest(testID: testID, score: score))
+        let timestamp = each["timestamp"] as? Date
+        finishedTests.append(CCEFinishedTest(testID: testID, score: score, timestamp: timestamp))
       }
       completed(.success(CCEUsersData(finishedTests: finishedTests, readChapters: readChapters)))
     }

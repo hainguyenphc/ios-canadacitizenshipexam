@@ -104,6 +104,7 @@ class HomeVC: UIViewController {
             self.configureHeadingView()
           }
         case .failure(let error):
+          //TODO: handle error
           print(error)
       }
     }

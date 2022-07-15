@@ -25,6 +25,7 @@
 		845BF3DF286E9783003952CF /* ChapterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BF3DE286E9783003952CF /* ChapterVC.swift */; };
 		846CF9E828809BB900E2A96F /* CCEProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CF9E728809BB900E2A96F /* CCEProgressBar.swift */; };
 		847CA1DE288104FD003CC661 /* CCEFinishedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CA1DD288104FD003CC661 /* CCEFinishedTest.swift */; };
+		847CA1E0288108CA003CC661 /* ScoreStatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CA1DF288108CA003CC661 /* ScoreStatsManager.swift */; };
 		847DDCA5287E55DF00A77199 /* TestsVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCA4287E55DF00A77199 /* TestsVC+Ext.swift */; };
 		847DDCA7287E570B00A77199 /* BookVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCA6287E570B00A77199 /* BookVC+Ext.swift */; };
 		847DDCA9287E574B00A77199 /* HomeVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCA8287E574B00A77199 /* HomeVC+Ext.swift */; };
@@ -120,6 +121,7 @@
 		845BF3DE286E9783003952CF /* ChapterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterVC.swift; sourceTree = "<group>"; };
 		846CF9E728809BB900E2A96F /* CCEProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEProgressBar.swift; sourceTree = "<group>"; };
 		847CA1DD288104FD003CC661 /* CCEFinishedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEFinishedTest.swift; sourceTree = "<group>"; };
+		847CA1DF288108CA003CC661 /* ScoreStatsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStatsManager.swift; sourceTree = "<group>"; };
 		847DDCA4287E55DF00A77199 /* TestsVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestsVC+Ext.swift"; sourceTree = "<group>"; };
 		847DDCA6287E570B00A77199 /* BookVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookVC+Ext.swift"; sourceTree = "<group>"; };
 		847DDCA8287E574B00A77199 /* HomeVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+Ext.swift"; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				849539EB283BE3EC00260E85 /* NetworkManager.swift */,
+				847CA1DF288108CA003CC661 /* ScoreStatsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -771,6 +774,7 @@
 				84A184F3281D95CD0074D5AB /* CCEScreenCollectiveProgressView.swift in Sources */,
 				84B8DABC285F9572008DDAFE /* CardCell.swift in Sources */,
 				84A18500281DF4EE0074D5AB /* CCESection.swift in Sources */,
+				847CA1E0288108CA003CC661 /* ScoreStatsManager.swift in Sources */,
 				849539E9283BE15E00260E85 /* CCETest.swift in Sources */,
 				847CA1DE288104FD003CC661 /* CCEFinishedTest.swift in Sources */,
 			);

@@ -7,10 +7,20 @@
 
 import Foundation
 
-struct CCEFinishedTest {
+struct CCEFinishedTest: Comparable {
 
   var testID: String!
 
   var score: Float!
+
+  var timestamp: Date!
+
+  static func ==(lhs: CCEFinishedTest, rhs: CCEFinishedTest) -> Bool {
+    return lhs.timestamp == rhs.timestamp
+  }
+
+  static func <(lhs: CCEFinishedTest, rhs: CCEFinishedTest) -> Bool {
+    return lhs.timestamp < rhs.timestamp
+  }
 
 }
