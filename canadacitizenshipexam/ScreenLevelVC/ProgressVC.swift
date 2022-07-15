@@ -9,15 +9,23 @@ import UIKit
 
 class ProgressVC: UIViewController {
 
+  /* Contains the CCEHeadingView instance representing Practice Progress. */
   @IBOutlet var practiceProgressView: UIView!
+  var practiceProgressHeadingView: CCEHeadingView!
 
+  /* Contains the CCEHeadingView instance representing Reading Progress. */
   @IBOutlet var readingProgressView: UIView!
+  var readingProgressHeadingView: CCEHeadingView!
 
   @IBOutlet var lastTestScoreLabel: UILabel!
 
   @IBOutlet var lastFiveTestsScoreLabel: UILabel!
 
   @IBOutlet var lastTenTestsScoreLabel: UILabel!
+
+  // ===========================================================================
+  // Lifecycle methods
+  // ===========================================================================
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -29,26 +37,19 @@ class ProgressVC: UIViewController {
   // ===========================================================================
 
   func configureHeadingView() -> Void {
-    let stackView = UIStackView()
-    stackView.axis = .vertical
-    stackView.alignment = .center
-    stackView.distribution   = .fillProportionally
-    stackView.translatesAutoresizingMaskIntoConstraints = false
-
-    let practiceProgressView = CCEHeadingView(
+    self.practiceProgressHeadingView = CCEHeadingView(
       progress: Float(100.0),
       title: "Pratice Progress",
       bodyOne: "0 Daily Questions Answered",
-      bodyTwo: "0 of 35 Tests Completed"
-    )
-    self.practiceProgressView.addSubview(practiceProgressView)
+      bodyTwo: "0 of 35 Tests Completed")
+    self.practiceProgressView.addSubview(self.practiceProgressHeadingView)
 
-    let readingProgressView = CCEHeadingView(
+    self.readingProgressHeadingView = CCEHeadingView(
       progress: Float(100.0),
       title: "Reading Progress",
       bodyOne: "0 of 28 Sections Read",
       bodyTwo: "Progress: 0%")
-    self.readingProgressView.addSubview(readingProgressView)
+    self.readingProgressView.addSubview(self.readingProgressHeadingView)
   }
 
 }

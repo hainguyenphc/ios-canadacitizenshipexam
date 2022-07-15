@@ -206,13 +206,19 @@ class NetworkManager {
         completed(.success(CCEUsersData()))
         return
       }
-      guard let finishedTests = data["finishedTests"] as? [String] else {
+      guard let finishedTestsRawArray = data["finishedTests"] as? [NSDictionary] else {
         completed(.failure(.parseUsersDataFailure))
         return
       }
       guard let readChapters = data["readChapters"] as? [String] else {
         completed(.failure(.parseUsersDataFailure))
         return
+      }
+      var finishedTests = [CCEFinishedTest]()
+      for (_, each) in finishedTestsRawArray.enumerated() {
+        let testID = each["testID"] as? String
+        let score = each["score"] as? Float
+        finishedTests.append(CCEFinishedTest(testID: testID, score: score))
       }
       completed(.success(CCEUsersData(finishedTests: finishedTests, readChapters: readChapters)))
     }

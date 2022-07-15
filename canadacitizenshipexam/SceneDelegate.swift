@@ -76,7 +76,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func createSettingsNC() -> UINavigationController {
     let navController        = UINavigationController(rootViewController: SettingsVC())
     navController.title      = "Settings"
-    navController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: SFSymbols.progress), tag: 4)
+    navController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: SFSymbols.settings), tag: 4)
     return navController
   }
 

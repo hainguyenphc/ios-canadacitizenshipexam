@@ -283,19 +283,42 @@ class TestResultVC: UIViewController {
       guard let self = self else { return }
       switch (result) {
         case .success(let usersData):
-          let redoTest = usersData.finishedTests.contains(self.test.id)
-            // Only if this is a fresh new test (1st time user takes it), updates the
-            // list of taken tests for user.
+          var redoTest = false
+          var flagIndex = -1
+          for (index, each) in usersData.finishedTests.enumerated() {
+            if each.testID == self.test.id {
+              redoTest = true
+              flagIndex = index
+              break
+            }
+          }
+          // Only if this is a fresh new test (1st time user takes it), updates the
+          // list of taken tests for user.
           if (!redoTest) {
-            usersData.finishedTests.append(self.test.id)
-            let fields: [String: Any] = [
-              "finishedTests": usersData.finishedTests!
-            ]
-            NetworkManager.shared.updateUsersData(
-              userID: userID,
-              fields: fields
+            usersData.finishedTests.append(
+              CCEFinishedTest(
+                testID: self.test.id,
+                score: self.testResult["testScoreInPercentFloat"] as? Float
+              )
             )
           }
+          else {
+            usersData.finishedTests[flagIndex].score =
+              self.testResult["testScoreInPercentFloat"] as? Float
+          }
+          var finishedTestsRawArray = [[String: Any]]()
+          for (_, each) in usersData.finishedTests.enumerated() {
+            finishedTestsRawArray.append([
+              "score": each.score!,
+              "testID": each.testID!
+            ])
+          }
+          NetworkManager.shared.updateUsersData(
+            userID: userID,
+            fields: [
+              "finishedTests": finishedTestsRawArray
+            ]
+          )
         case .failure(let error):
           print(error)
       } // end switch
@@ -344,10 +367,8 @@ class TestResultVC: UIViewController {
           // This is the correct answer that user has missed. Places a green check mark to notify him.
           if (answer == dirtyQuestion.question.correctAnswer) {
             let imageAttachment = NSTextAttachment()
-            let imageSystemName = "checkmark"
-            let imageTintColor: UIColor = .systemGreen
-            imageAttachment.image = UIImage(systemName: imageSystemName)?
-              .withTintColor(imageTintColor)
+            imageAttachment.image = UIImage(systemName: "checkmark")?
+              .withTintColor(.systemGreen)
             text.append(NSAttributedString(attachment: imageAttachment))
             text.append(NSAttributedString(string: answer))
             text.append(NSMutableAttributedString(string: "\n\n"))

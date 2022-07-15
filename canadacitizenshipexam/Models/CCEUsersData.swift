@@ -9,16 +9,16 @@ import Foundation
 
 class CCEUsersData {
 
-  var finishedTests: [String]!
-
   var readChapters: [String]!
+
+  var finishedTests: [CCEFinishedTest]!
 
   init() {
     self.finishedTests = []
     self.readChapters = []
   }
 
-  init (finishedTests: [String], readChapters: [String]) {
+  init (finishedTests: [CCEFinishedTest], readChapters: [String]) {
     self.finishedTests = finishedTests
     self.readChapters = readChapters
   }
