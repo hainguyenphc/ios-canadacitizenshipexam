@@ -32,6 +32,8 @@ class ProgressVC: UIViewController {
 
   @IBOutlet var lastTenTestsScoreLabel: UILabel!
 
+  @IBOutlet var allTestsScoreLabel: UILabel!
+
   // ===========================================================================
   // Lifecycle methods
   // ===========================================================================
@@ -60,15 +62,47 @@ class ProgressVC: UIViewController {
     guard let userID = Auth.auth().currentUser?.uid else {
       return
     }
-    ScoreStatsManager.shared.getLastTestScore(userID: userID) { [weak self] result in
+
+    ScoreStatsManager.shared.getAllTestsAverageScores(userID: userID) { [weak self] result in
       guard let self = self else { return }
       switch (result) {
-        case .success(let score):
-          self.lastTestScoreLabel.text = "\(score)%"
+        case .success(let scores):
+          self.process(scores: scores)
         case .failure(let error):
           //TODO: handle error
           print(error)
       }
+    }
+  }
+
+  func process(scores: [Int]) {
+    DispatchQueue.main.async {
+      self.lastTestScoreLabel.text = "\(scores[0])%"
+      // Last five tests
+      let maxLength = scores.count
+      var total = 0
+      var count = min(5, maxLength)
+      for index in 0..<count {
+        total += scores[index]
+      }
+      total = total / count
+      self.lastFiveTestsScoreLabel.text = "\(total)%"
+      // Last ten tests
+      total = 0
+      count = min(10, maxLength)
+      for index in 0..<count {
+        total += scores[index]
+      }
+      total = total / count
+      self.lastTenTestsScoreLabel.text = "\(total)%"
+      // All tests
+      total = 0
+      count = maxLength
+      for index in 0..<count {
+        total += scores[index]
+      }
+      total = total / count
+      self.allTestsScoreLabel.text = "\(total)%"
     }
   }
 

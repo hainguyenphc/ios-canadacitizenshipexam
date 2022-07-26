@@ -31,7 +31,7 @@ class CCEHeadingView: UIView {
       completed: self.progress,
       title: "Practice Progress",
       bodyOne: "0 Daily Questions Answered",
-      bodyTwo: "0 of 35 Tests Completed"
+      bodyTwo: "0 of 35 Tests Completed",
     )
     self.configureUI()
   }

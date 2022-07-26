@@ -210,6 +210,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allTestsScoreLabel" destination="y7q-iD-puL" id="PWf-jz-b5R"/>
                         <outlet property="lastFiveTestsScoreLabel" destination="qRw-c7-P1O" id="tau-d3-H48"/>
                         <outlet property="lastTenTestsScoreLabel" destination="h5M-Yq-Uys" id="6fV-a1-wTt"/>
                         <outlet property="lastTestScoreLabel" destination="jmA-uR-Lvq" id="Eqj-3e-WiF"/>
