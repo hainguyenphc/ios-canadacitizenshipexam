@@ -78,6 +78,7 @@ class ProgressVC: UIViewController {
 
   func process(scores: [Int]) {
     DispatchQueue.main.async {
+      // Last test
       self.lastTestScoreLabel.text = "\(scores[0])%"
       // Last five tests
       let maxLength = scores.count
