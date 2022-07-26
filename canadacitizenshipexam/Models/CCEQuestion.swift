@@ -30,7 +30,7 @@ struct CCEQuestion: Codable {
   ) {
     self.answers = answers
     self.correctAnswer = correctAnswer
-    self.isMultipleChoice = isMultipleChoice
+    self.isMultipleChoice = answers.count == 4
     self.explanation = explanation
     self.question = question
     self.stats = stats

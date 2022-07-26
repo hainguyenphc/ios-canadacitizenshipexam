@@ -298,7 +298,8 @@ class TestResultVC: UIViewController {
             usersData.finishedTests.append(
               CCEFinishedTest(
                 testID: self.test.id,
-                score: self.testResult["testScoreInPercentFloat"] as? Float
+                score: self.testResult["testScoreInPercentFloat"] as? Float,
+                timestamp: Date()
               )
             )
           }

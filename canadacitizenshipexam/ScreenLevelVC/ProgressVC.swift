@@ -40,6 +40,7 @@ class ProgressVC: UIViewController {
     super.viewDidLoad()
     self.configureUI()
     self.configureHeadingView()
+    // Seeder.seedTestsV2()
   }
 
   override func viewWillAppear(_ animated: Bool) {

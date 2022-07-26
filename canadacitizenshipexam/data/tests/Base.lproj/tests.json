@@ -1,0 +1,60 @@
+[{
+  "communityAverageScore": 0,
+  "name": "Rights and responsibilities",
+  "totalSubmissions": 0,
+  "questions": [{
+    "answers": [
+      "Equality rights and care for the government",
+      "Aboriginal rights and conserving water",
+      "Freedom of speech and freedom of religion",
+      "The Magna Carta and English common law"
+    ],
+    "correctAnswer": "Freedom of speech and freedom of religion",
+    "explanation": "Just an explanation",
+    "isMultipleChoice": true,
+    "question": "Name two fundamental freedoms under Canadian law.",
+    "stats": {
+      "countA": 0,
+      "countB": 0,
+      "countC": 0,
+      "countD": 0
+    }
+  },
+    {
+      "answers": [
+        "The right to be educated in either official language, the right to apply for a Canadian passport, the right to vote, the right to enter and leave Canada freely",
+        "The right of be educated in either official language, the right to apply for a Canadian passport, the right to drive, the right to enter and leave Canada freely",
+        "The right to enter and leave Canada and the United States freely, the right to apply for a Canadian passport, the right to be educated, the right to vote",
+        "The right to live and work anywhere in Canada, the right to vote, the right to be educated in either official language, the right to drive"
+      ],
+      "correctAnswer": "The right to be educated in either official language, the right to apply for a Canadian passport, the right to vote, the right to enter and leave Canada freely",
+      "explanation": "",
+      "isMultipleChoice": false,
+      "question": "List four additional rights Canadian citizens have under the Canadian Charter of Rights and Freedoms.",
+      "stats": {
+        "countA": 0,
+        "countB": 0,
+        "countC": 0,
+        "countD": 0
+      }
+    },
+    {
+      "answers": [
+        "Serving on a jury, keeping your yard tidy and helping others in the community",
+        "Obeying the law, voting in elections and working for the government",
+        "Obeying the law, voting in elections and taking responsibility for oneself and family",
+        "Voting in elections, taking responsibility for others and protecting the environment"
+      ],
+      "correctAnswer": "Obeying the law, voting in elections and taking responsibility for oneself and family",
+      "explanation": "Just another explanation",
+      "isMultipleChoice": true,
+      "question": "Name three responsibilities of Canadian citizenship.",
+      "stats": {
+        "countA": 0,
+        "countB": 0,
+        "countC": 0,
+        "countD": 0
+      }
+    }
+  ]
+}]

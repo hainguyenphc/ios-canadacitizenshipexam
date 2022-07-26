@@ -19,8 +19,8 @@ class CCEUsersData {
   }
 
   init (finishedTests: [CCEFinishedTest], readChapters: [String]) {
-    self.finishedTests = finishedTests
     self.readChapters = readChapters
+    self.finishedTests = finishedTests
   }
 
 }

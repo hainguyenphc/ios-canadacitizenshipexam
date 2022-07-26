@@ -13,14 +13,20 @@ struct CCEFinishedTest: Comparable {
 
   var score: Float!
 
-  var timestamp: Date!
+  var timestamp: Date! = Date()
 
   static func ==(lhs: CCEFinishedTest, rhs: CCEFinishedTest) -> Bool {
-    return lhs.timestamp == rhs.timestamp
+    if let lhsTimestamp = lhs.timestamp, let rhsTimestamp = rhs.timestamp {
+      return lhsTimestamp == rhsTimestamp
+    }
+    return lhs.testID == rhs.testID
   }
 
   static func <(lhs: CCEFinishedTest, rhs: CCEFinishedTest) -> Bool {
-    return lhs.timestamp < rhs.timestamp
+    if let lhsTimestamp = lhs.timestamp, let rhsTimestamp = rhs.timestamp {
+      return lhsTimestamp < rhsTimestamp
+    }
+    return lhs.testID == rhs.testID
   }
 
 }

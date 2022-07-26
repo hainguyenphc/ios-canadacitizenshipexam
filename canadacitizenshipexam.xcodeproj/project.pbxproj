@@ -63,6 +63,7 @@
 		84A184FD281DF1630074D5AB /* CCESectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184FC281DF1630074D5AB /* CCESectionView.swift */; };
 		84A18500281DF4EE0074D5AB /* CCESection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184FF281DF4EE0074D5AB /* CCESection.swift */; };
 		84AE1BC528280F9300075F53 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84AE1BC428280F9300075F53 /* GoogleService-Info.plist */; };
+		84B182222884EE2700903FF6 /* tests.json in Resources */ = {isa = PBXBuildFile; fileRef = 84B182242884EE2700903FF6 /* tests.json */; };
 		84B8DAB5285F6C6B008DDAFE /* Int+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DAB4285F6C6B008DDAFE /* Int+Ext.swift */; };
 		84B8DABC285F9572008DDAFE /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DABA285F9572008DDAFE /* CardCell.swift */; };
 		84B8DABD285F9572008DDAFE /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B8DABB285F9572008DDAFE /* CardCell.xib */; };
@@ -163,6 +164,7 @@
 		84A184FC281DF1630074D5AB /* CCESectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionView.swift; sourceTree = "<group>"; };
 		84A184FF281DF4EE0074D5AB /* CCESection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESection.swift; sourceTree = "<group>"; };
 		84AE1BC428280F9300075F53 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84B182232884EE2700903FF6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = Base; path = Base.lproj/tests.json; sourceTree = "<group>"; };
 		84B8DAB4285F6C6B008DDAFE /* Int+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Ext.swift"; sourceTree = "<group>"; };
 		84B8DABA285F9572008DDAFE /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		84B8DABB285F9572008DDAFE /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				8450BC3F287F5A5D0079E016 /* chapters */,
+				84B1821F2884E83000903FF6 /* tests */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -425,6 +428,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		84B1821F2884E83000903FF6 /* tests */ = {
+			isa = PBXGroup;
+			children = (
+				84B182242884EE2700903FF6 /* tests.json */,
+			);
+			path = tests;
+			sourceTree = "<group>";
+		};
 		E0CA7DEF2B0C8892D7E131B6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,6 +571,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842F1B6E287F65C300AF45C9 /* ProgressVC.storyboard in Resources */,
+				84B182222884EE2700903FF6 /* tests.json in Resources */,
 				84A184D9281D73CA0074D5AB /* README.md in Resources */,
 				84B8DABD285F9572008DDAFE /* CardCell.xib in Resources */,
 				84CC3F37287B4211005AFF0F /* appstore.png in Resources */,
@@ -841,6 +853,14 @@
 				84A184B4281D72ED0074D5AB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		84B182242884EE2700903FF6 /* tests.json */ = {
+			isa = PBXVariantGroup;
+			children = (
+				84B182232884EE2700903FF6 /* Base */,
+			);
+			name = tests.json;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

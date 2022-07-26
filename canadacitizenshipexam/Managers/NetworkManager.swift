@@ -20,6 +20,49 @@ class NetworkManager {
     // Leaves empty.
   }
 
+  func addTests(tests: [CCETest]) {
+    for test in tests {
+      var questions = [[String: Any]]()
+      for each in test.questions {
+        let answers = each.answers
+        let correctAnswer = each.correctAnswer
+        let explanation = each.explanation
+        let isMultipleChoice = each.isMultipleChoice
+        let questionString = each.question
+        var stats = [String: Any]()
+        for (_, stat) in each.stats.enumerated() {
+          stats[stat.key] = stat.value
+        }
+        let question: [String: Any] = [
+          "answers": answers!,
+          "correctAnswer": correctAnswer!,
+          "explanation": explanation!,
+          "isMultipleChoice": isMultipleChoice!,
+          "question": questionString!,
+          "stats": stats
+        ]
+        questions.append(question)
+      }
+      let data: [String: Any] = [
+        "communityAverageScore": test.communityAverageScore!,
+        "name": test.name!,
+        "totalSubmissions": test.totalSubmissions!,
+        "questions": questions
+      ]
+      firestore.collection(CCECollections.tests)
+        .document(UUID().uuidString)
+        .setData(data) { error in
+          if let error = error {
+            print("Error adding a test to \(CCECollections.tests) collection.")
+            print(error.localizedDescription)
+          }
+          else {
+            print("Successfully added test(s) to \(CCECollections.tests) collection.")
+          }
+        }
+    }
+  }
+
   /* Fetches all online tests. */
   func getTests(completed: @escaping(Result<[CCETest], CCEFailure>) -> Void) {
     firestore.collection(CCECollections.tests)
