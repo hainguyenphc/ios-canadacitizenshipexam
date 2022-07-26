@@ -10,6 +10,12 @@ import UIKit
 class CCEScreenCollectiveSummary: UIView {
 
   // ===========================================================================
+  // Logic variables
+  // ===========================================================================
+
+  var alignment: NSTextAlignment! = .left
+
+  // ===========================================================================
   // UI variables
   // ===========================================================================
 
@@ -29,12 +35,14 @@ class CCEScreenCollectiveSummary: UIView {
   init(completed percent: Float,
        title: String    = "",
        bodyOne: String  = "",
-       bodyTwo: String  = ""
+       bodyTwo: String  = "",
+       alignment: NSTextAlignment = .left
   ) {
     super.init(frame: .zero)
     self.progressView = CCEScreenCollectiveProgressView(completed: percent)
     self.metricsView  = CCEScreenCollectiveMetricsView(
       title: title, bodyOne: bodyOne, bodyTwo: bodyTwo)
+    self.alignment = alignment
     self.configureUI()
   }
 
@@ -46,8 +54,16 @@ class CCEScreenCollectiveSummary: UIView {
     self.stackView.translatesAutoresizingMaskIntoConstraints = false
     self.stackView.axis           = .horizontal
     self.stackView.distribution   = .fillProportionally
-    self.stackView.addArrangedSubview(self.progressView)
-    self.stackView.addArrangedSubview(self.metricsView)
+
+    if (self.alignment == .left) {
+      self.stackView.addArrangedSubview(self.progressView)
+      self.stackView.addArrangedSubview(self.metricsView)
+    }
+    else if (self.alignment == .right) {
+      self.stackView.addArrangedSubview(self.metricsView)
+      self.stackView.addArrangedSubview(self.progressView)
+    }
+    
     self.addSubview(self.stackView)
 
     NSLayoutConstraint.activate([

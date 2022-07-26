@@ -21,6 +21,8 @@ class CCEHeadingView: UIView {
 
   var progress: Float! = 0
 
+  var alignment: NSTextAlignment! = .left
+
   // ===========================================================================
   // Initializer
   // ===========================================================================
@@ -31,19 +33,25 @@ class CCEHeadingView: UIView {
       completed: self.progress,
       title: "Practice Progress",
       bodyOne: "0 Daily Questions Answered",
-      bodyTwo: "0 of 35 Tests Completed",
+      bodyTwo: "0 of 35 Tests Completed"
     )
     self.configureUI()
   }
 
-  init(progress: Float = 0.0, title: String = "", bodyOne: String = "", bodyTwo: String = "") {
+  init(progress: Float = 0.0,
+       title: String = "",
+       bodyOne: String = "",
+       bodyTwo: String = "",
+       alignment: NSTextAlignment = .left
+  ) {
     super.init(frame: CGRect())
     self.progress = progress
     self.screenCollectiveSummary = CCEScreenCollectiveSummary(
       completed: self.progress,
       title: title,
       bodyOne: bodyOne,
-      bodyTwo: bodyTwo
+      bodyTwo: bodyTwo,
+      alignment: alignment
     )
     self.configureUI()
   }

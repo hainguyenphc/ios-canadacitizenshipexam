@@ -24,7 +24,8 @@ class ProgressVC: UIViewController {
     progress: Float(100.0),
     title: "Reading Progress",
     bodyOne: "0 of 28 Sections Read",
-    bodyTwo: "Progress: 0%")
+    bodyTwo: "Progress: 0%",
+    alignment: .right)
 
   @IBOutlet var lastTestScoreLabel: UILabel!
 
