@@ -325,7 +325,7 @@ class TestVC: UIViewController {
       // The C answer.
       self.answerButtons[2].bottomAnchor.constraint(
         equalTo: self.answerButtons[3].topAnchor,
-        constant: -Dimensions.defaultPadding),
+        constant: -20),
       self.answerButtons[2].leadingAnchor.constraint(
         equalTo: self.view.leadingAnchor,
         constant: Dimensions.defaultPadding),
@@ -335,7 +335,7 @@ class TestVC: UIViewController {
       // The B answer.
       self.answerButtons[1].bottomAnchor.constraint(
         equalTo: self.answerButtons[2].topAnchor,
-        constant: -Dimensions.defaultPadding),
+        constant: -20),
       self.answerButtons[1].leadingAnchor.constraint(
         equalTo: self.view.leadingAnchor,
         constant: Dimensions.defaultPadding),
@@ -345,7 +345,7 @@ class TestVC: UIViewController {
       // The A answer.
       self.answerButtons[0].bottomAnchor.constraint(
         equalTo: self.answerButtons[1].topAnchor,
-        constant: -Dimensions.defaultPadding),
+        constant: -20),
       self.answerButtons[0].leadingAnchor.constraint(
         equalTo: self.view.leadingAnchor,
         constant: Dimensions.defaultPadding),
