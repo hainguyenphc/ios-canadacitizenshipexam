@@ -15,16 +15,16 @@ class ProgressVC: UIViewController {
   var practiceProgressHeadingView = CCEHeadingView(
     progress: Float(100.0),
     title: "Pratice Progress",
-    bodyOne: "0 Daily Questions Answered",
-    bodyTwo: "0 of 35 Tests Completed")
+    bodyOne: "Loading...",
+    bodyTwo: "")
 
   /* Contains the CCEHeadingView instance representing Reading Progress. */
   @IBOutlet var readingProgressView: UIView!
   var readingProgressHeadingView = CCEHeadingView(
     progress: Float(100.0),
     title: "Reading Progress",
-    bodyOne: "0 of 28 Sections Read",
-    bodyTwo: "Progress: 0%",
+    bodyOne: "Loading...",
+    bodyTwo: "",
     alignment: .right)
 
   @IBOutlet var lastTestScoreLabel: UILabel!
@@ -42,8 +42,6 @@ class ProgressVC: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.configureUI()
-    self.configureHeadingView()
-    // Seeder.seedTestsV2()
   }
 
   override func viewWillAppear(_ animated: Bool) {
@@ -55,10 +53,6 @@ class ProgressVC: UIViewController {
   // UI configurations, constraints, etc.
   // ===========================================================================
 
-  func configureHeadingView() -> Void {
-    //TODO: deal with the heading
-  }
-
   func configureScoreStatsView() -> Void {
     guard let userID = Auth.auth().currentUser?.uid else {
       return
@@ -67,8 +61,8 @@ class ProgressVC: UIViewController {
     ScoreStatsManager.shared.getAllTestsAverageScores(userID: userID) { [weak self] result in
       guard let self = self else { return }
       switch (result) {
-        case .success(let scores):
-          self.process(scores: scores)
+        case .success(let progressReport):
+          self.process(progressReport: progressReport)
         case .failure(let error):
           //TODO: handle error
           print(error)
@@ -76,7 +70,8 @@ class ProgressVC: UIViewController {
     }
   }
 
-  func process(scores: [Int]) {
+  func process(progressReport: CCEProgressReport) {
+    let scores = progressReport.scores
     DispatchQueue.main.async {
       // Last test
       self.lastTestScoreLabel.text = "\(scores[0])%"
@@ -105,6 +100,13 @@ class ProgressVC: UIViewController {
       }
       total = total / count
       self.allTestsScoreLabel.text = "\(total)%"
+      // Renders the headings
+      self.practiceProgressHeadingView.setBodyOne(
+        content: "\(progressReport.numberOfFinishedTests) Tests completed")
+      self.readingProgressHeadingView.setBodyOne(
+        content: "\(progressReport.numberOfReadChapters) Chapters read")
+      self.readingProgressHeadingView.setProgress(progress:
+        (Float) (progressReport.numberOfReadChapters * 100 / Chapters.storage.count))
     }
   }
 

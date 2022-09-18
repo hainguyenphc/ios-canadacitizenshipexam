@@ -89,16 +89,19 @@ enum CCEErrorMessage {
 enum CCEFailure: String, Error {
 
   // Networking failures
-  case getTestByIdFailure = "There was probleam loading the test with that ID."
+  case getTestByIdFailure = "There was a probleam loading the test with that ID."
+  case getReadingProgressByUserIDFailure = "There was probleam getting progress for user."
 
   // Parsing failures
-  case parseUsersDataFailure = "There was problem parsing users data to correct format."
-  case parseTestDataFailure = "There was problem parsing test data to correct format."
+  case parseUsersDataFailure = "There was a problem parsing users data to correct format."
+  case parseTestDataFailure = "There was a problem parsing test data to correct format."
   case questionsMissingFailure = "Questions were missing from the test data."
   case communityAverageScoreMissingFailure = "Community average score was missing from the test data."
   case totalSubmissionsMissingFailure = "Total submissions were missing from the test data."
   case nameMissingFailure = "Name was missing from the test data."
   case statsMissingFailure = "Statistics were missing from the test data."
+  case finishedTestsMissingFailure = "Problem getting finished tests."
+  case readChaptersMissingFailure = "Problem getting read chapters."
 
 }
 

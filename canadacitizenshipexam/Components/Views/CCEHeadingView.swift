@@ -56,6 +56,22 @@ class CCEHeadingView: UIView {
     self.configureUI()
   }
 
+  func setTitle(content: String) {
+    self.screenCollectiveSummary.metricsView.titleLabel.text = content
+  }
+
+  func setBodyOne(content: String) {
+    self.screenCollectiveSummary.metricsView.bodyOne.text = content
+  }
+
+  func setBodyTwo(content: String) {
+    self.screenCollectiveSummary.metricsView.bodyTwo.text = content
+  }
+
+  func setProgress(progress: Float) {
+    self.screenCollectiveSummary.progressView.circularProgressLabel.setProgress(progress: progress)
+  }
+
   // ===========================================================================
   // UI configurations, constraints, etc.
   // ===========================================================================

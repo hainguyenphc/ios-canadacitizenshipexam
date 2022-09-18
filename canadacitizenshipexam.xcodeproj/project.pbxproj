@@ -69,6 +69,8 @@
 		84B8DABC285F9572008DDAFE /* CardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DABA285F9572008DDAFE /* CardCell.swift */; };
 		84B8DABD285F9572008DDAFE /* CardCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84B8DABB285F9572008DDAFE /* CardCell.xib */; };
 		84B8DABF285FDD65008DDAFE /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84B8DABE285FDD65008DDAFE /* String+Ext.swift */; };
+		84C05B9F28D74A7900FF86CB /* CCEBaseUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C05B9E28D74A7900FF86CB /* CCEBaseUIViewController.swift */; };
+		84C05BA128D7588F00FF86CB /* CCEProgressReport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C05BA028D7588F00FF86CB /* CCEProgressReport.swift */; };
 		84CC3F30287B098A005AFF0F /* CCEUsersData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CC3F2F287B098A005AFF0F /* CCEUsersData.swift */; };
 		84CC3F33287B41FB005AFF0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CC3F32287B41FB005AFF0F /* Assets.xcassets */; };
 		84CC3F36287B4211005AFF0F /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CC3F34287B4211005AFF0F /* playstore.png */; };
@@ -171,6 +173,8 @@
 		84B8DABA285F9572008DDAFE /* CardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCell.swift; sourceTree = "<group>"; };
 		84B8DABB285F9572008DDAFE /* CardCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCell.xib; sourceTree = "<group>"; };
 		84B8DABE285FDD65008DDAFE /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		84C05B9E28D74A7900FF86CB /* CCEBaseUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEBaseUIViewController.swift; sourceTree = "<group>"; };
+		84C05BA028D7588F00FF86CB /* CCEProgressReport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEProgressReport.swift; sourceTree = "<group>"; };
 		84CC3F2F287B098A005AFF0F /* CCEUsersData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEUsersData.swift; sourceTree = "<group>"; };
 		84CC3F32287B41FB005AFF0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84CC3F34287B4211005AFF0F /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playstore.png; sourceTree = "<group>"; };
@@ -350,6 +354,7 @@
 				84A184DC281D87CD0074D5AB /* TestsVC.swift */,
 				84A184E0281D8A330074D5AB /* BookVC.swift */,
 				84A184E4281D8AB90074D5AB /* SettingsVC.swift */,
+				84C05B9E28D74A7900FF86CB /* CCEBaseUIViewController.swift */,
 			);
 			path = ScreenLevelVC;
 			sourceTree = "<group>";
@@ -427,6 +432,7 @@
 				847DDCB0287E601A00A77199 /* CCEDirtyQuestion.swift */,
 				847DDCB2287E605100A77199 /* CCEChapter.swift */,
 				847CA1DD288104FD003CC661 /* CCEFinishedTest.swift */,
+				84C05BA028D7588F00FF86CB /* CCEProgressReport.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -765,6 +771,7 @@
 				845BF3DF286E9783003952CF /* ChapterVC.swift in Sources */,
 				845B46E0287A7B0500AC58B0 /* RegisterVC.swift in Sources */,
 				84A184A8281D72EC0074D5AB /* SceneDelegate.swift in Sources */,
+				84C05BA128D7588F00FF86CB /* CCEProgressReport.swift in Sources */,
 				84A184EB281D8DB40074D5AB /* CCELevelOneTitleLabel.swift in Sources */,
 				849539EC283BE3EC00260E85 /* NetworkManager.swift in Sources */,
 				8436CBEE281F00B8007668DC /* UIView+Ext.swift in Sources */,
@@ -789,6 +796,7 @@
 				84A184E1281D8A330074D5AB /* BookVC.swift in Sources */,
 				84A184F3281D95CD0074D5AB /* CCEScreenCollectiveProgressView.swift in Sources */,
 				84B8DABC285F9572008DDAFE /* CardCell.swift in Sources */,
+				84C05B9F28D74A7900FF86CB /* CCEBaseUIViewController.swift in Sources */,
 				84A18500281DF4EE0074D5AB /* CCESection.swift in Sources */,
 				847CA1E0288108CA003CC661 /* ScoreStatsManager.swift in Sources */,
 				849539E9283BE15E00260E85 /* CCETest.swift in Sources */,

@@ -282,4 +282,27 @@ class NetworkManager {
       }
   }
 
+  func getUserReadingProgress(userID: String, viewController: CCEBaseUIViewController) {
+    NetworkManager.shared.getUsersData(userID: userID) { result in
+      switch (result) {
+        case .success(let usersData):
+          let totalChaptersRead = usersData.readChapters.count
+          let totalChapters = Chapters.storage.count
+          let progress = Float(totalChaptersRead * 100 / totalChapters)
+          DispatchQueue.main.async {
+            viewController.headingView = CCEHeadingView(
+              progress: progress,
+              title: "Overall Progress",
+              bodyOne: "\(totalChaptersRead) out of \(totalChapters) chapters read",
+              bodyTwo: "Progress: \(progress)%"
+            )
+            viewController.configureTableView()
+            viewController.configureHeadingView()
+          }
+        case .failure(let error):
+          print(error)
+      } // end switch
+    } // end closure
+  }
+
 }
