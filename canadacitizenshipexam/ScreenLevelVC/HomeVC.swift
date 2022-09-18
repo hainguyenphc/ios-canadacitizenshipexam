@@ -168,9 +168,12 @@ class HomeVC: UIViewController {
     self.tableView.pin(to: self.view)
     self.tableView.backgroundColor = .secondarySystemBackground
     self.tableView.translatesAutoresizingMaskIntoConstraints = false
-    // Moves table content down 80 units down -> the Heading Label is visible.
+    // Moves table content down ... units down -> the Heading Label is visible.
     self.tableView.contentInset = UIEdgeInsets(
-      top: 80, left: 0, bottom: 0, right: 0)
+      top: DimensionManager.shared.getTopEdgeInset(),
+      left: 0,
+      bottom: 0,
+      right: 0)
   }
 
 }
