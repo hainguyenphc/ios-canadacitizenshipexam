@@ -10,6 +10,8 @@ import UIKit
 
 class CCEButton: UIButton {
 
+  var isLarge: Bool = false
+
   // ===========================================================================
   // Initializer
   // ===========================================================================
@@ -19,10 +21,11 @@ class CCEButton: UIButton {
     self.configure()
   }
 
-  init(backgroundColor: UIColor, title: String) {
+  init(backgroundColor: UIColor, title: String, isLarge: Bool = false) {
     super.init(frame: .zero)
     self.backgroundColor = backgroundColor
     self.setTitle(title, for: .normal)
+    self.isLarge = isLarge
     self.configure()
   }
 
@@ -50,7 +53,7 @@ class CCEButton: UIButton {
         toItem: nil,
         attribute: NSLayoutConstraint.Attribute.notAnAttribute,
         multiplier: 1,
-        constant: 85)
+        constant: self.isLarge ? 85 : 35)
     ])
   }
 

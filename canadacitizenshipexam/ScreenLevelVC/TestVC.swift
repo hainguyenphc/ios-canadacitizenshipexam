@@ -48,11 +48,13 @@ class TestVC: UIViewController {
   var questionLabel = CCELevelOneTitleLabel(text: "", textAlignment: .left, fontSize: 26)
 
   var answerButtons = [
-    CCEButton(backgroundColor: .secondaryLabel, title: ""),
-    CCEButton(backgroundColor: .secondaryLabel, title: ""),
-    CCEButton(backgroundColor: .secondaryLabel, title: ""),
-    CCEButton(backgroundColor: .secondaryLabel, title: "")
+    CCEButton(backgroundColor: .secondaryLabel, title: "", isLarge: true),
+    CCEButton(backgroundColor: .secondaryLabel, title: "", isLarge: true),
+    CCEButton(backgroundColor: .secondaryLabel, title: "", isLarge: true),
+    CCEButton(backgroundColor: .secondaryLabel, title: "", isLarge: true)
   ]
+
+  var answersButtonsHeights = [21, 21, 21, 21]
 
   /* The Next button. */
   var nextButton = CCEButton(backgroundColor: .secondaryLabel, title: "Next")
@@ -202,7 +204,8 @@ class TestVC: UIViewController {
     else {
       self.isTestDone = true
       // Navigates user to the Test Result screen.
-      let testResultVC = TestResultVC(test: self.cceTest, dirtyQuestions: self.dirtyQuestions)
+      let testResultVC = TestResultVC(
+        test: self.cceTest, dirtyQuestions: self.dirtyQuestions)
       self.navigationController?.pushViewController(testResultVC, animated: true)
     }
   }
@@ -214,7 +217,8 @@ class TestVC: UIViewController {
     let correctAnswer = self.cceTest.questions[self.counter].correctAnswer
     if self.userAnswer != nil && correctAnswer != nil {
       self.userHasAnswered = true
-      sender.backgroundColor = (self.userAnswer == correctAnswer) ? .systemGreen : .systemRed
+      sender.backgroundColor = (self.userAnswer == correctAnswer)
+        ? .systemGreen : .systemRed
     }
     //
     self.updateDirtyQuestions()
@@ -230,11 +234,17 @@ class TestVC: UIViewController {
     self.userHasAnswered = false
     // Updates the next answer labels and colors.
     for i in 0...3 {
-      self.answerButtons[i].setTitle(self.cceTest.questions[self.counter].answers[i],for: .normal)
+      let text = self.cceTest.questions[self.counter].answers[i]
+      // let numberOfWords = text.components(separatedBy: .whitespacesAndNewlines).filter{ !$0.isEmpty }.count
+      self.answerButtons[i].setTitle(text, for: .normal)
       self.answerButtons[i].backgroundColor = .secondaryLabel
+      // let lines = numberOfWords > 8 ? (Int) (round((Double) (numberOfWords / 8))) : numberOfWords
+      // self.answersButtonsHeights[i] = lines * 21
     }
-    self.answerButtons[0].isHidden = !self.cceTest.questions[self.counter].isMultipleChoice
-    self.answerButtons[1].isHidden = !self.cceTest.questions[self.counter].isMultipleChoice
+    self.answerButtons[0].isHidden =
+      !self.cceTest.questions[self.counter].isMultipleChoice
+    self.answerButtons[1].isHidden =
+      !self.cceTest.questions[self.counter].isMultipleChoice
   }
 
   /* Any logic to update the dirty question records. */
@@ -363,6 +373,18 @@ class TestVC: UIViewController {
         equalTo: self.view.trailingAnchor,
         constant: -Dimensions.defaultPadding),
     ])
+    // for i in 0...3 {
+    //   NSLayoutConstraint.activate([
+    //     NSLayoutConstraint(
+    //       item: self.answerButtons[i],
+    //       attribute: NSLayoutConstraint.Attribute.height,
+    //       relatedBy: NSLayoutConstraint.Relation.equal,
+    //       toItem: nil,
+    //       attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+    //       multiplier: 1,
+    //       constant: CGFloat(self.answersButtonsHeights[i]))
+    //   ])
+    // }
   }
 
   // ===========================================================================
