@@ -93,6 +93,7 @@ class TestVC: UIViewController {
   override func viewWillDisappear(_ animated: Bool) {
     if (!self.isTestDone) {
       // Persists the in-progress test and states as the app abruptly terminates.
+      self.nextButtonPressed(nil)
       self.saveInprogressTest()
     }
     else {
@@ -228,6 +229,9 @@ class TestVC: UIViewController {
 
   /* Executes any logic to make way for the first question or the next one. */
   func prepareForNextQuestion() -> Void {
+    if (self.counter >= self.cceTest.questions.count) {
+      self.counter = 0
+    }
     // Updates the next question label.
     self.questionLabel.text = self.cceTest.questions[self.counter].question
     // User has not answered the next question yet.
@@ -235,11 +239,8 @@ class TestVC: UIViewController {
     // Updates the next answer labels and colors.
     for i in 0...3 {
       let text = self.cceTest.questions[self.counter].answers[i]
-      // let numberOfWords = text.components(separatedBy: .whitespacesAndNewlines).filter{ !$0.isEmpty }.count
       self.answerButtons[i].setTitle(text, for: .normal)
       self.answerButtons[i].backgroundColor = .secondaryLabel
-      // let lines = numberOfWords > 8 ? (Int) (round((Double) (numberOfWords / 8))) : numberOfWords
-      // self.answersButtonsHeights[i] = lines * 21
     }
     self.answerButtons[0].isHidden =
       !self.cceTest.questions[self.counter].isMultipleChoice
@@ -373,18 +374,6 @@ class TestVC: UIViewController {
         equalTo: self.view.trailingAnchor,
         constant: -Dimensions.defaultPadding),
     ])
-    // for i in 0...3 {
-    //   NSLayoutConstraint.activate([
-    //     NSLayoutConstraint(
-    //       item: self.answerButtons[i],
-    //       attribute: NSLayoutConstraint.Attribute.height,
-    //       relatedBy: NSLayoutConstraint.Relation.equal,
-    //       toItem: nil,
-    //       attribute: NSLayoutConstraint.Attribute.notAnAttribute,
-    //       multiplier: 1,
-    //       constant: CGFloat(self.answersButtonsHeights[i]))
-    //   ])
-    // }
   }
 
   // ===========================================================================
