@@ -14,6 +14,8 @@ class HomeVC: CCEBaseUIViewController {
   // Logic variables
   // ===========================================================================
 
+  var presenter: HomePresenterProtocol!
+
   var dateTimeTextField: UITextField = UITextField()
 
   var appointment: Date! = Date()
@@ -51,7 +53,8 @@ class HomeVC: CCEBaseUIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor = .secondarySystemBackground
+    self.presenter = HomePresenterImpl()
+    // self.view.backgroundColor = .secondarySystemBackground
     // If there is no active user session, redirects user to the Register VC.
     guard let currentUser = Auth.auth().currentUser else {
       self.navigationController?.pushViewController(RegisterVC(), animated: true)
@@ -59,61 +62,52 @@ class HomeVC: CCEBaseUIViewController {
     }
     // This is a good chance to cache the logged in user data.
     NetworkManager.shared.generateUsersDataOnServerIfNil(userID: currentUser.uid)
-    self.loadProgress()
+    self.presenter.loadProgress {[weak self] usersData in
+      self?.userReadingProgressReceived(usersData)
+    }
   }
 
   override func viewWillAppear(_ animated: Bool) {
+    // Redirects user to Register screen if he is not logged in.
     guard let _ = Auth.auth().currentUser else {
       self.navigationController?.pushViewController(RegisterVC(), animated: true)
       return
     }
-    // When user is back to Home tab, this deselects the currently selected row.
+    // When user is back to Home tab, this de-selects the currently selected row.
     if let indexPath = self.tableView.indexPathForSelectedRow {
       self.tableView.deselectRow(at: indexPath, animated: false)
     }
+    // Do not hide the tab bar.
     self.tabBarController?.tabBar.isHidden = false
+    // Do not show the Back button.
     self.navigationItem.setHidesBackButton(true, animated: false)
-    self.loadProgress()
+    self.presenter.loadProgress {[weak self] usersData in
+      self?.userReadingProgressReceived(usersData)
+    }
   }
 
   // ===========================================================================
   // Helper functions
   // ===========================================================================
 
-  func loadProgress() -> Void {
-    guard let userID = Auth.auth().currentUser?.uid else {
-      return
+  func userReadingProgressReceived(_ usersData: CCEUsersData) {
+    let totalChaptersRead = usersData.readChapters.count
+    let totalChapters     = Chapters.storage.count
+    let progress          = Float(totalChaptersRead * 100 / totalChapters)
+    DispatchQueue.main.async {
+      self.headingView = CCEHeadingView(
+        progress: progress,
+        title   : "Overall Progress",
+        bodyOne : "\(totalChaptersRead) out of \(totalChapters) chapters read",
+        bodyTwo : "Progress: \(progress)%"
+      )
+      self.configureTableView()
+      self.configureHeadingView()
     }
-    NetworkManager.shared.getUserReadingProgress(userID: userID, viewController: self)
   }
 
-  /* Users picked a date time to start practicing. */
-  func registerAppointment() {
-    let center = UNUserNotificationCenter.current()
-    center.requestAuthorization(options: [
-      .alert,
-      .badge,
-      .sound
-    ]) { granted, error in
-      // code
-    }
-    let content = UNMutableNotificationContent()
-    content.title = "Practice Reminder"
-    content.body = "You booked a pratice session."
-    let dateComponents = Calendar.current.dateComponents([
-      .year,
-      .month,
-      .day,
-      .hour,
-      .minute,
-      .second
-    ], from: self.appointment) // let date = Date().addingTimeInterval(15)
-    let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
-    let uuidString = UUID().uuidString
-    let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
-    center.add(request) { error in
-      // @TODO: handle errors
-    }
+  func registerAppointment(_ appointment: Date) {
+    self.presenter.registerAppointment(appointment)
   }
 
   // ===========================================================================

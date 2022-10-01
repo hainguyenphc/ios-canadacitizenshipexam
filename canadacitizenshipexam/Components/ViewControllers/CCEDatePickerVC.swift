@@ -37,8 +37,7 @@ class CCEDatePickerVC: UIViewController {
 
   @objc func confirm() {
     self.dismiss(animated: true) {
-      self.parentVC.appointment = self.datePicker.date
-      self.parentVC.registerAppointment()
+      self.parentVC.registerAppointment(self.datePicker.date)
     }
   }
 
