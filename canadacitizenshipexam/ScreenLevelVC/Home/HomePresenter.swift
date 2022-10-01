@@ -8,11 +8,11 @@
 import UIKit
 import FirebaseAuth
 
-typealias UsersData = (CCEUsersData) -> Void
+typealias CallbackWithUsersData = (CCEUsersData) -> Void
 
 protocol HomePresenterProtocol {
 
-  func loadProgress(finished: @escaping UsersData) -> Void
+  func loadProgress(finished: @escaping CallbackWithUsersData) -> Void
 
   func registerAppointment(_ appointment: Date) -> Void
 
@@ -20,7 +20,7 @@ protocol HomePresenterProtocol {
 
 class HomePresenterImpl: HomePresenterProtocol {
 
-  func loadProgress(finished: @escaping UsersData) -> Void {
+  func loadProgress(finished: @escaping CallbackWithUsersData) -> Void {
     guard let userID = Auth.auth().currentUser?.uid else {
       return
     }
