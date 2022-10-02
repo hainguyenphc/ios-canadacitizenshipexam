@@ -234,6 +234,64 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
+		8429B31E28E8EC84005ECE6E /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				842F1B6D287F65C300AF45C9 /* ProgressVC.storyboard */,
+				84A184E2281D8A820074D5AB /* ProgressVC.swift */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		8429B31F28E8ECA1005ECE6E /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				849539E4283BCD4F00260E85 /* TestVC.swift */,
+			);
+			path = Test;
+			sourceTree = "<group>";
+		};
+		8429B32028E8ECAD005ECE6E /* TestResult */ = {
+			isa = PBXGroup;
+			children = (
+				84428C0228502E4F00C22BC9 /* TestResultVC.swift */,
+			);
+			path = TestResult;
+			sourceTree = "<group>";
+		};
+		8429B32128E8ED16005ECE6E /* Chapter */ = {
+			isa = PBXGroup;
+			children = (
+				845BF3DE286E9783003952CF /* ChapterVC.swift */,
+			);
+			path = Chapter;
+			sourceTree = "<group>";
+		};
+		8429B32228E8ED24005ECE6E /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				84A184E0281D8A330074D5AB /* BookVC.swift */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
+		8429B32328E8ED3E005ECE6E /* Login&Register */ = {
+			isa = PBXGroup;
+			children = (
+				845B46DF287A7B0500AC58B0 /* RegisterVC.swift */,
+				845B46E1287A8FD000AC58B0 /* LoginVC.swift */,
+			);
+			path = "Login&Register";
+			sourceTree = "<group>";
+		};
+		8429B32428E8ED52005ECE6E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				84A184E4281D8AB90074D5AB /* SettingsVC.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		8436CBEF281F11FB007668DC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,7 +386,6 @@
 				84A184E7281D8BA20074D5AB /* Utils */,
 				84A184E8281D8D4C0074D5AB /* Components */,
 				84A184E6281D8B7C0074D5AB /* ScreenLevelVC */,
-				8450BC32287F07C90079E016 /* FatalErrorUtil.swift */,
 				84A184A5281D72EC0074D5AB /* AppDelegate.swift */,
 				84A184A7281D72EC0074D5AB /* SceneDelegate.swift */,
 				84A184B3281D72ED0074D5AB /* LaunchScreen.storyboard */,
@@ -365,17 +422,15 @@
 		84A184E6281D8B7C0074D5AB /* ScreenLevelVC */ = {
 			isa = PBXGroup;
 			children = (
+				8429B32328E8ED3E005ECE6E /* Login&Register */,
+				8429B31E28E8EC84005ECE6E /* Progress */,
 				8429B31828E8D8F8005ECE6E /* Home */,
 				8429B31B28E8E09B005ECE6E /* Tests */,
-				842F1B6D287F65C300AF45C9 /* ProgressVC.storyboard */,
-				84A184E2281D8A820074D5AB /* ProgressVC.swift */,
-				849539E4283BCD4F00260E85 /* TestVC.swift */,
-				84428C0228502E4F00C22BC9 /* TestResultVC.swift */,
-				845BF3DE286E9783003952CF /* ChapterVC.swift */,
-				845B46DF287A7B0500AC58B0 /* RegisterVC.swift */,
-				845B46E1287A8FD000AC58B0 /* LoginVC.swift */,
-				84A184E0281D8A330074D5AB /* BookVC.swift */,
-				84A184E4281D8AB90074D5AB /* SettingsVC.swift */,
+				8429B31F28E8ECA1005ECE6E /* Test */,
+				8429B32028E8ECAD005ECE6E /* TestResult */,
+				8429B32228E8ED24005ECE6E /* Book */,
+				8429B32128E8ED16005ECE6E /* Chapter */,
+				8429B32428E8ED52005ECE6E /* Settings */,
 				84C05B9E28D74A7900FF86CB /* CCEBaseUIViewController.swift */,
 			);
 			path = ScreenLevelVC;
@@ -393,6 +448,7 @@
 				847DDCA6287E570B00A77199 /* BookVC+Ext.swift */,
 				847DDCA8287E574B00A77199 /* HomeVC+Ext.swift */,
 				847DDCAC287E5AB600A77199 /* TestResultVC+Ext.swift */,
+				8450BC32287F07C90079E016 /* FatalErrorUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
