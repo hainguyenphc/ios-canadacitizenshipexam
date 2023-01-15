@@ -22,19 +22,19 @@ struct CCECollections {
 
 struct K {
 
-  static let passingScoreInPercent                = 75
-  static let sectionCellIdentifier                = "cceSectionCell"
-  static let standardCharacterCountForTableCell   = 72
+  static let passingScoreInPercent = 75
+  static let sectionCellIdentifier = "cceSectionCell"
+  static let standardCharacterCountForTableCell = 72
 
 }
 
 enum Dimensions {
 
-  static let cardViewTopPadding: CGFloat            = 20
-  static let cardViewLeadingPadding: CGFloat        = 20
-  static let cardViewTrailingPadding: CGFloat       = 20
-  static let defaultPadding: CGFloat                = 15
-  static let bottomPaddingForAnswerLabel: CGFloat   = -30
+  static let cardViewTopPadding: CGFloat = 20
+  static let cardViewLeadingPadding: CGFloat = 20
+  static let cardViewTrailingPadding: CGFloat = 20
+  static let defaultPadding: CGFloat = 15
+  static let bottomPaddingForAnswerLabel: CGFloat = -30
 }
 
 enum  TabBarItemID {
@@ -49,32 +49,32 @@ enum  TabBarItemID {
 
 enum SFSymbols {
 
-  static let home                     = "house.fill"
-  static let tests                    = "square.stack.3d.up"
-  static let book                     = "books.vertical"
-  static let progress                 = "chart.pie"
-  static let settings                 = "gear"
-  static let notifications            = "bell"
-  static let premium                  = "plus"
-  static let lock                     = "lock.fill"
-  static let openLock                 = "lock.open.fill"
-  static let info                     = "info.circle"
+  static let home = "house.fill"
+  static let tests = "square.stack.3d.up"
+  static let book = "books.vertical"
+  static let progress = "chart.pie"
+  static let settings = "gear"
+  static let notifications = "bell"
+  static let premium = "plus"
+  static let lock = "lock.fill"
+  static let openLock = "lock.open.fill"
+  static let info = "info.circle"
   static let sectionFallbackImageName = "doc.text"
-  static let tryAgain                 = "arrow.uturn.backward"
-  static let restart                  = "restart.circle.fill"
-  static let read                     = "studentdesk"
-  static let userProfile              = "person.crop.circle.fill"
-  static let finished                 = "checkmark.seal.fill"
+  static let tryAgain = "arrow.uturn.backward"
+  static let restart = "restart.circle.fill"
+  static let read = "studentdesk"
+  static let userProfile = "person.crop.circle.fill"
+  static let finished = "checkmark.seal.fill"
 
 }
 
 enum CCEScreens {
 
-  static let home                     = "home"
-  static let tests                    = "tests"
-  static let book                     = "book"
-  static let progress                 = "progress"
-  static let settings                 = "settings"
+  static let home = "home"
+  static let tests = "tests"
+  static let book = "book"
+  static let progress = "progress"
+  static let settings = "settings"
 
 }
 
