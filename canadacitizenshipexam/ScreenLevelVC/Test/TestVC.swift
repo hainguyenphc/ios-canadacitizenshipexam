@@ -45,7 +45,7 @@ class TestVC: UIViewController {
   // UI variables
   // ===========================================================================
 
-  var questionLabel = CCELevelOneTitleLabel(text: "", textAlignment: .left, fontSize: 26)
+  var questionLabel = CCELevelOneTitleLabel(text: "", textAlignment: .left, fontSize: 18)
 
   var answerButtons = [
     CCEButton(backgroundColor: .secondaryLabel, title: "", isLarge: true),
