@@ -12,6 +12,12 @@ class CCEButton: UIButton {
 
   var isLarge: Bool = false
 
+  // How to make the button contains its text with some paddings.
+  override var intrinsicContentSize: CGSize {
+    let labelSize = titleLabel?.sizeThatFits(CGSize(width: frame.size.width, height: CGFloat.greatestFiniteMagnitude)) ?? .zero
+    return CGSize(width: labelSize.width + 10, height: labelSize.height + 20)
+  }
+
   // ===========================================================================
   // Initializer
   // ===========================================================================
@@ -45,16 +51,16 @@ class CCEButton: UIButton {
     self.setTitleColor(.white, for: .normal)
     self.titleLabel?.font = UIFont.preferredFont(forTextStyle: .headline)
     self.translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      NSLayoutConstraint(
-        item: self,
-        attribute: NSLayoutConstraint.Attribute.height,
-        relatedBy: NSLayoutConstraint.Relation.equal,
-        toItem: nil,
-        attribute: NSLayoutConstraint.Attribute.notAnAttribute,
-        multiplier: 1,
-        constant: self.isLarge ? 85 : 35)
-    ])
+    // Sets the height of the button.
+    // NSLayoutConstraint.activate([
+    //   NSLayoutConstraint(
+    //     item: self,
+    //     attribute: NSLayoutConstraint.Attribute.height,
+    //     relatedBy: NSLayoutConstraint.Relation.equal,
+    //     toItem: nil,
+    //     attribute: NSLayoutConstraint.Attribute.notAnAttribute,
+    //     multiplier: 1)
+    // ])
   }
 
   func set(backgroundColor: UIColor, title: String) -> Void {
