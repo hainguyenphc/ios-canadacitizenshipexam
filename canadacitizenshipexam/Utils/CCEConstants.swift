@@ -119,3 +119,5 @@ struct Chapters {
   ]
 
 }
+
+let APP_ACCENT_COLOR = UIColor(red: 150 / 255, green: 0 / 255, blue: 10 / 255, alpha: 1.0)
