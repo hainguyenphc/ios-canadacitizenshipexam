@@ -8,8 +8,32 @@
 import UIKit
 import FirebaseAuth
 
-class HomeVC_: UIViewController {
-  
+// MARK: - Delegate
+
+protocol HomeVCDelegate {
+
+  func handleSuccessLoadingUsersDataFromNetworkCall(usersData: CCEUsersData)
+
+  func handleErrorLoadingUsersDataFromNetworkCall(error: CCEFailure)
+
+}
+
+// MARK: - View/View Controller
+
+class HomeVC_: UIViewController, HomeVCDelegate {
+
+  // MARK: - View Model
+
+  /*
+   Logic attributes.
+   */
+
+  // The Home view model.
+  let homeVM: HomeVM_ = HomeVM_()
+
+  // MARK: - Sub-views
+
+  // @todo: payment
   var unlockPremiumFeaturesView: UIView?
 
   // This is initialized in `assembleTheViews()` later.
@@ -18,28 +42,45 @@ class HomeVC_: UIViewController {
   // This is initialized in `assembleTheViews()` later.
   var completionPercentageLabel: UILabel? = nil
 
-  override func viewDidLoad() {
-    authCheck()
-  }
+  // MARK: - Life-cyle methods
 
   override func viewWillAppear(_ animated: Bool) {
-    authCheck()
+    homeVM.delegate = self
+    homeVM.checkAuthorization()
 
     super.viewWillAppear(animated)
+
     // Build the Unlock view first since other views depend on it.
     unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
     assembleTheViews()
+
+    tabBarController?.tabBar.isHidden = false
+    navigationItem.setHidesBackButton(true, animated: false)
+
+    // @todo Load progress
   }
 
-  // Redirects user to Register screen if he is not logged in.
-  private func authCheck() {
-    guard let _ = Auth.auth().currentUser else {
-      self.navigationController?.pushViewController(RegisterVC(), animated: true)
-      return
-    }
+  override func viewDidLoad() {
+    homeVM.checkAuthorization()
   }
 
 }
+
+// MARK: - Delegate Implementations
+
+extension HomeVC_ {
+
+  func handleSuccessLoadingUsersDataFromNetworkCall(usersData: CCEUsersData) {
+      // @todo
+  }
+
+  func handleErrorLoadingUsersDataFromNetworkCall(error: CCEFailure) {
+      // @todo
+  }
+
+}
+
+// MARK: - Code snippets
 
 // Example: how to update the progress.
 // DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
