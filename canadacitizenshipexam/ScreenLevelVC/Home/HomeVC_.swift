@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC_: UIViewController {
+class HomeVC: UIViewController {
 
   let bounds = UIScreen.main.bounds
   let deviceIdiom = UIScreen.main.traitCollection.userInterfaceIdiom

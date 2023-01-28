@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseAuth
 
+// Legacy Home VC.
+// @todo remove it.
 class HomeVC: CCEBaseUIViewController {
 
   // ===========================================================================
