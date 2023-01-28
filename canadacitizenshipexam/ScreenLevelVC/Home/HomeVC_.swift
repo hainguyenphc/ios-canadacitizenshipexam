@@ -19,20 +19,24 @@ class HomeVC_: UIViewController {
   var completionPercentageLabel: UILabel? = nil
 
   override func viewDidLoad() {
-
+    authCheck()
   }
 
   override func viewWillAppear(_ animated: Bool) {
-    // Redirects user to Register screen if he is not logged in.
-    guard let _ = Auth.auth().currentUser else {
-      self.navigationController?.pushViewController(RegisterVC(), animated: true)
-      return
-    }
+    authCheck()
 
     super.viewWillAppear(animated)
     // Build the Unlock view first since other views depend on it.
     unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
     assembleTheViews()
+  }
+
+  // Redirects user to Register screen if he is not logged in.
+  private func authCheck() {
+    guard let _ = Auth.auth().currentUser else {
+      self.navigationController?.pushViewController(RegisterVC(), animated: true)
+      return
+    }
   }
 
 }
