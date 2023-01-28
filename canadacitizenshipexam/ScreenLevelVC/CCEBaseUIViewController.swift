@@ -26,14 +26,14 @@ class CCEBaseUIViewController: UIViewController {
     self.tableView.translatesAutoresizingMaskIntoConstraints = false
     // Moves table content down ... units down -> the Heading Label is visible.
     self.tableView.contentInset = UIEdgeInsets(
-      top: DimensionManager.shared.getTopEdgeInset(),
-      left: 0,
+      top   : DimensionManager.shared.getTopEdgeInset(),
+      left  : 0,
       bottom: 0,
-      right: 0)
+      right : 0)
   }
 
   func configureHeadingView() {
-    self.headingView.progress = 100
+    self.headingView.progress = 0
     self.view.addSubview(self.headingView)
     self.headingView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
