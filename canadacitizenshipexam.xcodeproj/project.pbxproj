@@ -41,6 +41,11 @@
 		849539E9283BE15E00260E85 /* CCETest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539E8283BE15E00260E85 /* CCETest.swift */; };
 		849539EC283BE3EC00260E85 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539EB283BE3EC00260E85 /* NetworkManager.swift */; };
 		84979B6E287EF6DC002675A6 /* CCESectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B6D287EF6DC002675A6 /* CCESectionTests.swift */; };
+		849DF42B2984B77400EA3D1A /* HomeVC_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42A2984B77400EA3D1A /* HomeVC_.swift */; };
+		849DF42F2984B85F00EA3D1A /* HomeStickyHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42E2984B85F00EA3D1A /* HomeStickyHeading.swift */; };
+		849DF43529853FFF00EA3D1A /* StickyHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43429853FFF00EA3D1A /* StickyHeading.swift */; };
+		849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF436298544BD00EA3D1A /* CircularProgressView.swift */; };
+		849DF4392985469400EA3D1A /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */; };
 		84A184A6281D72EC0074D5AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184A5281D72EC0074D5AB /* AppDelegate.swift */; };
 		84A184A8281D72EC0074D5AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184A7281D72EC0074D5AB /* SceneDelegate.swift */; };
 		84A184B0281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84A184AE281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld */; };
@@ -143,6 +148,11 @@
 		849539E8283BE15E00260E85 /* CCETest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCETest.swift; sourceTree = "<group>"; };
 		849539EB283BE3EC00260E85 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		84979B6D287EF6DC002675A6 /* CCESectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionTests.swift; sourceTree = "<group>"; };
+		849DF42A2984B77400EA3D1A /* HomeVC_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC_.swift; sourceTree = "<group>"; };
+		849DF42E2984B85F00EA3D1A /* HomeStickyHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStickyHeading.swift; sourceTree = "<group>"; };
+		849DF43429853FFF00EA3D1A /* StickyHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeading.swift; sourceTree = "<group>"; };
+		849DF436298544BD00EA3D1A /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
 		84A184A2281D72EC0074D5AB /* canadacitizenshipexam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = canadacitizenshipexam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A184A5281D72EC0074D5AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A184A7281D72EC0074D5AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,8 +229,10 @@
 		8429B31828E8D8F8005ECE6E /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				84A184DA281D84B70074D5AB /* HomeVC.swift */,
-				8429B31928E8D90E005ECE6E /* HomePresenter.swift */,
+				849DF43229853BDA00EA3D1A /* _legacy */,
+				849DF43129853BBF00EA3D1A /* Logic */,
+				849DF43029853AD300EA3D1A /* UI */,
+				849DF42A2984B77400EA3D1A /* HomeVC_.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -352,6 +364,54 @@
 			path = CCESectionTests;
 			sourceTree = "<group>";
 		};
+		849DF42C2984B79E00EA3D1A /* StickyHeadingArea */ = {
+			isa = PBXGroup;
+			children = (
+				849DF42E2984B85F00EA3D1A /* HomeStickyHeading.swift */,
+			);
+			path = StickyHeadingArea;
+			sourceTree = "<group>";
+		};
+		849DF42D2984B7BB00EA3D1A /* ScrollViewArea */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ScrollViewArea;
+			sourceTree = "<group>";
+		};
+		849DF43029853AD300EA3D1A /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				849DF42D2984B7BB00EA3D1A /* ScrollViewArea */,
+				849DF42C2984B79E00EA3D1A /* StickyHeadingArea */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		849DF43129853BBF00EA3D1A /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		849DF43229853BDA00EA3D1A /* _legacy */ = {
+			isa = PBXGroup;
+			children = (
+				84A184DA281D84B70074D5AB /* HomeVC.swift */,
+				8429B31928E8D90E005ECE6E /* HomePresenter.swift */,
+			);
+			path = _legacy;
+			sourceTree = "<group>";
+		};
+		849DF43329853FE700EA3D1A /* StickyHeading */ = {
+			isa = PBXGroup;
+			children = (
+				849DF43429853FFF00EA3D1A /* StickyHeading.swift */,
+			);
+			path = StickyHeading;
+			sourceTree = "<group>";
+		};
 		84A18499281D72EC0074D5AB = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +516,7 @@
 		84A184E8281D8D4C0074D5AB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				849DF43329853FE700EA3D1A /* StickyHeading */,
 				8436CBEF281F11FB007668DC /* Cells */,
 				84A184EC281D94670074D5AB /* Views */,
 				84A184ED281D94700074D5AB /* ViewControllers */,
@@ -467,6 +528,7 @@
 		84A184E9281D8D910074D5AB /* Labels */ = {
 			isa = PBXGroup;
 			children = (
+				849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */,
 				84A184EA281D8DB40074D5AB /* CCELevelOneTitleLabel.swift */,
 				84A184F0281D95930074D5AB /* CCELevelTwoTitleLabel.swift */,
 				84A184F8281D98930074D5AB /* CCEBodyLabel.swift */,
@@ -487,6 +549,7 @@
 				84B8DABA285F9572008DDAFE /* CardCell.swift */,
 				84B8DABB285F9572008DDAFE /* CardCell.xib */,
 				846CF9E728809BB900E2A96F /* CCEProgressBar.swift */,
+				849DF436298544BD00EA3D1A /* CircularProgressView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -839,14 +902,17 @@
 				84A184E3281D8A820074D5AB /* ProgressVC.swift in Sources */,
 				84A184F1281D95930074D5AB /* CCELevelTwoTitleLabel.swift in Sources */,
 				84A184DB281D84B70074D5AB /* HomeVC.swift in Sources */,
+				849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */,
 				84A184F5281D96120074D5AB /* CCEScreenCollectiveMetricsView.swift in Sources */,
 				849539E5283BCD4F00260E85 /* TestVC.swift in Sources */,
 				84A184DD281D87CD0074D5AB /* TestsVC.swift in Sources */,
 				84A184F9281D98930074D5AB /* CCEBodyLabel.swift in Sources */,
 				846CF9E828809BB900E2A96F /* CCEProgressBar.swift in Sources */,
+				849DF43529853FFF00EA3D1A /* StickyHeading.swift in Sources */,
 				847DDCA7287E570B00A77199 /* BookVC+Ext.swift in Sources */,
 				845BF3DD286E9562003952CF /* CCESeeder.swift in Sources */,
 				845BF3DF286E9783003952CF /* ChapterVC.swift in Sources */,
+				849DF4392985469400EA3D1A /* ScreenTitleLabel.swift in Sources */,
 				845B46E0287A7B0500AC58B0 /* RegisterVC.swift in Sources */,
 				84A184A8281D72EC0074D5AB /* SceneDelegate.swift in Sources */,
 				84C05BA128D7588F00FF86CB /* CCEProgressReport.swift in Sources */,
@@ -871,7 +937,9 @@
 				84A184EF281D94ED0074D5AB /* CCEHeadingView.swift in Sources */,
 				84A184DF281D88D10074D5AB /* CCEConstants.swift in Sources */,
 				84502C94286AA0A000E86367 /* CCEDatePickerVC.swift in Sources */,
+				849DF42B2984B77400EA3D1A /* HomeVC_.swift in Sources */,
 				8450BC33287F07C90079E016 /* FatalErrorUtil.swift in Sources */,
+				849DF42F2984B85F00EA3D1A /* HomeStickyHeading.swift in Sources */,
 				84A184E1281D8A330074D5AB /* BookVC.swift in Sources */,
 				84A184F3281D95CD0074D5AB /* CCEScreenCollectiveProgressView.swift in Sources */,
 				84B8DABC285F9572008DDAFE /* CardCell.swift in Sources */,

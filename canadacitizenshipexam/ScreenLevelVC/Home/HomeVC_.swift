@@ -7,17 +7,27 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC_: UIViewController {
+  
+  var unlockPremiumFeaturesView: UIView?
 
-  let bounds = UIScreen.main.bounds
-  let deviceIdiom = UIScreen.main.traitCollection.userInterfaceIdiom
+  // This is initialized in `assembleTheViews()` later.
+  var completionCircularProgressView: CircularProgressView? = nil
 
-  // @remove headerBackgroundView
-  var stickyHeadingView: UIView!
+  // This is initialized in `assembleTheViews()` later.
+  var completionPercentageLabel: UILabel? = nil
 
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
-    self.setupStickyHeadingView()
+    // Build the Unlock view first since other views depend on it.
+    unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
+    assembleTheViews()
   }
 
 }
+
+// Example: how to update the progress.
+// DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+//   self.completionCircularProgressView?.progress = 0.5
+//   self.completionPercentageLabel?.text = "50%"
+// }

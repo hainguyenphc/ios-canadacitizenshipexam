@@ -120,4 +120,18 @@ struct Chapters {
 
 }
 
+/*
+ COLORS
+ */
+
 let APP_ACCENT_COLOR = UIColor(red: 150 / 255, green: 0 / 255, blue: 10 / 255, alpha: 1.0)
+
+/*
+ SIZES, DIMENSIONS
+ */
+
+let BOUNDS = UIScreen.main.bounds
+
+let DEVICE_IDIOM = UIScreen.main.traitCollection.userInterfaceIdiom
+
+let LEFT_SPACE: CGFloat = 40
