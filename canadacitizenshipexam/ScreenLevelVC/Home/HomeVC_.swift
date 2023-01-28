@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class HomeVC_: UIViewController {
   
@@ -17,7 +18,17 @@ class HomeVC_: UIViewController {
   // This is initialized in `assembleTheViews()` later.
   var completionPercentageLabel: UILabel? = nil
 
+  override func viewDidLoad() {
+
+  }
+
   override func viewWillAppear(_ animated: Bool) {
+    // Redirects user to Register screen if he is not logged in.
+    guard let _ = Auth.auth().currentUser else {
+      self.navigationController?.pushViewController(RegisterVC(), animated: true)
+      return
+    }
+
     super.viewWillAppear(animated)
     // Build the Unlock view first since other views depend on it.
     unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
