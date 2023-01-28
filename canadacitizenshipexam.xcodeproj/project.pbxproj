@@ -46,6 +46,7 @@
 		849DF43529853FFF00EA3D1A /* StickyHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43429853FFF00EA3D1A /* StickyHeading.swift */; };
 		849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF436298544BD00EA3D1A /* CircularProgressView.swift */; };
 		849DF4392985469400EA3D1A /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */; };
+		849DF43C2985CD0000EA3D1A /* HomeVM_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43B2985CD0000EA3D1A /* HomeVM_.swift */; };
 		84A184A6281D72EC0074D5AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184A5281D72EC0074D5AB /* AppDelegate.swift */; };
 		84A184A8281D72EC0074D5AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184A7281D72EC0074D5AB /* SceneDelegate.swift */; };
 		84A184B0281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84A184AE281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld */; };
@@ -153,6 +154,7 @@
 		849DF43429853FFF00EA3D1A /* StickyHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeading.swift; sourceTree = "<group>"; };
 		849DF436298544BD00EA3D1A /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
+		849DF43B2985CD0000EA3D1A /* HomeVM_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM_.swift; sourceTree = "<group>"; };
 		84A184A2281D72EC0074D5AB /* canadacitizenshipexam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = canadacitizenshipexam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A184A5281D72EC0074D5AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A184A7281D72EC0074D5AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -391,6 +393,7 @@
 		849DF43129853BBF00EA3D1A /* Logic */ = {
 			isa = PBXGroup;
 			children = (
+				849DF43B2985CD0000EA3D1A /* HomeVM_.swift */,
 			);
 			path = Logic;
 			sourceTree = "<group>";
@@ -895,6 +898,7 @@
 				84A184FB281DDEA50074D5AB /* CCECircularProgressLabel.swift in Sources */,
 				84428C0328502E4F00C22BC9 /* TestResultVC.swift in Sources */,
 				8462AF7728D7440000E4A759 /* DimensionManager.swift in Sources */,
+				849DF43C2985CD0000EA3D1A /* HomeVM_.swift in Sources */,
 				847DDCB1287E601A00A77199 /* CCEDirtyQuestion.swift in Sources */,
 				84A184FD281DF1630074D5AB /* CCESectionView.swift in Sources */,
 				84A184A6281D72EC0074D5AB /* AppDelegate.swift in Sources */,

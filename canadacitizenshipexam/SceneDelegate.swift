@@ -36,7 +36,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
 
   func createHomeNC() -> UINavigationController {
-    let navController         = UINavigationController(rootViewController: HomeVC())
+    let navController         = UINavigationController(rootViewController: HomeVC_())
     navController.title       = "Discover Canada"
     navController.tabBarItem  = UITabBarItem(
       title: "Home", image: UIImage(systemName: SFSymbols.home), tag: 0

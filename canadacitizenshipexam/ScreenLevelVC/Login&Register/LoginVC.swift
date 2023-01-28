@@ -53,7 +53,7 @@ class LoginVC: UIViewController {
           print(e.localizedDescription)
         }
         else {
-          self.navigationController?.pushViewController(HomeVC(), animated: true)
+          self.navigationController?.pushViewController(HomeVC_(), animated: true)
           self.tabBarController?.selectedIndex = 0
         }
       }
