@@ -61,12 +61,24 @@ class CardPrimaryTitleLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
   var card: CardProtocol?
 
-  init(card: CardProtocol, text: String) {
-    super.init(text: text,
-               textColor: .label,
-               textAlignment: .left,
-               fontSize: 20,
-               fontWeight: .regular)
+  var imageName: String?
+
+  init(card: CardProtocol, text: String, imageName: String? = nil) {
+    if let imageName = imageName {
+      super.init(text: text,
+                 textColor: .label,
+                 textAlignment: .left,
+                 fontSize: 20,
+                 fontWeight: .regular,
+                 imageName: imageName)
+    } else {
+      super.init(text: text,
+                 textColor: .label,
+                 textAlignment: .left,
+                 fontSize: 20,
+                 fontWeight: .regular)
+    }
+
     self.card = card
     self.theView = self
     self.theHeight! += (self.card?.theHeight!)!

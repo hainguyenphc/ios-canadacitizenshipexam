@@ -364,6 +364,14 @@
 			path = chapters;
 			sourceTree = "<group>";
 		};
+		8461895029876DAE0060D824 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				849DF43D2985FBBE00EA3D1A /* Card.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
 		849539EA283BE3DC00260E85 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +544,7 @@
 		84A184E8281D8D4C0074D5AB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8461895029876DAE0060D824 /* Card */,
 				8402A91E2986C4A10053E476 /* Scroll */,
 				849DF43329853FE700EA3D1A /* StickyHeading */,
 				8436CBEF281F11FB007668DC /* Cells */,
@@ -572,7 +581,6 @@
 				84B8DABB285F9572008DDAFE /* CardCell.xib */,
 				846CF9E728809BB900E2A96F /* CCEProgressBar.swift */,
 				849DF436298544BD00EA3D1A /* CircularProgressView.swift */,
-				849DF43D2985FBBE00EA3D1A /* Card.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

@@ -19,14 +19,29 @@ class ScreenTitleLabel: UILabel {
     textColor: UIColor,
     textAlignment: NSTextAlignment,
     fontSize: CGFloat,
-    fontWeight: UIFont.Weight
+    fontWeight: UIFont.Weight,
+    imageName: String? = nil
   ) {
-    super.init(frame: .zero)
-    self.text = text
-    self.textColor = textColor // UIColor.white
-    self.textAlignment = textAlignment
-    self.font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
-    self.configureUI()
+    if let imageName = imageName {
+      super.init(frame: .zero)
+      let attachment = NSTextAttachment()
+      attachment.image = UIImage(systemName: imageName)?.withTintColor(APP_ACCENT_COLOR)
+      let imageString = NSMutableAttributedString(attachment: attachment)
+      let textString = NSMutableAttributedString(string: "\(text)    ")
+      textString.append(imageString)
+      self.attributedText = textString
+      self.configureUI()
+    } else {
+      super.init(frame: .zero)
+      self.text = text
+      self.textColor = textColor // UIColor.white
+      self.textAlignment = textAlignment
+      self.font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
+      self.configureUI()
+    }
+
+
+
   }
 
   // ===========================================================================
