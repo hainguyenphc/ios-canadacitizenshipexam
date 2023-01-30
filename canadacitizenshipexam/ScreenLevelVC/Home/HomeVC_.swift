@@ -77,6 +77,7 @@ class HomeVC_: UIViewController, HomeVCDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     homeVM.checkAuthorization()
+    self.view.backgroundColor = UIColor(red: 220, green: 220, blue: 220, alpha: 1.0)
   }
 
 }

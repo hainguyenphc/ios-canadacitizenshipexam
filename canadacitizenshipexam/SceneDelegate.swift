@@ -83,6 +83,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func createPrimaryTabBarController() -> UITabBarController {
     let tabBarController              = UITabBarController()
     tabBarController.tabBar.tintColor = .systemRed
+    tabBarController.tabBar.backgroundColor = UIColor.white
     tabBarController.viewControllers  = [
       createHomeNC(),
       createTestsNC(),

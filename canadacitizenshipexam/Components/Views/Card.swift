@@ -36,9 +36,10 @@ class Card: UIViewController, CardProtocol {
 
   func build(scrollView: UIScrollView, previous: UIView? = nil) -> CardProtocol? {
     view.overrideUserInterfaceStyle = .light
-    view.backgroundColor = .secondarySystemBackground
+    // view.backgroundColor = .secondarySystemBackground
+    view.backgroundColor = UIColor(red: 220, green: 220, blue: 220, alpha: 1.0)
     view.translatesAutoresizingMaskIntoConstraints = false
-    view.layer.cornerRadius = 20
+    view.layer.cornerRadius = 16
     view.layer.shadowColor = UIColor.lightGray.cgColor
     view.layer.shadowOpacity = 0.4
     view.layer.shadowOffset = .zero
@@ -102,7 +103,7 @@ class CardPrimaryTitleLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
 class CardTaglineLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
-  var theHeight: CGFloat? = 45
+  var theHeight: CGFloat? = 40
 
   var theView: UIView?
 
@@ -143,7 +144,7 @@ class CardTaglineLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
 class CardActionableItem: ActionableLabel, CardDecoratoProtocol {
 
-  var theHeight: CGFloat? = 34.5
+  var theHeight: CGFloat? = 35
 
   var theView: UIView?
 
