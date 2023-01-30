@@ -65,11 +65,36 @@ extension HomeVC_: ScrollProtocol {
     var card6: CardProtocol = Card()
     card6 = CardPrimaryTitleLabelWithImage(card: card6, text: "Progress Metrics", imageName: SFSymbols.progress)
     card6 = CardTaglineLabel(card: card6, text: "View past test scores and trends.")
-    // card6 = CardPrimaryTitleLabelWithImage(card: card6, text: "Hello World", imageName: SFSymbols.lock, hasPrecedentSibling: true)
     cards.append(card6)
 
+    let boldFont = UIFont(name: "Helvetica-bold", size: 13.0)
+    let smallFont = UIFont(name: "Helvetica", size: 11.0)
+
+    let bodyText = "After generating your fancy text symbols, you can copy and paste the \"fonts\" to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text in agario is probably generated using a fancy text converter similar to this), to generate a creative-looking instagram, facebook, tumblr, or twitter post, for showing up n00bs on Steam, or just for sending messages full of beautiful text to your buddies.\nThe only exception is if your paste destination has a font which doesn't support some unicode characters. For example, you'll might find that some websites don't use a unicode font, or if they do, the font doesn't have all the characters required. In that case, you'll see a generic \"box\" in which was created when the browser tries to create a fancy letter. This doesn't mean there's an error with this translator, it just means the website's font doesn't support that character."
+    let decoratedBodyText = NSMutableAttributedString(string: "\n\(bodyText)", attributes: [
+      .font: UIFont.systemFont(ofSize: 16, weight: .regular),
+    ])
+
+    let image = UIImage(systemName: "bubble.left.and.exclamationmark.bubble.right")!
+      .withTintColor(APP_ACCENT_COLOR)
+    let attachment = NSTextAttachment()
+    attachment.image = image
+    let attributedText = NSMutableAttributedString(attachment: attachment)
+
+    let titleText = "How difficult is the official test?";
+    let decoratedTitleText = NSMutableAttributedString(string: " \(titleText)", attributes: [
+      .font: UIFont.systemFont(ofSize: 16, weight: .bold),
+      .foregroundColor: UIColor.label,
+      .strokeColor: UIColor.red,
+    ])
+    // decoratedTitleText.addAttribute(NSAttributedString.Key.font, value: boldFont, range: titleRange)
+    attributedText.append(decoratedTitleText)
+    attributedText.append(decoratedBodyText)
+    // attributedText.append(NSMutableAttributedString(string: "\n\(bodyText)"))
+
+    // attributedText.append()
     var card7: CardProtocol = Card()
-    card7 = CardTextView(card: card7, text: "How difficult is the official test?\n\nAfter generating your fancy text symbols, you can copy and paste the \"fonts\" to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text in agario is probably generated using a fancy text converter similar to this), to generate a creative-looking instagram, facebook, tumblr, or twitter post, for showing up n00bs on Steam, or just for sending messages full of beautiful text to your buddies.\n\nThe only exception is if your paste destination has a font which doesn't support some unicode characters. For example, you'll might find that some websites don't use a unicode font, or if they do, the font doesn't have all the characters required. In that case, you'll see a generic \"box\" in which was created when the browser tries to create a fancy letter. This doesn't mean there's an error with this translator, it just means the website's font doesn't support that character.")
+    card7 = CardTextView(card: card7, text: attributedText)
     cards.append(card7)
 
     var x: CardProtocol? = nil
