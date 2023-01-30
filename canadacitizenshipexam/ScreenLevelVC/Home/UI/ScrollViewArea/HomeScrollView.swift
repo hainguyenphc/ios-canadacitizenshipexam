@@ -75,11 +75,11 @@ extension HomeVC_: ScrollProtocol {
       NSLayoutConstraint.activate([
         (x!).theView!.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: distanceToTop),
         (x!).theView!.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-        (x!).theView!.heightAnchor.constraint(equalToConstant: each.getHeight()),
+        (x!).theView!.heightAnchor.constraint(equalToConstant: each.theHeight!),
         (x!).theView!.widthAnchor.constraint(equalToConstant: BOUNDS.width * 0.95)
       ])
       previousView = (each).theView
-      distanceToTop += each.getHeight() + DISTANCE_BETWEEN_CARDS
+      distanceToTop += each.theHeight! + DISTANCE_BETWEEN_CARDS
       index += 1
     }
 
@@ -87,108 +87,3 @@ extension HomeVC_: ScrollProtocol {
   }
 
 }
-
-// MARK: - code snippets
-
-// func setupScheduleBlockView() {
-//   blockView = UIView()
-//   blockView.overrideUserInterfaceStyle = .light
-//   blockView.backgroundColor = .secondarySystemBackground
-//   blockView.translatesAutoresizingMaskIntoConstraints = false
-//   blockView.layer.cornerRadius = 20
-//   blockView.layer.shadowColor = UIColor.lightGray.cgColor
-//   blockView.layer.shadowOpacity = 0.4
-//   blockView.layer.shadowOffset = .zero
-//   blockView.layer.shadowRadius = 10
-//   scrollView.addSubview(blockView)
-//   NSLayoutConstraint.activate([
-//     blockView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: 5),
-//     blockView.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-//     blockView.heightAnchor.constraint(equalToConstant: 150),
-//     blockView.widthAnchor.constraint(equalToConstant: BOUNDS.width * 0.95)
-//   ])
-//
-//   let label = UILabel()
-//   label.text = "Create a Study Schedule"
-//   label.textColor = .label
-//   label.translatesAutoresizingMaskIntoConstraints = false
-//   label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-//   blockView.addSubview(label)
-//   NSLayoutConstraint.activate([
-//     label.topAnchor.constraint(equalTo: blockView.topAnchor, constant: 15),
-//     label.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 15),
-//   ])
-//
-//   let makeScheduleLabel = UILabel()
-//   makeScheduleLabel.text = "Make a schedule to meet your goals."
-//   makeScheduleLabel.translatesAutoresizingMaskIntoConstraints = false
-//   makeScheduleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-//   makeScheduleLabel.textColor = .lightGray
-//   blockView.addSubview(makeScheduleLabel)
-//   NSLayoutConstraint.activate([
-//     makeScheduleLabel.topAnchor.constraint(equalTo: blockView.topAnchor, constant: 15 * 3),
-//     makeScheduleLabel.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 15),
-//   ])
-//
-//   let attachment = NSTextAttachment()
-//   attachment.image = UIImage(systemName: "calendar")?.withTintColor(APP_ACCENT_COLOR)
-//   let imageString = NSMutableAttributedString(attachment: attachment)
-//   let textString = NSAttributedString(string: " Schedule your Exam")
-//   imageString.append(textString)
-//   let scheduleLabel = UILabel()
-//   scheduleLabel.attributedText = imageString
-//   scheduleLabel.translatesAutoresizingMaskIntoConstraints = false
-//   scheduleLabel.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-//   scheduleLabel.textColor = APP_ACCENT_COLOR
-//   blockView.addSubview(scheduleLabel)
-//   NSLayoutConstraint.activate([
-//     scheduleLabel.topAnchor.constraint(equalTo: blockView.topAnchor, constant: 15 * 5),
-//     scheduleLabel.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 15)
-//   ])
-//
-//   let attachment2 = NSTextAttachment()
-//   attachment2.image = UIImage(systemName: "alarm")?.withTintColor(APP_ACCENT_COLOR)
-//   let imageString2 = NSMutableAttributedString(attachment: attachment2)
-//   let textString2 = NSAttributedString(string: " Practice Time: 8:30 AM")
-//   imageString2.append(textString2)
-//   let scheduleLabel2 = UILabel()
-//   scheduleLabel2.attributedText = imageString2
-//   scheduleLabel2.translatesAutoresizingMaskIntoConstraints = false
-//   scheduleLabel2.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-//   scheduleLabel2.textColor = APP_ACCENT_COLOR
-//   blockView.addSubview(scheduleLabel2)
-//   NSLayoutConstraint.activate([
-//     scheduleLabel2.topAnchor.constraint(equalTo: blockView.topAnchor, constant: 15 * 7),
-//     scheduleLabel2.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 15)
-//   ])
-// }
-//
-// func setupScheduleBlockView2() {
-//   blockView2 = UIView()
-//   blockView2.overrideUserInterfaceStyle = .light
-//   blockView2.backgroundColor = .secondarySystemBackground
-//   blockView2.translatesAutoresizingMaskIntoConstraints = false
-//   blockView2.layer.cornerRadius = 20
-//   blockView2.layer.shadowColor = UIColor.lightGray.cgColor
-//   blockView2.layer.shadowOpacity = 0.4
-//   blockView2.layer.shadowOffset = .zero
-//   blockView2.layer.shadowRadius = 10
-//   scrollView.addSubview(blockView2)
-//   NSLayoutConstraint.activate([
-//     blockView2.topAnchor.constraint(equalTo: blockView.bottomAnchor, constant: 20),
-//     blockView2.centerXAnchor.constraint(equalTo: scrollView.centerXAnchor),
-//     blockView2.heightAnchor.constraint(equalToConstant: 150),
-//     blockView2.widthAnchor.constraint(equalToConstant: BOUNDS.width * 0.95)
-//   ])
-//
-//   let label = UILabel()
-//   label.text = "Create a Study Schedule II"
-//   label.textColor = .label
-//   label.translatesAutoresizingMaskIntoConstraints = false
-//   label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-//   blockView2.addSubview(label)
-//   NSLayoutConstraint.activate([
-//     label.topAnchor.constraint(equalTo: blockView2.topAnchor, constant: 15),
-//     label.leadingAnchor.constraint(equalTo: blockView2.leadingAnchor, constant: 15),
-//   ])
-// }

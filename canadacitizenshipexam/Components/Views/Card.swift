@@ -15,8 +15,6 @@ protocol CardProtocol {
 
   func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol?
 
-  func getHeight() -> CGFloat
-
 }
 
 class Card: UIViewController, CardProtocol {
@@ -36,7 +34,6 @@ class Card: UIViewController, CardProtocol {
 
   func build(scrollView: UIScrollView, previous: UIView? = nil) -> CardProtocol? {
     view.overrideUserInterfaceStyle = .light
-    // view.backgroundColor = .secondarySystemBackground
     view.backgroundColor = UIColor(red: 220, green: 220, blue: 220, alpha: 1.0)
     view.translatesAutoresizingMaskIntoConstraints = false
     view.layer.cornerRadius = 16
@@ -46,10 +43,6 @@ class Card: UIViewController, CardProtocol {
     view.layer.shadowRadius = 10
     scrollView.addSubview(view)
     return self
-  }
-
-  func getHeight() -> CGFloat {
-    return self.theHeight!
   }
 
 }
@@ -95,10 +88,6 @@ class CardPrimaryTitleLabel: ScreenTitleLabel, CardDecoratoProtocol {
     return result
   }
 
-  func getHeight() -> CGFloat {
-    return self.theHeight!
-  }
-
 }
 
 class CardTaglineLabel: ScreenTitleLabel, CardDecoratoProtocol {
@@ -136,10 +125,6 @@ class CardTaglineLabel: ScreenTitleLabel, CardDecoratoProtocol {
     return result
   }
 
-  func getHeight() -> CGFloat {
-    return self.theHeight!
-  }
-
 }
 
 class CardActionableItem: ActionableLabel, CardDecoratoProtocol {
@@ -171,10 +156,6 @@ class CardActionableItem: ActionableLabel, CardDecoratoProtocol {
     ])
 
     return result
-  }
-
-  func getHeight() -> CGFloat {
-    return self.theHeight!
   }
 
 }
