@@ -7,6 +7,62 @@
 
 import UIKit
 
+class CardTextView: UITextView, CardDecoratoProtocol {
+
+  var card: CardProtocol?
+
+  var theView: UIView?
+
+  var theHeight: CGFloat?
+
+  init(card: CardProtocol? = nil, text: String) {
+    super.init(frame: .zero, textContainer: nil)
+
+    let height = calculatedHeight(for: text, width: BOUNDS.width * 0.95)
+    self.layer.cornerRadius = 16
+    self.text = text
+    self.textColor = .label
+    self.textAlignment = .natural
+    self.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+    self.backgroundColor = UIColor(red: 100, green: 220, blue: 220, alpha: 0.6)
+    self.textContainerInset = .init(top: 15, left: 15, bottom: 15, right: 15)
+    self.frame = CGRect(x: 0, y: 0, width: BOUNDS.width * 0.95, height: height)
+
+
+    self.card = card
+    self.theView = self
+    self.theHeight = 0
+  }
+
+  func calculatedHeight(for text: String, width: CGFloat) -> CGFloat {
+    let label = UILabel(frame: CGRect(x: 0, y: 0, width: width,
+                                      height: .greatestFiniteMagnitude))
+    label.numberOfLines = 0
+    label.text = text
+    label.sizeToFit()
+    return label.frame.height
+  }
+
+  func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol? {
+    let result = self.card?.build(scrollView: scrollView, previous: previous)
+    let blockView: UIView = (self.card!).theView!
+    blockView.addSubview(self)
+
+    NSLayoutConstraint.activate([
+      self.topAnchor.constraint(equalTo: blockView.topAnchor),
+      self.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 20),
+      self.trailingAnchor.constraint(equalTo: blockView.trailingAnchor, constant: -20)
+    ])
+
+    return result
+  }
+
+  required init?(coder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
+
+}
+
 class CardPrimaryTitleLabelWithImage: UIStackView, CardDecoratoProtocol {
 
   var card: CardProtocol?

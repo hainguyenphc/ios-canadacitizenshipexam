@@ -130,7 +130,7 @@ let APP_ACCENT_COLOR = UIColor(red: 150 / 255, green: 0 / 255, blue: 10 / 255, a
  SIZES, DIMENSIONS
  */
 
-let BOUNDS = UIScreen.main.bounds
+let BOUNDS: CGRect = UIScreen.main.bounds
 
 let DEVICE_IDIOM = UIScreen.main.traitCollection.userInterfaceIdiom
 
