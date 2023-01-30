@@ -45,26 +45,32 @@ extension HomeVC_: ScrollProtocol {
     cards.append(card1)
 
     var card2: CardProtocol = Card()
-    card2 = CardPrimaryTitleLabel(card: card2, text: "Daily Question", imageName: "exclamationmark.circle")
+    card2 = CardPrimaryTitleLabelWithImage(card: card2, text: "Daily Question", imageName: SFSymbols.info)
     cards.append(card2)
 
     var card3: CardProtocol = Card()
-    card3 = CardPrimaryTitleLabel(card: card3, text: "Start Practicing", imageName: SFSymbols.tests)
+    card3 = CardPrimaryTitleLabelWithImage(card: card3, text: "Start Practicing", imageName: SFSymbols.tests)
     cards.append(card3)
 
     var card4: CardProtocol = Card()
-    card4 = CardPrimaryTitleLabel(card: card4, text: "Read the Study Book", imageName: SFSymbols.book)
+    card4 = CardPrimaryTitleLabelWithImage(card: card4, text: "Read the Study Book", imageName: SFSymbols.book)
     cards.append(card4)
 
     var card5: CardProtocol = Card()
-    card5 = CardPrimaryTitleLabel(card: card5, text: "Unlock Premimum Features", imageName: SFSymbols.premium)
+    // card5 = CardPrimaryTitleLabel(card: card5, text: "Unlock Premimum Features")
+    card5 = CardPrimaryTitleLabelWithImage(card: card5, text: "Unlock Premimum Features", imageName: SFSymbols.premium)
     card5 = CardTaglineLabel(card: card5, text: "Maximize your chances by practicing with premium \ntests.")
     cards.append(card5)
 
     var card6: CardProtocol = Card()
-    card6 = CardPrimaryTitleLabel(card: card6, text: "Progress Metrics", imageName: SFSymbols.progress)
+    card6 = CardPrimaryTitleLabelWithImage(card: card6, text: "Progress Metrics", imageName: SFSymbols.progress)
     card6 = CardTaglineLabel(card: card6, text: "View past test scores and trends.")
+    card6 = CardPrimaryTitleLabelWithImage(card: card6, text: "Hello World", imageName: SFSymbols.lock, hasPrecedentSibling: true)
     cards.append(card6)
+
+    // var card7: CardProtocol = Card()
+    // card7 = CardPrimaryTitleLabelWithImage(card: card7, text: "Heal The World", imageName: "globe.americas")
+    // cards.append(card7)
 
     var x: CardProtocol? = nil
     var previousView: UIView? = nil
