@@ -67,8 +67,8 @@ class CardPrimaryTitleLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
   var card: CardProtocol?
 
-  init(card: CardProtocol) {
-    super.init(text: "Create a study schedule",
+  init(card: CardProtocol, text: String) {
+    super.init(text: text,
                textColor: .label,
                textAlignment: .left,
                fontSize: 20,
@@ -108,8 +108,8 @@ class CardTaglineLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
   var card: CardProtocol?
 
-  init(card: CardProtocol) {
-    super.init(text: "Make a schedule to meet your goals.\nTurn on notifications for study reminders.",
+  init(card: CardProtocol, text: String) {
+    super.init(text: text,
                textColor: .label,
                textAlignment: .left,
                fontSize: 16,
