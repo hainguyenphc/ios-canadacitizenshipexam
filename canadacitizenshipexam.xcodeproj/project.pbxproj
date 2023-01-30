@@ -28,6 +28,12 @@
 		845B46E2287A8FD000AC58B0 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B46E1287A8FD000AC58B0 /* LoginVC.swift */; };
 		845BF3DD286E9562003952CF /* CCESeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BF3DC286E9562003952CF /* CCESeeder.swift */; };
 		845BF3DF286E9783003952CF /* ChapterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845BF3DE286E9783003952CF /* ChapterVC.swift */; };
+		846072B12987F98200348ED6 /* CardProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846072B02987F98200348ED6 /* CardProtocol.swift */; };
+		846072B32987F9AD00348ED6 /* CardDecoratorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846072B22987F9AD00348ED6 /* CardDecoratorProtocol.swift */; };
+		846072B52987F9CC00348ED6 /* CardPrimaryTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846072B42987F9CC00348ED6 /* CardPrimaryTitleLabel.swift */; };
+		846072B72987F9EB00348ED6 /* CardTaglineLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846072B62987F9EB00348ED6 /* CardTaglineLabel.swift */; };
+		846072B92987FA0300348ED6 /* CardActionableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846072B82987FA0300348ED6 /* CardActionableItem.swift */; };
+		846072BB2987FA1E00348ED6 /* CardPrimaryTitleLabelWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846072BA2987FA1E00348ED6 /* CardPrimaryTitleLabelWithImage.swift */; };
 		8462AF7728D7440000E4A759 /* DimensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462AF7628D7440000E4A759 /* DimensionManager.swift */; };
 		846CF9E828809BB900E2A96F /* CCEProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CF9E728809BB900E2A96F /* CCEProgressBar.swift */; };
 		847CA1DE288104FD003CC661 /* CCEFinishedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CA1DD288104FD003CC661 /* CCEFinishedTest.swift */; };
@@ -140,6 +146,12 @@
 		845B46E1287A8FD000AC58B0 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		845BF3DC286E9562003952CF /* CCESeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESeeder.swift; sourceTree = "<group>"; };
 		845BF3DE286E9783003952CF /* ChapterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterVC.swift; sourceTree = "<group>"; };
+		846072B02987F98200348ED6 /* CardProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardProtocol.swift; sourceTree = "<group>"; };
+		846072B22987F9AD00348ED6 /* CardDecoratorProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDecoratorProtocol.swift; sourceTree = "<group>"; };
+		846072B42987F9CC00348ED6 /* CardPrimaryTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPrimaryTitleLabel.swift; sourceTree = "<group>"; };
+		846072B62987F9EB00348ED6 /* CardTaglineLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTaglineLabel.swift; sourceTree = "<group>"; };
+		846072B82987FA0300348ED6 /* CardActionableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardActionableItem.swift; sourceTree = "<group>"; };
+		846072BA2987FA1E00348ED6 /* CardPrimaryTitleLabelWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPrimaryTitleLabelWithImage.swift; sourceTree = "<group>"; };
 		8462AF7628D7440000E4A759 /* DimensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionManager.swift; sourceTree = "<group>"; };
 		846CF9E728809BB900E2A96F /* CCEProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEProgressBar.swift; sourceTree = "<group>"; };
 		847CA1DD288104FD003CC661 /* CCEFinishedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEFinishedTest.swift; sourceTree = "<group>"; };
@@ -368,6 +380,12 @@
 			isa = PBXGroup;
 			children = (
 				849DF43D2985FBBE00EA3D1A /* Card.swift */,
+				846072B02987F98200348ED6 /* CardProtocol.swift */,
+				846072B22987F9AD00348ED6 /* CardDecoratorProtocol.swift */,
+				846072B42987F9CC00348ED6 /* CardPrimaryTitleLabel.swift */,
+				846072BA2987FA1E00348ED6 /* CardPrimaryTitleLabelWithImage.swift */,
+				846072B62987F9EB00348ED6 /* CardTaglineLabel.swift */,
+				846072B82987FA0300348ED6 /* CardActionableItem.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -955,16 +973,20 @@
 				84CC3F30287B098A005AFF0F /* CCEUsersData.swift in Sources */,
 				8436CBF3281F4621007668DC /* CCESectionCompoundCell.swift in Sources */,
 				847DDCAD287E5AB600A77199 /* TestResultVC+Ext.swift in Sources */,
+				846072B12987F98200348ED6 /* CardProtocol.swift in Sources */,
+				846072B72987F9EB00348ED6 /* CardTaglineLabel.swift in Sources */,
 				847DDCB3287E605100A77199 /* CCEChapter.swift in Sources */,
 				845B46E2287A8FD000AC58B0 /* LoginVC.swift in Sources */,
 				84A184F7281D96740074D5AB /* CCEScreenCollectiveSummary.swift in Sources */,
 				8402A91D2986C3B40053E476 /* HomeScrollView.swift in Sources */,
+				846072B32987F9AD00348ED6 /* CardDecoratorProtocol.swift in Sources */,
 				8429B31D28E8E124005ECE6E /* TestsPresenter.swift in Sources */,
 				84A184B0281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld in Sources */,
 				847DDCAF287E5FEF00A77199 /* CCEQuestion.swift in Sources */,
 				849DF43E2985FBBE00EA3D1A /* Card.swift in Sources */,
 				84B8DABF285FDD65008DDAFE /* String+Ext.swift in Sources */,
 				84A184E5281D8AB90074D5AB /* SettingsVC.swift in Sources */,
+				846072B92987FA0300348ED6 /* CardActionableItem.swift in Sources */,
 				847DDCA5287E55DF00A77199 /* TestsVC+Ext.swift in Sources */,
 				849539E7283BDABC00260E85 /* CCEButton.swift in Sources */,
 				847DDCA9287E574B00A77199 /* HomeVC+Ext.swift in Sources */,
@@ -977,6 +999,8 @@
 				8450BC33287F07C90079E016 /* FatalErrorUtil.swift in Sources */,
 				849DF42F2984B85F00EA3D1A /* HomeStickyHeading.swift in Sources */,
 				84A184E1281D8A330074D5AB /* BookVC.swift in Sources */,
+				846072BB2987FA1E00348ED6 /* CardPrimaryTitleLabelWithImage.swift in Sources */,
+				846072B52987F9CC00348ED6 /* CardPrimaryTitleLabel.swift in Sources */,
 				84A184F3281D95CD0074D5AB /* CCEScreenCollectiveProgressView.swift in Sources */,
 				84B8DABC285F9572008DDAFE /* CardCell.swift in Sources */,
 				8429B31A28E8D90E005ECE6E /* HomePresenter.swift in Sources */,
