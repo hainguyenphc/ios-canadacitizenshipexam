@@ -10,7 +10,15 @@ import FirebaseAuth
 
 protocol HomeVMDelegate {
 
+  /*
+   Loads practice progress from server.
+   */
   func loadPracticeProgress()
+
+  /*
+   Check if user is logged in.
+   */
+  func checkAuthorization()
 
 }
 

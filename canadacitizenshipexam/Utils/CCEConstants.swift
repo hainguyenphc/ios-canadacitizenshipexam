@@ -135,3 +135,5 @@ let BOUNDS = UIScreen.main.bounds
 let DEVICE_IDIOM = UIScreen.main.traitCollection.userInterfaceIdiom
 
 let LEFT_SPACE: CGFloat = 40
+
+let SCROLL_VIEW_LEFT_AND_RIGHT_SPACE: CGFloat = 10

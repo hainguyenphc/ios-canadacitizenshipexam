@@ -31,16 +31,29 @@ class HomeVC_: UIViewController, HomeVCDelegate {
   // The Home view model.
   let homeVM: HomeVM_ = HomeVM_()
 
+  var count = 0
+
   // MARK: - Sub-views
 
   // @todo: payment
   var unlockPremiumFeaturesView: UIView?
+
+  // This is the container housing both `completionCircularProgressView`
+  // and `completionPercentageLabel` views.
+  // It is used as an anchor to position the scroll view.
+  var completionPercentageView: UIView? = nil
 
   // This is initialized in `assembleTheViews()` later.
   var completionCircularProgressView: CircularProgressView? = nil
 
   // This is initialized in `assembleTheViews()` later.
   var completionPercentageLabel: UILabel? = nil
+
+  // The scroll view containing several cards.
+  var scrollView: UIScrollView! = UIScrollView()
+
+  var blockView: UIView!
+  var blockView2: UIView!
 
   // MARK: - Life-cyle methods
 
@@ -53,6 +66,7 @@ class HomeVC_: UIViewController, HomeVCDelegate {
     // Build the Unlock view first since other views depend on it.
     unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
     assembleTheViews()
+    setupScrollView()
 
     tabBarController?.tabBar.isHidden = false
     navigationItem.setHidesBackButton(true, animated: false)
@@ -61,6 +75,7 @@ class HomeVC_: UIViewController, HomeVCDelegate {
   }
 
   override func viewDidLoad() {
+    super.viewDidLoad()
     homeVM.checkAuthorization()
   }
 

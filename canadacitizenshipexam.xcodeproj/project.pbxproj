@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8402A91D2986C3B40053E476 /* HomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402A91C2986C3B40053E476 /* HomeScrollView.swift */; };
+		8402A9202986C4B60053E476 /* ScrollProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402A91F2986C4B60053E476 /* ScrollProtocol.swift */; };
+		8402A9222986CB350053E476 /* ActionableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402A9212986CB350053E476 /* ActionableLabel.swift */; };
 		8429B31A28E8D90E005ECE6E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B31928E8D90E005ECE6E /* HomePresenter.swift */; };
 		8429B31D28E8E124005ECE6E /* TestsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B31C28E8E124005ECE6E /* TestsPresenter.swift */; };
 		842F1B69287F610000AF45C9 /* 60EBFD59-74CC-439B-B25A-5CB90222FAA4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 842F1B6B287F610000AF45C9 /* 60EBFD59-74CC-439B-B25A-5CB90222FAA4.txt */; };
@@ -43,10 +46,11 @@
 		84979B6E287EF6DC002675A6 /* CCESectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B6D287EF6DC002675A6 /* CCESectionTests.swift */; };
 		849DF42B2984B77400EA3D1A /* HomeVC_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42A2984B77400EA3D1A /* HomeVC_.swift */; };
 		849DF42F2984B85F00EA3D1A /* HomeStickyHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42E2984B85F00EA3D1A /* HomeStickyHeading.swift */; };
-		849DF43529853FFF00EA3D1A /* StickyHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43429853FFF00EA3D1A /* StickyHeading.swift */; };
+		849DF43529853FFF00EA3D1A /* StickyHeadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */; };
 		849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF436298544BD00EA3D1A /* CircularProgressView.swift */; };
 		849DF4392985469400EA3D1A /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */; };
 		849DF43C2985CD0000EA3D1A /* HomeVM_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43B2985CD0000EA3D1A /* HomeVM_.swift */; };
+		849DF43E2985FBBE00EA3D1A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43D2985FBBE00EA3D1A /* Card.swift */; };
 		84A184A6281D72EC0074D5AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184A5281D72EC0074D5AB /* AppDelegate.swift */; };
 		84A184A8281D72EC0074D5AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184A7281D72EC0074D5AB /* SceneDelegate.swift */; };
 		84A184B0281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84A184AE281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld */; };
@@ -112,6 +116,9 @@
 		3596294FFD5F9E6221EF9178 /* Pods-canadacitizenshipexamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexamTests.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexamTests/Pods-canadacitizenshipexamTests.release.xcconfig"; sourceTree = "<group>"; };
 		464E207B50CBDE64EA5667FF /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		662D13FA3BD7D68C42651586 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8402A91C2986C3B40053E476 /* HomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollView.swift; sourceTree = "<group>"; };
+		8402A91F2986C4B60053E476 /* ScrollProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollProtocol.swift; sourceTree = "<group>"; };
+		8402A9212986CB350053E476 /* ActionableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionableLabel.swift; sourceTree = "<group>"; };
 		840998D732D835275330E792 /* Pods_canadacitizenshipexamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8429B31928E8D90E005ECE6E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8429B31C28E8E124005ECE6E /* TestsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsPresenter.swift; sourceTree = "<group>"; };
@@ -151,10 +158,11 @@
 		84979B6D287EF6DC002675A6 /* CCESectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionTests.swift; sourceTree = "<group>"; };
 		849DF42A2984B77400EA3D1A /* HomeVC_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC_.swift; sourceTree = "<group>"; };
 		849DF42E2984B85F00EA3D1A /* HomeStickyHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStickyHeading.swift; sourceTree = "<group>"; };
-		849DF43429853FFF00EA3D1A /* StickyHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeading.swift; sourceTree = "<group>"; };
+		849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeadingProtocol.swift; sourceTree = "<group>"; };
 		849DF436298544BD00EA3D1A /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
 		849DF43B2985CD0000EA3D1A /* HomeVM_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM_.swift; sourceTree = "<group>"; };
+		849DF43D2985FBBE00EA3D1A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		84A184A2281D72EC0074D5AB /* canadacitizenshipexam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = canadacitizenshipexam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A184A5281D72EC0074D5AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84A184A7281D72EC0074D5AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,6 +236,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8402A91E2986C4A10053E476 /* Scroll */ = {
+			isa = PBXGroup;
+			children = (
+				8402A91F2986C4B60053E476 /* ScrollProtocol.swift */,
+			);
+			path = Scroll;
+			sourceTree = "<group>";
+		};
 		8429B31828E8D8F8005ECE6E /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,6 +393,7 @@
 		849DF42D2984B7BB00EA3D1A /* ScrollViewArea */ = {
 			isa = PBXGroup;
 			children = (
+				8402A91C2986C3B40053E476 /* HomeScrollView.swift */,
 			);
 			path = ScrollViewArea;
 			sourceTree = "<group>";
@@ -410,7 +427,7 @@
 		849DF43329853FE700EA3D1A /* StickyHeading */ = {
 			isa = PBXGroup;
 			children = (
-				849DF43429853FFF00EA3D1A /* StickyHeading.swift */,
+				849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */,
 			);
 			path = StickyHeading;
 			sourceTree = "<group>";
@@ -519,6 +536,7 @@
 		84A184E8281D8D4C0074D5AB /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				8402A91E2986C4A10053E476 /* Scroll */,
 				849DF43329853FE700EA3D1A /* StickyHeading */,
 				8436CBEF281F11FB007668DC /* Cells */,
 				84A184EC281D94670074D5AB /* Views */,
@@ -536,6 +554,7 @@
 				84A184F0281D95930074D5AB /* CCELevelTwoTitleLabel.swift */,
 				84A184F8281D98930074D5AB /* CCEBodyLabel.swift */,
 				84A184FA281DDEA50074D5AB /* CCECircularProgressLabel.swift */,
+				8402A9212986CB350053E476 /* ActionableLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -553,6 +572,7 @@
 				84B8DABB285F9572008DDAFE /* CardCell.xib */,
 				846CF9E728809BB900E2A96F /* CCEProgressBar.swift */,
 				849DF436298544BD00EA3D1A /* CircularProgressView.swift */,
+				849DF43D2985FBBE00EA3D1A /* Card.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -903,6 +923,7 @@
 				84A184FD281DF1630074D5AB /* CCESectionView.swift in Sources */,
 				84A184A6281D72EC0074D5AB /* AppDelegate.swift in Sources */,
 				84B8DAB5285F6C6B008DDAFE /* Int+Ext.swift in Sources */,
+				8402A9202986C4B60053E476 /* ScrollProtocol.swift in Sources */,
 				84A184E3281D8A820074D5AB /* ProgressVC.swift in Sources */,
 				84A184F1281D95930074D5AB /* CCELevelTwoTitleLabel.swift in Sources */,
 				84A184DB281D84B70074D5AB /* HomeVC.swift in Sources */,
@@ -912,7 +933,7 @@
 				84A184DD281D87CD0074D5AB /* TestsVC.swift in Sources */,
 				84A184F9281D98930074D5AB /* CCEBodyLabel.swift in Sources */,
 				846CF9E828809BB900E2A96F /* CCEProgressBar.swift in Sources */,
-				849DF43529853FFF00EA3D1A /* StickyHeading.swift in Sources */,
+				849DF43529853FFF00EA3D1A /* StickyHeadingProtocol.swift in Sources */,
 				847DDCA7287E570B00A77199 /* BookVC+Ext.swift in Sources */,
 				845BF3DD286E9562003952CF /* CCESeeder.swift in Sources */,
 				845BF3DF286E9783003952CF /* ChapterVC.swift in Sources */,
@@ -929,15 +950,18 @@
 				847DDCB3287E605100A77199 /* CCEChapter.swift in Sources */,
 				845B46E2287A8FD000AC58B0 /* LoginVC.swift in Sources */,
 				84A184F7281D96740074D5AB /* CCEScreenCollectiveSummary.swift in Sources */,
+				8402A91D2986C3B40053E476 /* HomeScrollView.swift in Sources */,
 				8429B31D28E8E124005ECE6E /* TestsPresenter.swift in Sources */,
 				84A184B0281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld in Sources */,
 				847DDCAF287E5FEF00A77199 /* CCEQuestion.swift in Sources */,
+				849DF43E2985FBBE00EA3D1A /* Card.swift in Sources */,
 				84B8DABF285FDD65008DDAFE /* String+Ext.swift in Sources */,
 				84A184E5281D8AB90074D5AB /* SettingsVC.swift in Sources */,
 				847DDCA5287E55DF00A77199 /* TestsVC+Ext.swift in Sources */,
 				849539E7283BDABC00260E85 /* CCEButton.swift in Sources */,
 				847DDCA9287E574B00A77199 /* HomeVC+Ext.swift in Sources */,
 				8436CBF5281F465D007668DC /* CCECompoundSection.swift in Sources */,
+				8402A9222986CB350053E476 /* ActionableLabel.swift in Sources */,
 				84A184EF281D94ED0074D5AB /* CCEHeadingView.swift in Sources */,
 				84A184DF281D88D10074D5AB /* CCEConstants.swift in Sources */,
 				84502C94286AA0A000E86367 /* CCEDatePickerVC.swift in Sources */,

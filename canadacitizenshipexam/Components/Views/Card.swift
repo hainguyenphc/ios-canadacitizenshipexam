@@ -1,9 +1,9 @@
-  //
-  //  Card.swift
-  //  canadacitizenshipexam
-  //
-  //  Created by hainguyen on 2023-01-28.
-  //
+//
+//  Card.swift
+//  canadacitizenshipexam
+//
+//  Created by hainguyen on 2023-01-28.
+//
 
 import UIKit
 
@@ -13,9 +13,10 @@ protocol CardProtocol {
 
   var theHeight: CGFloat? {get set}
 
-  // func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol?
+  func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol?
 
   func getHeight() -> CGFloat
+
 }
 
 class Card: UIViewController, CardProtocol {
@@ -33,8 +34,21 @@ class Card: UIViewController, CardProtocol {
     fatalError("init(coder:) has not been implemented")
   }
 
+  func build(scrollView: UIScrollView, previous: UIView? = nil) -> CardProtocol? {
+    view.overrideUserInterfaceStyle = .light
+    view.backgroundColor = .secondarySystemBackground
+    view.translatesAutoresizingMaskIntoConstraints = false
+    view.layer.cornerRadius = 20
+    view.layer.shadowColor = UIColor.lightGray.cgColor
+    view.layer.shadowOpacity = 0.4
+    view.layer.shadowOffset = .zero
+    view.layer.shadowRadius = 10
+    scrollView.addSubview(view)
+    return self
+  }
+
   func getHeight() -> CGFloat {
-    return 0
+    return self.theHeight!
   }
 
 }
@@ -43,13 +57,11 @@ protocol CardDecoratoProtocol: UIView, CardProtocol {
 
   var card: CardProtocol? {get set}
 
-  // func getHeight() -> CGFloat
-
 }
 
 class CardPrimaryTitleLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
-  var theHeight: CGFloat? = 31
+  var theHeight: CGFloat? = 55
 
   var theView: UIView?
 
@@ -70,6 +82,18 @@ class CardPrimaryTitleLabel: ScreenTitleLabel, CardDecoratoProtocol {
     fatalError("init(coder:) has not been implemented")
   }
 
+  func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol? {
+    let result = self.card?.build(scrollView: scrollView, previous: nil)
+    let blockView: UIView = (self.card!).theView!
+    blockView.addSubview(self)
+    NSLayoutConstraint.activate([
+      self.topAnchor.constraint(equalTo: blockView.topAnchor, constant: 15),
+      self.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 15),
+    ])
+
+    return result
+  }
+
   func getHeight() -> CGFloat {
     return self.theHeight!
   }
@@ -78,7 +102,7 @@ class CardPrimaryTitleLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
 class CardTaglineLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
-  var theHeight: CGFloat? = 21
+  var theHeight: CGFloat? = 45
 
   var theView: UIView?
 
@@ -99,6 +123,18 @@ class CardTaglineLabel: ScreenTitleLabel, CardDecoratoProtocol {
     fatalError("init(coder:) has not been implemented")
   }
 
+  func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol? {
+    let result = self.card?.build(scrollView: scrollView, previous: nil)
+    let blockView: UIView = (self.card!).theView!
+    blockView.addSubview(self)
+    NSLayoutConstraint.activate([
+      self.topAnchor.constraint(equalTo: blockView.bottomAnchor, constant: 10),
+      self.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 0),
+    ])
+
+    return result
+  }
+
   func getHeight() -> CGFloat {
     return self.theHeight!
   }
@@ -107,7 +143,7 @@ class CardTaglineLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
 class CardActionableItem: ActionableLabel, CardDecoratoProtocol {
 
-  var theHeight: CGFloat? = 11
+  var theHeight: CGFloat? = 34.5
 
   var theView: UIView?
 
@@ -124,33 +160,20 @@ class CardActionableItem: ActionableLabel, CardDecoratoProtocol {
     fatalError("init(coder:) has not been implemented")
   }
 
+  func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol? {
+    let result = self.card?.build(scrollView: scrollView, previous: nil)
+    let blockView: UIView = (self.card!).theView!
+    blockView.addSubview(self)
+    NSLayoutConstraint.activate([
+      self.topAnchor.constraint(equalTo: blockView.bottomAnchor, constant: 15),
+      self.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 0),
+    ])
+
+    return result
+  }
+
   func getHeight() -> CGFloat {
     return self.theHeight!
   }
 
 }
-
-//
-
-
-var card3: CardProtocol = Card()
-card3 = CardPrimaryTitleLabel(card: card3) //31
-card3 = CardTaglineLabel(card: card3) //21
-card3 = CardTaglineLabel(card: card3) //21
-print("Line 132: \((card3 as! CardDecoratoProtocol).getHeight())")
-card3 = CardActionableItem(card: card3, text: "Hello World", imageName: "clock") //11
-print("Line 134: \((card3 as! CardDecoratoProtocol).getHeight())")
-card3 = CardActionableItem(card: card3, text: "Heal the World", imageName: "calendar") //11
-print("Line 136: \((card3 as! CardDecoratoProtocol).getHeight())")
-card3 = CardActionableItem(card: card3, text: "Heal the World", imageName: "calendar") //11
-print("Line 136: \((card3 as! CardDecoratoProtocol).getHeight())")
-card3 = CardPrimaryTitleLabel(card: card3) //31
-print("Line 136: \((card3 as! CardDecoratoProtocol).getHeight())")
-
-// var card3: CardProtocol = Card()
-// card3 = CardPrimaryTitleLabel(card: card3) //31
-// print("Line 136: \((card3 as! CardDecoratoProtocol).getHeight())")
-// card3 = CardTaglineLabel(card: card3) //21
-// print("Line 136: \((card3 as! CardDecoratoProtocol).getHeight())")
-// card3 = CardPrimaryTitleLabel(card: card3) // 31
-// print("Line 136: \((card3 as! CardDecoratoProtocol).getHeight())")
