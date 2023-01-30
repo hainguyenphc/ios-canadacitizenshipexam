@@ -36,6 +36,7 @@
 		846072BB2987FA1E00348ED6 /* CardPrimaryTitleLabelWithImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846072BA2987FA1E00348ED6 /* CardPrimaryTitleLabelWithImage.swift */; };
 		8462AF7728D7440000E4A759 /* DimensionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8462AF7628D7440000E4A759 /* DimensionManager.swift */; };
 		846A77E4298854DD00FE7EA3 /* CardTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A77E3298854DD00FE7EA3 /* CardTextView.swift */; };
+		846A77E629885FB500FE7EA3 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A77E529885FB500FE7EA3 /* UIDevice+Ext.swift */; };
 		846CF9E828809BB900E2A96F /* CCEProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CF9E728809BB900E2A96F /* CCEProgressBar.swift */; };
 		847CA1DE288104FD003CC661 /* CCEFinishedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CA1DD288104FD003CC661 /* CCEFinishedTest.swift */; };
 		847CA1E0288108CA003CC661 /* ScoreStatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CA1DF288108CA003CC661 /* ScoreStatsManager.swift */; };
@@ -155,6 +156,7 @@
 		846072BA2987FA1E00348ED6 /* CardPrimaryTitleLabelWithImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardPrimaryTitleLabelWithImage.swift; sourceTree = "<group>"; };
 		8462AF7628D7440000E4A759 /* DimensionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionManager.swift; sourceTree = "<group>"; };
 		846A77E3298854DD00FE7EA3 /* CardTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTextView.swift; sourceTree = "<group>"; };
+		846A77E529885FB500FE7EA3 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
 		846CF9E728809BB900E2A96F /* CCEProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEProgressBar.swift; sourceTree = "<group>"; };
 		847CA1DD288104FD003CC661 /* CCEFinishedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEFinishedTest.swift; sourceTree = "<group>"; };
 		847CA1DF288108CA003CC661 /* ScoreStatsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStatsManager.swift; sourceTree = "<group>"; };
@@ -558,6 +560,7 @@
 				847DDCA8287E574B00A77199 /* HomeVC+Ext.swift */,
 				847DDCAC287E5AB600A77199 /* TestResultVC+Ext.swift */,
 				8450BC32287F07C90079E016 /* FatalErrorUtil.swift */,
+				846A77E529885FB500FE7EA3 /* UIDevice+Ext.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -991,6 +994,7 @@
 				84B8DABF285FDD65008DDAFE /* String+Ext.swift in Sources */,
 				84A184E5281D8AB90074D5AB /* SettingsVC.swift in Sources */,
 				846072B92987FA0300348ED6 /* CardActionableItem.swift in Sources */,
+				846A77E629885FB500FE7EA3 /* UIDevice+Ext.swift in Sources */,
 				847DDCA5287E55DF00A77199 /* TestsVC+Ext.swift in Sources */,
 				849539E7283BDABC00260E85 /* CCEButton.swift in Sources */,
 				847DDCA9287E574B00A77199 /* HomeVC+Ext.swift in Sources */,
