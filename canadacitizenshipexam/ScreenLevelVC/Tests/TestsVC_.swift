@@ -15,6 +15,12 @@ class TestsVC_: UIViewController, TestsVCDelegate {
 
   var unlockPremiumFeaturesView: UIView?
 
+  var completionPercentageView: UIView? = nil
+
+  var completionCircularProgressView: CircularProgressView? = nil
+
+  var completionPercentageLabel: UILabel? = nil
+
   // The scroll view containing several cards.
   var scrollView: UIScrollView! = UIScrollView()
 
@@ -29,6 +35,7 @@ class TestsVC_: UIViewController, TestsVCDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.view.backgroundColor = UIColor(red: 220, green: 220, blue: 220, alpha: 1.0)
   }
 
 
