@@ -18,6 +18,16 @@ extension TestsVC_: ScrollProtocol {
     scrollView.isScrollEnabled = true
     view.addSubview(scrollView)
 
+    if unlockPremiumFeaturesView != nil {
+      NSLayoutConstraint.activate([
+        scrollView.topAnchor.constraint(equalTo: (unlockPremiumFeaturesView! as UIView).bottomAnchor, constant: 10)
+      ])
+    } else {
+      NSLayoutConstraint.activate([
+        scrollView.topAnchor.constraint(equalTo: (view.safeAreaLayoutGuide).topAnchor, constant: 20)
+      ])
+    }
+
     NSLayoutConstraint.activate([
       scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: SCROLL_VIEW_LEFT_AND_RIGHT_SPACE),
       scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -SCROLL_VIEW_LEFT_AND_RIGHT_SPACE),
