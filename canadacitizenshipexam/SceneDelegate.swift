@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
 
   func createTestsNC() -> UINavigationController {
-    let navController         = UINavigationController(rootViewController: TestsVC())
+    let navController         = UINavigationController(rootViewController: TestsVC_())
     navController.title       = "Practice Tests"
     navController.tabBarItem  = UITabBarItem(
       title: "Tests", image: UIImage(systemName: SFSymbols.tests), tag: 1
