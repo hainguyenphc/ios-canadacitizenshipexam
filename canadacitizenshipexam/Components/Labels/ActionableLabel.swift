@@ -19,12 +19,19 @@ class ActionableLabel: UILabel {
     imageName: String
   ) {
     super.init(frame: .zero)
-    let attachment = NSTextAttachment()
-    attachment.image = UIImage(systemName: imageName)?.withTintColor(APP_ACCENT_COLOR)
-    let imageString = NSMutableAttributedString(attachment: attachment)
+
     let textString = NSAttributedString(string: " \(text)")
-    imageString.append(textString)
-    self.attributedText = imageString
+
+    if !(imageName.isEmpty) {
+      let attachment = NSTextAttachment()
+      attachment.image = UIImage(systemName: imageName)?.withTintColor(APP_ACCENT_COLOR)
+      let imageString = NSMutableAttributedString(attachment: attachment)
+      imageString.append(textString)
+      self.attributedText = imageString
+    } else {
+      self.attributedText = textString
+    }
+
     self.configureUI()
   }
 
