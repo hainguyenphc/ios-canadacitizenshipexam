@@ -72,7 +72,8 @@ extension HomeVC_ {
      The order is important; We must build the background view first or it overlaps the others.
      */
 
-    let backgroundView = UIBuildingManager.shared.buildTheBackgroundView()
+    let multiplier = DEVICE_IDIOM == .pad ? 0.33 : 0.50
+    let backgroundView = UIBuildingManager.shared.buildTheBackgroundView(multiplier: multiplier)
     let titleLabel = UIBuildingManager.shared.buildTheTitleLabel(title: "Discover Canad")
     let taglineLabel = UIBuildingManager.shared.buildTheTaglineLabel(tagline: "Canada Citizenship Test 2023")
     let imageView = UIBuildingManager.shared.buildTheImageNextToTitleLabel(systemName: "square.and.arrow.up")
