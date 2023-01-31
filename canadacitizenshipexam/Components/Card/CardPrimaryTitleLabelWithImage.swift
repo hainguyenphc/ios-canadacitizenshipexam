@@ -23,14 +23,19 @@ class CardPrimaryTitleLabelWithImage: UIStackView, CardDecoratoProtocol {
 
   var hasPrecedentSibling: Bool!
 
-  init(card: CardProtocol, text: String, imageName: String, hasPrecedentSibling: Bool = false) {
+  init(card: CardProtocol,
+       text: String,
+       imageName: String,
+       hasPrecedentSibling: Bool = false,
+       tintColor: UIColor = APP_ACCENT_COLOR
+  ) {
     super.init(frame: .zero)
     self.configureUI()
 
     self.imageName = imageName
     self.imageView = UIImageView(image: UIImage(systemName: imageName))
     self.imageView!.translatesAutoresizingMaskIntoConstraints = false
-    self.imageView?.tintColor = APP_ACCENT_COLOR
+    self.imageView?.tintColor = tintColor
 
     self.text = text
     self.titleLabel = ScreenTitleLabel(
