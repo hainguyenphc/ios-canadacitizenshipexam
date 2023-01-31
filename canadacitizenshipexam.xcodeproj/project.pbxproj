@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8402A91D2986C3B40053E476 /* HomeScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402A91C2986C3B40053E476 /* HomeScrollView.swift */; };
+		8402A91D2986C3B40053E476 /* Home+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402A91C2986C3B40053E476 /* Home+ScrollView.swift */; };
 		8402A9202986C4B60053E476 /* ScrollProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402A91F2986C4B60053E476 /* ScrollProtocol.swift */; };
 		8402A9222986CB350053E476 /* ActionableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402A9212986CB350053E476 /* ActionableLabel.swift */; };
+		84267ACF29893B3600DA8157 /* TestsVC_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84267ACE29893B3600DA8157 /* TestsVC_.swift */; };
+		84267AD329893C9D00DA8157 /* Tests+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84267AD229893C9D00DA8157 /* Tests+ScrollView.swift */; };
+		84267AD729893F0400DA8157 /* Tests+Heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84267AD629893F0400DA8157 /* Tests+Heading.swift */; };
+		84267ADA298947EF00DA8157 /* UIBuildingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84267AD9298947EF00DA8157 /* UIBuildingManager.swift */; };
+		84267ADE2989694000DA8157 /* Home+Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84267ADD2989694000DA8157 /* Home+Cards.swift */; };
+		84267AE129896AAC00DA8157 /* Tests+Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84267AE029896AAC00DA8157 /* Tests+Cards.swift */; };
 		8429B31A28E8D90E005ECE6E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B31928E8D90E005ECE6E /* HomePresenter.swift */; };
 		8429B31D28E8E124005ECE6E /* TestsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B31C28E8E124005ECE6E /* TestsPresenter.swift */; };
 		842F1B69287F610000AF45C9 /* 60EBFD59-74CC-439B-B25A-5CB90222FAA4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 842F1B6B287F610000AF45C9 /* 60EBFD59-74CC-439B-B25A-5CB90222FAA4.txt */; };
@@ -53,7 +59,7 @@
 		849539EC283BE3EC00260E85 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539EB283BE3EC00260E85 /* NetworkManager.swift */; };
 		84979B6E287EF6DC002675A6 /* CCESectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B6D287EF6DC002675A6 /* CCESectionTests.swift */; };
 		849DF42B2984B77400EA3D1A /* HomeVC_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42A2984B77400EA3D1A /* HomeVC_.swift */; };
-		849DF42F2984B85F00EA3D1A /* HomeStickyHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42E2984B85F00EA3D1A /* HomeStickyHeading.swift */; };
+		849DF42F2984B85F00EA3D1A /* Home+StickyHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42E2984B85F00EA3D1A /* Home+StickyHeading.swift */; };
 		849DF43529853FFF00EA3D1A /* StickyHeadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */; };
 		849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF436298544BD00EA3D1A /* CircularProgressView.swift */; };
 		849DF4392985469400EA3D1A /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */; };
@@ -124,10 +130,16 @@
 		3596294FFD5F9E6221EF9178 /* Pods-canadacitizenshipexamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexamTests.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexamTests/Pods-canadacitizenshipexamTests.release.xcconfig"; sourceTree = "<group>"; };
 		464E207B50CBDE64EA5667FF /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		662D13FA3BD7D68C42651586 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig"; sourceTree = "<group>"; };
-		8402A91C2986C3B40053E476 /* HomeScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScrollView.swift; sourceTree = "<group>"; };
+		8402A91C2986C3B40053E476 /* Home+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+ScrollView.swift"; sourceTree = "<group>"; };
 		8402A91F2986C4B60053E476 /* ScrollProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollProtocol.swift; sourceTree = "<group>"; };
 		8402A9212986CB350053E476 /* ActionableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionableLabel.swift; sourceTree = "<group>"; };
 		840998D732D835275330E792 /* Pods_canadacitizenshipexamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84267ACE29893B3600DA8157 /* TestsVC_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsVC_.swift; sourceTree = "<group>"; };
+		84267AD229893C9D00DA8157 /* Tests+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tests+ScrollView.swift"; sourceTree = "<group>"; };
+		84267AD629893F0400DA8157 /* Tests+Heading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tests+Heading.swift"; sourceTree = "<group>"; };
+		84267AD9298947EF00DA8157 /* UIBuildingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBuildingManager.swift; sourceTree = "<group>"; };
+		84267ADD2989694000DA8157 /* Home+Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+Cards.swift"; sourceTree = "<group>"; };
+		84267AE029896AAC00DA8157 /* Tests+Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tests+Cards.swift"; sourceTree = "<group>"; };
 		8429B31928E8D90E005ECE6E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8429B31C28E8E124005ECE6E /* TestsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsPresenter.swift; sourceTree = "<group>"; };
 		842F1B6A287F610000AF45C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text; name = Base; path = "Base.lproj/60EBFD59-74CC-439B-B25A-5CB90222FAA4.txt"; sourceTree = "<group>"; };
@@ -173,7 +185,7 @@
 		849539EB283BE3EC00260E85 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		84979B6D287EF6DC002675A6 /* CCESectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionTests.swift; sourceTree = "<group>"; };
 		849DF42A2984B77400EA3D1A /* HomeVC_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC_.swift; sourceTree = "<group>"; };
-		849DF42E2984B85F00EA3D1A /* HomeStickyHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStickyHeading.swift; sourceTree = "<group>"; };
+		849DF42E2984B85F00EA3D1A /* Home+StickyHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+StickyHeading.swift"; sourceTree = "<group>"; };
 		849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeadingProtocol.swift; sourceTree = "<group>"; };
 		849DF436298544BD00EA3D1A /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
@@ -260,6 +272,74 @@
 			path = Scroll;
 			sourceTree = "<group>";
 		};
+		84267ACD29893B1400DA8157 /* _legacy */ = {
+			isa = PBXGroup;
+			children = (
+				84A184DC281D87CD0074D5AB /* TestsVC.swift */,
+			);
+			path = _legacy;
+			sourceTree = "<group>";
+		};
+		84267AD029893C6E00DA8157 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				84267ADF29896A9F00DA8157 /* Cards */,
+				84267AD529893EEA00DA8157 /* HeadingArea */,
+				84267AD429893ECC00DA8157 /* ScrollViewArea */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		84267AD129893C7600DA8157 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Logic;
+			sourceTree = "<group>";
+		};
+		84267AD429893ECC00DA8157 /* ScrollViewArea */ = {
+			isa = PBXGroup;
+			children = (
+				84267AD229893C9D00DA8157 /* Tests+ScrollView.swift */,
+			);
+			path = ScrollViewArea;
+			sourceTree = "<group>";
+		};
+		84267AD529893EEA00DA8157 /* HeadingArea */ = {
+			isa = PBXGroup;
+			children = (
+				84267AD629893F0400DA8157 /* Tests+Heading.swift */,
+			);
+			path = HeadingArea;
+			sourceTree = "<group>";
+		};
+		84267AD82989478800DA8157 /* _legacy */ = {
+			isa = PBXGroup;
+			children = (
+				847DDCA4287E55DF00A77199 /* TestsVC+Ext.swift */,
+				847DDCA6287E570B00A77199 /* BookVC+Ext.swift */,
+				847DDCA8287E574B00A77199 /* HomeVC+Ext.swift */,
+				847DDCAC287E5AB600A77199 /* TestResultVC+Ext.swift */,
+			);
+			path = _legacy;
+			sourceTree = "<group>";
+		};
+		84267ADC2989691C00DA8157 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				84267ADD2989694000DA8157 /* Home+Cards.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		84267ADF29896A9F00DA8157 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				84267AE029896AAC00DA8157 /* Tests+Cards.swift */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
 		8429B31828E8D8F8005ECE6E /* Home */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,8 +354,11 @@
 		8429B31B28E8E09B005ECE6E /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				84A184DC281D87CD0074D5AB /* TestsVC.swift */,
+				84267ACD29893B1400DA8157 /* _legacy */,
+				84267AD129893C7600DA8157 /* Logic */,
+				84267AD029893C6E00DA8157 /* UI */,
 				8429B31C28E8E124005ECE6E /* TestsPresenter.swift */,
+				84267ACE29893B3600DA8157 /* TestsVC_.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -401,6 +484,7 @@
 				849539EB283BE3EC00260E85 /* NetworkManager.swift */,
 				847CA1DF288108CA003CC661 /* ScoreStatsManager.swift */,
 				8462AF7628D7440000E4A759 /* DimensionManager.swift */,
+				84267AD9298947EF00DA8157 /* UIBuildingManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -416,7 +500,7 @@
 		849DF42C2984B79E00EA3D1A /* StickyHeadingArea */ = {
 			isa = PBXGroup;
 			children = (
-				849DF42E2984B85F00EA3D1A /* HomeStickyHeading.swift */,
+				849DF42E2984B85F00EA3D1A /* Home+StickyHeading.swift */,
 			);
 			path = StickyHeadingArea;
 			sourceTree = "<group>";
@@ -424,7 +508,7 @@
 		849DF42D2984B7BB00EA3D1A /* ScrollViewArea */ = {
 			isa = PBXGroup;
 			children = (
-				8402A91C2986C3B40053E476 /* HomeScrollView.swift */,
+				8402A91C2986C3B40053E476 /* Home+ScrollView.swift */,
 			);
 			path = ScrollViewArea;
 			sourceTree = "<group>";
@@ -432,6 +516,7 @@
 		849DF43029853AD300EA3D1A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				84267ADC2989691C00DA8157 /* Cards */,
 				849DF42D2984B7BB00EA3D1A /* ScrollViewArea */,
 				849DF42C2984B79E00EA3D1A /* StickyHeadingArea */,
 			);
@@ -550,15 +635,12 @@
 		84A184E7281D8BA20074D5AB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				84267AD82989478800DA8157 /* _legacy */,
 				84A184DE281D88D10074D5AB /* CCEConstants.swift */,
 				845BF3DC286E9562003952CF /* CCESeeder.swift */,
 				8436CBED281F00B8007668DC /* UIView+Ext.swift */,
 				84B8DAB4285F6C6B008DDAFE /* Int+Ext.swift */,
 				84B8DABE285FDD65008DDAFE /* String+Ext.swift */,
-				847DDCA4287E55DF00A77199 /* TestsVC+Ext.swift */,
-				847DDCA6287E570B00A77199 /* BookVC+Ext.swift */,
-				847DDCA8287E574B00A77199 /* HomeVC+Ext.swift */,
-				847DDCAC287E5AB600A77199 /* TestResultVC+Ext.swift */,
 				8450BC32287F07C90079E016 /* FatalErrorUtil.swift */,
 				846A77E529885FB500FE7EA3 /* UIDevice+Ext.swift */,
 			);
@@ -958,7 +1040,9 @@
 				8402A9202986C4B60053E476 /* ScrollProtocol.swift in Sources */,
 				84A184E3281D8A820074D5AB /* ProgressVC.swift in Sources */,
 				84A184F1281D95930074D5AB /* CCELevelTwoTitleLabel.swift in Sources */,
+				84267ACF29893B3600DA8157 /* TestsVC_.swift in Sources */,
 				84A184DB281D84B70074D5AB /* HomeVC.swift in Sources */,
+				84267AD729893F0400DA8157 /* Tests+Heading.swift in Sources */,
 				849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */,
 				84A184F5281D96120074D5AB /* CCEScreenCollectiveMetricsView.swift in Sources */,
 				849539E5283BCD4F00260E85 /* TestVC.swift in Sources */,
@@ -972,6 +1056,7 @@
 				845BF3DF286E9783003952CF /* ChapterVC.swift in Sources */,
 				849DF4392985469400EA3D1A /* ScreenTitleLabel.swift in Sources */,
 				845B46E0287A7B0500AC58B0 /* RegisterVC.swift in Sources */,
+				84267AE129896AAC00DA8157 /* Tests+Cards.swift in Sources */,
 				84A184A8281D72EC0074D5AB /* SceneDelegate.swift in Sources */,
 				84C05BA128D7588F00FF86CB /* CCEProgressReport.swift in Sources */,
 				84A184EB281D8DB40074D5AB /* CCELevelOneTitleLabel.swift in Sources */,
@@ -985,7 +1070,7 @@
 				847DDCB3287E605100A77199 /* CCEChapter.swift in Sources */,
 				845B46E2287A8FD000AC58B0 /* LoginVC.swift in Sources */,
 				84A184F7281D96740074D5AB /* CCEScreenCollectiveSummary.swift in Sources */,
-				8402A91D2986C3B40053E476 /* HomeScrollView.swift in Sources */,
+				8402A91D2986C3B40053E476 /* Home+ScrollView.swift in Sources */,
 				846072B32987F9AD00348ED6 /* CardDecoratorProtocol.swift in Sources */,
 				8429B31D28E8E124005ECE6E /* TestsPresenter.swift in Sources */,
 				84A184B0281D72EC0074D5AB /* canadacitizenshipexam.xcdatamodeld in Sources */,
@@ -994,6 +1079,7 @@
 				84B8DABF285FDD65008DDAFE /* String+Ext.swift in Sources */,
 				84A184E5281D8AB90074D5AB /* SettingsVC.swift in Sources */,
 				846072B92987FA0300348ED6 /* CardActionableItem.swift in Sources */,
+				84267ADA298947EF00DA8157 /* UIBuildingManager.swift in Sources */,
 				846A77E629885FB500FE7EA3 /* UIDevice+Ext.swift in Sources */,
 				847DDCA5287E55DF00A77199 /* TestsVC+Ext.swift in Sources */,
 				849539E7283BDABC00260E85 /* CCEButton.swift in Sources */,
@@ -1005,11 +1091,12 @@
 				84502C94286AA0A000E86367 /* CCEDatePickerVC.swift in Sources */,
 				849DF42B2984B77400EA3D1A /* HomeVC_.swift in Sources */,
 				8450BC33287F07C90079E016 /* FatalErrorUtil.swift in Sources */,
-				849DF42F2984B85F00EA3D1A /* HomeStickyHeading.swift in Sources */,
+				849DF42F2984B85F00EA3D1A /* Home+StickyHeading.swift in Sources */,
 				84A184E1281D8A330074D5AB /* BookVC.swift in Sources */,
 				846072BB2987FA1E00348ED6 /* CardPrimaryTitleLabelWithImage.swift in Sources */,
 				846072B52987F9CC00348ED6 /* CardPrimaryTitleLabel.swift in Sources */,
 				84A184F3281D95CD0074D5AB /* CCEScreenCollectiveProgressView.swift in Sources */,
+				84267AD329893C9D00DA8157 /* Tests+ScrollView.swift in Sources */,
 				84B8DABC285F9572008DDAFE /* CardCell.swift in Sources */,
 				8429B31A28E8D90E005ECE6E /* HomePresenter.swift in Sources */,
 				84C05B9F28D74A7900FF86CB /* CCEBaseUIViewController.swift in Sources */,
@@ -1017,6 +1104,7 @@
 				847CA1E0288108CA003CC661 /* ScoreStatsManager.swift in Sources */,
 				849539E9283BE15E00260E85 /* CCETest.swift in Sources */,
 				847CA1DE288104FD003CC661 /* CCEFinishedTest.swift in Sources */,
+				84267ADE2989694000DA8157 /* Home+Cards.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

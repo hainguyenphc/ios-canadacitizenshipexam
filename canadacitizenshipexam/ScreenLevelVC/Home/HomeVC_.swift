@@ -22,7 +22,7 @@ protocol HomeVCDelegate {
 
 class HomeVC_: UIViewController, HomeVCDelegate {
 
-  // MARK: - View Model
+  // MARK: - View Model & Logic variables
 
   /*
    Logic attributes.
@@ -32,6 +32,8 @@ class HomeVC_: UIViewController, HomeVCDelegate {
   let homeVM: HomeVM_ = HomeVM_()
 
   var count = 0
+
+  var distanceToTop: CGFloat = 0
 
   // MARK: - Sub-views
 
@@ -52,9 +54,6 @@ class HomeVC_: UIViewController, HomeVCDelegate {
   // The scroll view containing several cards.
   var scrollView: UIScrollView! = UIScrollView()
 
-  // var blockView: UIView!
-  // var blockView2: UIView!
-
   // MARK: - Life-cyle methods
 
   override func viewWillAppear(_ animated: Bool) {
@@ -65,8 +64,14 @@ class HomeVC_: UIViewController, HomeVCDelegate {
 
     // Build the Unlock view first since other views depend on it.
     unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
-    assembleTheViews()
+    // For the Home view, the heading view is sticky, so we build it first.
+    buildTheHeadingView()
+    // Next, we set up the scroll view.
     setupScrollView()
+    // Next, we construct the cards.
+    buildTheCards()
+    // Finally, establish the scroll view height.
+    specifyScrollViewHeight()
 
     tabBarController?.tabBar.isHidden = false
     navigationItem.setHidesBackButton(true, animated: false)
@@ -87,11 +92,11 @@ class HomeVC_: UIViewController, HomeVCDelegate {
 extension HomeVC_ {
 
   func handleSuccessLoadingUsersDataFromNetworkCall(usersData: CCEUsersData) {
-      // @todo
+    // @todo
   }
 
   func handleErrorLoadingUsersDataFromNetworkCall(error: CCEFailure) {
-      // @todo
+    // @todo
   }
 
 }

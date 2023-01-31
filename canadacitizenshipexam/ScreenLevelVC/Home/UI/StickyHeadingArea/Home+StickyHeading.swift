@@ -66,7 +66,7 @@ extension HomeVC_ {
     return unlockPremiumFeaturesView
   }
 
-  func assembleTheViews() -> Void {
+  func buildTheHeadingView() -> Void {
     /*
      Initialize all the views.
      The order is important; We must build the background view first or it overlaps the others.
