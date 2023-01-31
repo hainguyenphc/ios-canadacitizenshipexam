@@ -19,7 +19,7 @@ class CircularProgressView: UIView {
   var timeToFill = 0.1
 
   var progressColor = UIColor.white {
-    didSet{
+    didSet {
       progressLayer.strokeColor = progressColor.cgColor
     }
   }
