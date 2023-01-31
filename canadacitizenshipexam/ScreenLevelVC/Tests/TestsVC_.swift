@@ -23,6 +23,8 @@ class TestsVC_: UIViewController, TestsVCDelegate {
 
     // Build the Unlock view first since other views depend on it.
     unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
+
+    setupScrollView()
   }
 
   override func viewDidLoad() {
