@@ -23,15 +23,19 @@ struct CompletionPercentageOptions {
 
 }
 
-protocol StickyHeadingProtocol {
-
-  /*
-   */
-  func buildTheBackgroundView() -> UIView?
+protocol UnlockPremiumFeatureProtocol {
 
   /*
    */
   func buildTheUnlockPremiumFeatureView() -> UIView?
+
+}
+
+protocol StickyHeadingProtocol: UnlockPremiumFeatureProtocol {
+
+  /*
+   */
+  func buildTheBackgroundView() -> UIView?
 
   /*
    */
