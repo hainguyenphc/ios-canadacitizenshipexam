@@ -52,8 +52,8 @@ class HomeVC_: UIViewController, HomeVCDelegate {
   // The scroll view containing several cards.
   var scrollView: UIScrollView! = UIScrollView()
 
-  var blockView: UIView!
-  var blockView2: UIView!
+  // var blockView: UIView!
+  // var blockView2: UIView!
 
   // MARK: - Life-cyle methods
 
