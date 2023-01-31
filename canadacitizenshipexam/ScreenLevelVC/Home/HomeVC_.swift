@@ -28,6 +28,8 @@ class HomeVC_: UIViewController, HomeVCDelegate {
    Logic attributes.
    */
 
+  var isFirstTimeLoaded: Bool = true
+
   // The Home view model.
   let homeVM: HomeVM_ = HomeVM_()
 
@@ -62,16 +64,20 @@ class HomeVC_: UIViewController, HomeVCDelegate {
 
     super.viewWillAppear(animated)
 
-    // Build the Unlock view first since other views depend on it.
-    unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
-    // For the Home view, the heading view is sticky, so we build it first.
-    buildTheHeadingView()
-    // Next, we set up the scroll view.
-    setupScrollView()
-    // Next, we construct the cards.
-    buildTheCards()
-    // Finally, establish the scroll view height.
-    specifyScrollViewHeight()
+    if self.isFirstTimeLoaded {
+      // Build the Unlock view first since other views depend on it.
+      unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
+      // For the Home view, the heading view is sticky, so we build it first.
+      buildTheHeadingView()
+      // Next, we set up the scroll view.
+      setupScrollView()
+      // Next, we construct the cards.
+      buildTheCards()
+      // Finally, establish the scroll view height.
+      specifyScrollViewHeight()
+      isFirstTimeLoaded = !isFirstTimeLoaded
+    }
+
 
     tabBarController?.tabBar.isHidden = false
     navigationItem.setHidesBackButton(true, animated: false)

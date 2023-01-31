@@ -22,6 +22,8 @@ class TestsVC_: UIViewController, TestsVCDelegate {
  
   var distanceToTop: CGFloat = 0
 
+  var isFirstTimeLoaded: Bool = true
+
   // MARK: - Sub-views
 
   var unlockPremiumFeaturesView: UIView?
@@ -40,19 +42,23 @@ class TestsVC_: UIViewController, TestsVCDelegate {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
-    // Build the Unlock view first since other views depend on it.
-    unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
+    if isFirstTimeLoaded {
+      // Build the Unlock view first since other views depend on it.
+      unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
 
-    // The Tests view has its heading area attached to the scroll view.
-    // I.e., the heading area is not sticky.
-    // Hence, we set up the scroll view first.
-    setupScrollView()
-    // Then we build the heading
-    buildTheHeadingView()
-    // Next, we construct the cards which are the tests.
-    buildTheCards()
-    // Finally, establish the scroll view height.
-    specifyScrollViewHeight()
+      // The Tests view has its heading area attached to the scroll view.
+      // I.e., the heading area is not sticky.
+      // Hence, we set up the scroll view first.
+      setupScrollView()
+      // Then we build the heading
+      buildTheHeadingView()
+      // Next, we construct the cards which are the tests.
+      buildTheCards()
+      // Finally, establish the scroll view height.
+      specifyScrollViewHeight()
+
+      isFirstTimeLoaded = !isFirstTimeLoaded
+    }
   }
 
   override func viewDidLoad() {
