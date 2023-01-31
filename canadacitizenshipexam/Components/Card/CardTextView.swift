@@ -15,6 +15,8 @@ class CardTextView: UITextView, CardDecoratoProtocol {
 
   var theHeight: CGFloat?
 
+  var calculatedHeight: CGFloat?
+
   init(card: CardProtocol? = nil, text: NSMutableAttributedString) {
     super.init(frame: .zero, textContainer: nil)
     self.attributedText = text
@@ -22,6 +24,8 @@ class CardTextView: UITextView, CardDecoratoProtocol {
     self.card = card
     self.theView = self
     self.theHeight = 0
+    self.theHeight! += (self.card?.theHeight!)!
+    self.theHeight! += self.calculatedHeight!
   }
 
   func calculatedHeight(for text: String, width: CGFloat) -> CGFloat {
@@ -47,8 +51,11 @@ class CardTextView: UITextView, CardDecoratoProtocol {
   }
 
   func configure() {
+    self.isEditable = false
     self.layer.cornerRadius = 16
     self.textAlignment = .natural
+    self.showsVerticalScrollIndicator = false
+    self.translatesAutoresizingMaskIntoConstraints = false
     self.textContainerInset = .init(top: 15, left: 15, bottom: 15, right: 15)
     var multiplier: CGFloat = 0
     let modelName = UIDevice.modelName
@@ -70,9 +77,9 @@ class CardTextView: UITextView, CardDecoratoProtocol {
         break
     }
 
-    let height = calculatedHeight(for: self.attributedText.string, width: BOUNDS.width * multiplier)
-    self.frame = CGRect(x: 0, y: 0, width: BOUNDS.width * 0.95, height: height)
-    self.translatesAutoresizingMaskIntoConstraints = false
+    self.calculatedHeight = calculatedHeight(for: self.attributedText.string, width: BOUNDS.width * multiplier)
+    self.frame = CGRect(x: 0, y: 0, width: BOUNDS.width * 0.95, height: self.calculatedHeight!)
+
   }
 
 }
