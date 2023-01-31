@@ -221,6 +221,8 @@ extension HomeVC_: StickyHeadingProtocol {
       .compactMap{$0 as? CircularProgressView}
       .first
 
+    (self.completionCircularProgressView)!.progressColor = .white
+
     self.completionPercentageLabel = completionPercentageView?
       .subviews
       .compactMap{$0 as? UILabel}
