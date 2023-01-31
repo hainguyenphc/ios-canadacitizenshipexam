@@ -16,8 +16,8 @@ class UIBuildingManager {
     // Leaves empty.
   }
 
-  func buildTheBackgroundView() -> UIView? {
-    let multiplier = DEVICE_IDIOM == .pad ? 0.33 : 0.50
+  func buildTheBackgroundView(multiplier: CGFloat) -> UIView? {
+    // let multiplier = DEVICE_IDIOM == .pad ? 0.33 : 0.50
     let rectangle = CGRect(x: 0, y: 0, width: BOUNDS.size.width, height: BOUNDS.height * multiplier)
     let stickyHeadingView = UIView(frame: rectangle)
     stickyHeadingView.layer.backgroundColor = APP_ACCENT_COLOR.cgColor
