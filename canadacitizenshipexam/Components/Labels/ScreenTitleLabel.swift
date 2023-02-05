@@ -39,9 +39,6 @@ class ScreenTitleLabel: UILabel {
       self.font = UIFont.systemFont(ofSize: fontSize, weight: fontWeight)
       self.configureUI()
     }
-
-
-
   }
 
   // ===========================================================================

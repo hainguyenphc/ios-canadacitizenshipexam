@@ -74,7 +74,7 @@ extension HomeVC_ {
 
     let multiplier = DEVICE_IDIOM == .pad ? 0.33 : 0.50
     let backgroundView = UIBuildingManager.shared.buildTheBackgroundView(multiplier: multiplier)
-    let titleLabel = UIBuildingManager.shared.buildTheTitleLabel(title: "Discover Canad")
+    let titleLabel = UIBuildingManager.shared.buildTheTitleLabel(title: "Discover Canada")
     let taglineLabel = UIBuildingManager.shared.buildTheTaglineLabel(tagline: "Canada Citizenship Test 2023")
     let imageView = UIBuildingManager.shared.buildTheImageNextToTitleLabel(systemName: "square.and.arrow.up")
     let options = CompletionPercentageOptions(position: .left, textColor: UIColor.white.cgColor)
