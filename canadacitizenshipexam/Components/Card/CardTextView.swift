@@ -35,7 +35,7 @@ class CardTextView: UITextView, CardDecoratoProtocol {
     label.text = text
     label.sizeToFit()
 
-    return label.frame.height
+    return label.frame.height + 15
   }
 
   func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol? {
