@@ -54,7 +54,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
 
   func createBookNC() -> UINavigationController {
-    let navController         = UINavigationController(rootViewController: BookVC())
+    let navController         = UINavigationController(rootViewController: BookVC_())
     navController.title       = "Study Book"
     navController.tabBarItem  = UITabBarItem(title: "Book", image: UIImage(systemName: SFSymbols.book), tag: 2)
     return navController

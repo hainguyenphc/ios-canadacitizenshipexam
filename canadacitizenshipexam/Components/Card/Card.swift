@@ -24,6 +24,7 @@ class Card: UIViewController, CardProtocol {
 
   func build(scrollView: UIScrollView, previous: UIView? = nil) -> CardProtocol? {
     view.overrideUserInterfaceStyle = .light
+    // Other variants have background color changed just fine; except for the text view.
     view.backgroundColor = UIColor(red: 220, green: 220, blue: 220, alpha: 1.0)
     view.translatesAutoresizingMaskIntoConstraints = false
     view.layer.cornerRadius = 16

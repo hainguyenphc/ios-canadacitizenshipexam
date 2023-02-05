@@ -111,12 +111,16 @@ class UIBuildingManager {
   /*
    @todo generalize the texts in here.
    */
-  func buildTheCompletionDetailsView(textColor: UIColor = .white) -> UIView? {
+  func buildTheCompletionDetailsView(
+    textColor: UIColor = .white,
+    titleText: String = "",
+    subtitleText: String = "") -> UIView?
+  {
     let blockView = UIView()
     blockView.translatesAutoresizingMaskIntoConstraints = false
 
     let primaryLabel = ScreenTitleLabel(
-      text: "Practice Progress",
+      text: titleText,
       textColor: textColor,
       textAlignment: .left,
       fontSize: 20,
@@ -131,8 +135,8 @@ class UIBuildingManager {
     ])
 
     let secondaryLabel = ScreenTitleLabel(
-      text: "1 Daily Question Answered\n0 of 35 Tests Completed",
-      // textColor: UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.8),
+      // text: "1 Daily Question Answered\n0 of 35 Tests Completed",
+      text: subtitleText,
       textColor: textColor,
       textAlignment: .left,
       fontSize: 15,

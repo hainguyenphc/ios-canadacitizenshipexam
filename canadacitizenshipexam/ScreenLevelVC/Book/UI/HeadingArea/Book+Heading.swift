@@ -1,13 +1,13 @@
 //
-//  TestsStickyHeading.swift
+//  Chapters+Heading.swift
 //  canadacitizenshipexam
 //
-//  Created by hainguyen on 2023-01-31.
+//  Created by hainguyen on 2023-02-04.
 //
 
 import UIKit
 
-extension TestsVC_: UnlockPremiumFeatureProtocol {
+extension BookVC_: UnlockPremiumFeatureProtocol {
 
   func buildTheUnlockPremiumFeatureView() -> UIView? {
     let backgroundView = UIBuildingManager.shared.buildTheBackgroundView(
@@ -67,17 +67,17 @@ extension TestsVC_: UnlockPremiumFeatureProtocol {
 
 }
 
-extension TestsVC_ {
+extension BookVC_ {
 
   func buildTheHeadingView() {
-    let titleLabel = UIBuildingManager.shared.buildTheTitleLabel(title: "Practice Tests", textColor: .label)
-    let taglineLabel = UIBuildingManager.shared.buildTheTaglineLabel(tagline: "35 Tests", textColor: .secondaryLabel)
+    let titleLabel = UIBuildingManager.shared.buildTheTitleLabel(title: "Study Book", textColor: .label)
+    let taglineLabel = UIBuildingManager.shared.buildTheTaglineLabel(tagline: "35 Chapters", textColor: .secondaryLabel)
     let options = CompletionPercentageOptions(position: .left, textColor: UIColor.label.cgColor)
     let completionPercentageView = UIBuildingManager.shared.buildTheCompletionPercentageView(percent: 0.5, options: options)
     let completionDetailsView = UIBuildingManager.shared.buildTheCompletionDetailsView(
       textColor: .label,
-      titleText: "Practice Progress",
-      subtitleText: "1 Daily Question Answered\n0 of 35 Tests Completed"
+      titleText: "Reading Progress",
+      subtitleText: "0 of 28 Sections Read\nProgress: 0%"
     )
 
     self.completionPercentageView = completionPercentageView
