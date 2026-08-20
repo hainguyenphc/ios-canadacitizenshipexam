@@ -16,7 +16,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "FirebaseAuth/Interop/FIRAuthInterop.h"
+#import "FirebaseAuth/Interop/Public/FirebaseAuthInterop/FIRAuthInterop.h"
 #import "FirebaseCore/Extension/FirebaseCoreInternal.h"
 
 #import "FirebaseDatabase/Sources/Api/FIRDatabaseComponent.h"
@@ -249,10 +249,12 @@
 }
 
 - (void)ensureRepo {
-    if (self.repo == nil) {
-        self.repo = [FRepoManager createRepo:self.repoInfo
-                                      config:self.config
-                                    database:self];
+    @synchronized(self) {
+        if (self.repo == nil) {
+            self.repo = [FRepoManager createRepo:self.repoInfo
+                                          config:self.config
+                                        database:self];
+        }
     }
 }
 
