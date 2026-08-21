@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-// Targetted compilation is ONLY for testing. UIKit is weak-linked in actual
+// Targeted compilation is ONLY for testing. UIKit is weak-linked in actual
 // release build.
 
 #import <Foundation/Foundation.h>
@@ -26,9 +26,11 @@
 #import "FirebaseDatabase/Sources/Realtime/FWebSocketConnection.h"
 #import "FirebaseDatabase/Sources/Utilities/FStringUtilities.h"
 
-#if TARGET_OS_IOS || TARGET_OS_TV
+#if TARGET_OS_IOS || TARGET_OS_TV ||                                           \
+    (defined(TARGET_OS_VISION) && TARGET_OS_VISION)
 #import <UIKit/UIKit.h>
-#endif // TARGET_OS_IOS || TARGET_OS_TV
+#endif // TARGET_OS_IOS || TARGET_OS_TV || (defined(TARGET_OS_VISION) &&
+       // TARGET_OS_VISION)
 
 #if TARGET_OS_WATCH
 #import <Network/Network.h>
@@ -111,18 +113,16 @@ static NSString *const kGoogleAppIDHeader = @"X-Firebase-GMPID";
             [session webSocketTaskWithRequest:req];
         self.webSocketTask = task;
 
-        if (@available(watchOS 7.0, *)) {
-            [[NSNotificationCenter defaultCenter]
-                addObserverForName:WKApplicationWillResignActiveNotification
-                            object:nil
-                             queue:opQueue
-                        usingBlock:^(NSNotification *_Nonnull note) {
-                          FFLog(@"I-RDB083015",
-                                @"Received watchOS background notification, "
-                                @"closing web socket.");
-                          [self onClosed];
-                        }];
-        }
+        [[NSNotificationCenter defaultCenter]
+            addObserverForName:WKApplicationWillResignActiveNotification
+                        object:nil
+                         queue:opQueue
+                    usingBlock:^(NSNotification *_Nonnull note) {
+                      FFLog(@"I-RDB083015",
+                            @"Received watchOS background notification, "
+                            @"closing web socket.");
+                      [self onClosed];
+                    }];
 #else
         // TODO(mmaksym): Remove googleAppID and userAgent from FSRWebSocket as
         // they are passed via NSURLRequest.
@@ -142,16 +142,17 @@ static NSString *const kGoogleAppIDHeader = @"X-Firebase-GMPID";
     NSString *deviceName;
     BOOL hasUiDeviceClass = NO;
 
-// Targetted compilation is ONLY for testing. UIKit is weak-linked in actual
+// Targeted compilation is ONLY for testing. UIKit is weak-linked in actual
 // release build.
-#if TARGET_OS_IOS || TARGET_OS_TV
+#if TARGET_OS_IOS || TARGET_OS_TV || TARGET_OS_VISION
     Class uiDeviceClass = NSClassFromString(@"UIDevice");
     if (uiDeviceClass) {
         systemVersion = [uiDeviceClass currentDevice].systemVersion;
         deviceName = [uiDeviceClass currentDevice].model;
         hasUiDeviceClass = YES;
     }
-#endif // TARGET_OS_IOS || TARGET_OS_TV
+#endif // TARGET_OS_IOS || TARGET_OS_TV || (defined(TARGET_OS_VISION) &&
+       // TARGET_OS_VISION)
 
     if (!hasUiDeviceClass) {
         NSDictionary *systemVersionDictionary = [NSDictionary
@@ -306,6 +307,17 @@ static NSString *const kGoogleAppIDHeader = @"X-Firebase-GMPID";
 }
 
 - (void)handleIncomingFrame:(NSString *)message {
+    // The realtime protocol only uses text frames. SocketRocket delivers an
+    // NSData for a binary frame (and the watchOS task delivers a nil string),
+    // neither of which responds to the NSString selectors used below, so a
+    // server sending such a frame would crash the client. Ignore anything that
+    // is not a text frame.
+    if (![message isKindOfClass:[NSString class]]) {
+        FFWarn(@"I-RDB083021",
+               @"(wsc:%@) Ignoring non-text frame received on stream.",
+               self.connectionId);
+        return;
+    }
     [self resetKeepAlive];
     if (self.buffering) {
         [self appendFrame:message];

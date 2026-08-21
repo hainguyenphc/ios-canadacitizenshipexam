@@ -27,3 +27,32 @@ target 'canadacitizenshipexam' do
   end
 
 end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
+
+      # Drop optimization for Swift pods in Debug to prevent frontend crashes
+      if target.name == 'FirebaseAuth'
+        target.build_configurations.each do |config|
+          if config.name == 'Debug'
+            config.build_settings['SWIFT_OPTIMIZATION_LEVEL'] = '-Onone'
+            config.build_settings['SWIFT_COMPILATION_MODE'] = 'singlefile'
+          end
+        end
+      end
+      
+      # Paste this specific block inside your existing post_install loop
+      if target.name == 'BoringSSL-GRPC'
+        target.source_build_phase.files.each do |file|
+          if file.settings && file.settings['COMPILER_FLAGS']
+            flags = file.settings['COMPILER_FLAGS'].split
+            flags.reject! { |flag| flag == '-GCC_WARN_INHIBIT_ALL_WARNINGS' }
+            file.settings['COMPILER_FLAGS'] = flags.join(' ')
+          end
+        end
+      end
+    end
+  end
+end

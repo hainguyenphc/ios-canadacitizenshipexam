@@ -1,52 +1,65 @@
-# Canada Citizenship Exam IOS app
+# Canada Citizenship Exam iOS app
 
 ## Overview
 
-We need a tab bar controller called `PrimaryTabBarController` to house:
+An iOS app (Swift/UIKit, programmatic UI — no storyboards) that helps users
+study for the Canadian citizenship test: read study-guide chapters, take
+practice tests, and track progress.
 
-- A navigation controller called `HomeNC`
-- A navigation controller called `TestNC`
-- A navigation controller called `BookNC`
-- A navigation controller called `ProgressNC`
-- A navigation controller called `SettingsNC`
+## Architecture
 
-### Custom components
+- **`ScreenLevelVC/`** — one folder per screen (Home, Book, Chapter, Test,
+  TestResult, Tests, Progress, Settings, Login/Register). Home and Tests use a
+  `*Presenter` protocol/impl pair (MVP-lite); other VCs talk to managers
+  directly.
+- **`CCEBaseUIViewController`** — shared base class most screens subclass:
+  owns a `UITableView` + `CCEHeadingView` (progress ring) and generic
+  "compound section" rendering.
+- **`Components/`** — hand-rolled design system: labels
+  (`CCELevelOneTitleLabel`, `CCEBodyLabel`, …), buttons, cells, a circular
+  progress label, section/heading views. Also uses the third-party
+  **CardParts** pod for `CardCell`.
+- **`Managers/`** — singletons: `NetworkManager` (Firestore CRUD for tests &
+  user data), `ScoreStatsManager` (aggregate score stats across users),
+  `DimensionManager` (layout constants).
+- **`Models/`** — `CCETest`/`CCEQuestion` (Codable, for Firestore + bundled
+  JSON), `CCEChapter`/`CCESection`/`CCECompoundSection` (study content),
+  `CCEUsersData`/`CCEFinishedTest`/`CCEProgressReport`, `CCEDirtyQuestion`
+  (mid-test answer tracking).
+- **Local persistence** — a small Core Data model (`Test` ↔ `State`
+  entities) lets an in-progress test resume after the app is killed;
+  `TestVC` loads/saves via `AppDelegate.persistentContainer`.
+- **`Utils/`** — extensions (`+Ext.swift` per VC), constants, a `Seeder` that
+  one-time-loads bundled `tests.json` into Firestore via
+  `NetworkManager.addTests`.
+- **`data/`** — bundled, localized (`Base.lproj`/`en.lproj`) chapter text
+  files and `tests.json` (seed content).
 
-#### Buttons
+## Backend
 
-#### Cells
+Firebase: `FirebaseUI` (Email + Google sign-in) for auth, **Firestore** for
+tests and per-user progress (`readChapters`, `finishedTests`). Firebase/
+Database and Analytics pods are present but not obviously used yet. No
+custom backend server.
 
-Either a table cell or a grid cell.
+## Tests
 
-Let's hard code all the section info items for now. Place them into a table view
-later.
+XCTest unit tests for the section/test models (`CCECompoundSectionTests`,
+`CCESectionTests`, `CCETestTests`) plus a UI test target scaffold.
 
-#### Labels
+## Notable oddities
 
-- `CCEScreenTitleLabel`. E.g., "Practice Tests"
-- `CCESectionPrimaryLabel`. E.g., "Free Practice Test" in black.
-- `CCESectionSecondaryLabel`. E.g., "20 Exam Questions" in red.
-- `CCEBobyLabel`. E.g., "Progress 0%" in greyish.
-
-#### Text fields
-
-Pontentially a text field for filling the gap?
-
-#### ViewControllers
-
-- `CCEGenericSectionInfoVC` which potentially has an array of `CCESectionInfoView`.
-- `CCEPracticeTestsScreenSectionInfoVC` extends `CCEGenericSectionInfoVC`.
-- `CCEStudyBookScreenSectionInfoVC` extends `CCEGenericSectionInfoVC`.
- 
-The `CCEPracticeTestsScreenSectionInfoVC` handles the tap action in the manner
-that it brings up a new view controller rendering corresponding test for the
-section info.
-
-The `CCEStudyBookScreenSectionInfoVC` handles the tap action by pushing up a new
-view controller rendering a corresponding section of the Discovery Canada book
-for the section info.
-
-#### Views
-
-- CCEGenericSectionInfoView. E.g., "Chapter 1" card view in "Study Book".
+- This README previously read as an original spec/plan (tab bar layout, nav
+  controller names, a component list) rather than a description of the
+  current state — some classes it named (e.g. `CCEGenericSectionInfoVC`)
+  never existed in the code. That aspirational version has been replaced by
+  this scaffold summary.
+- The root `package.json` only contains `@openai/codex` — unrelated to the
+  iOS app, likely a stray dev-tool leftover worth removing or explaining.
+- The working tree can show `Podfile`/`Podfile.lock` modified alongside the
+  entire `Pods/AppAuth` source tree deleted — that's an in-progress
+  `pod install`/pod update; finish or revert it before committing other
+  changes so the repo isn't left with a half-updated Pods directory.
+- `composites-designs/` holds design mockup screenshots (`IMG_0019.PNG`–
+  `IMG_0026.PNG`), useful as visual reference for intended screens.
 

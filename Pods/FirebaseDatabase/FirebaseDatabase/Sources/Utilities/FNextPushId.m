@@ -150,7 +150,7 @@ static unichar const HIGH_SURROGATE_PAIR_END = 0xDBFF;
                 high += 1;
                 NSString *highStr = [NSString stringWithFormat:@"%C", high];
 
-                [next replaceCharactersInRange:NSMakeRange(i - 1, i)
+                [next replaceCharactersInRange:NSMakeRange(i - 1, 1)
                                     withString:highStr];
                 plusOne = LOW_SURROGATE_PAIR_START; /* lowest value for the low
                                                        part of the pair */
@@ -205,7 +205,7 @@ static unichar const HIGH_SURROGATE_PAIR_END = 0xDBFF;
                             withString:@""];
         return next;
     }
-    // Replace the last character with its immedate predecessor, and fill the
+    // Replace the last character with its immediate predecessor, and fill the
     // suffix of the key with MAX_PUSH_CHAR. This is the lexicographically
     // largest possible key smaller than `key`.
     NSUInteger i = next.length - 1;
@@ -262,7 +262,7 @@ static unichar const HIGH_SURROGATE_PAIR_END = 0xDBFF;
                 high -= 1;
                 NSString *highStr = [NSString stringWithFormat:@"%C", high];
 
-                [next replaceCharactersInRange:NSMakeRange(i - 1, i)
+                [next replaceCharactersInRange:NSMakeRange(i - 1, 1)
                                     withString:highStr];
                 minusOne = LOW_SURROGATE_PAIR_END; /* highest value for the low
                                                       part of the pair */
