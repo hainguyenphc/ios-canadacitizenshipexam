@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140BEA146EB045777E4B7847 /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C947B4C5C180768C5B3AD67 /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework */; };
 		8429B31A28E8D90E005ECE6E /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B31928E8D90E005ECE6E /* HomePresenter.swift */; };
 		8429B31D28E8E124005ECE6E /* TestsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8429B31C28E8E124005ECE6E /* TestsPresenter.swift */; };
 		842F1B69287F610000AF45C9 /* 60EBFD59-74CC-439B-B25A-5CB90222FAA4.txt in Resources */ = {isa = PBXBuildFile; fileRef = 842F1B6B287F610000AF45C9 /* 60EBFD59-74CC-439B-B25A-5CB90222FAA4.txt */; };
@@ -77,9 +78,8 @@
 		84CC3F33287B41FB005AFF0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CC3F32287B41FB005AFF0F /* Assets.xcassets */; };
 		84CC3F36287B4211005AFF0F /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CC3F34287B4211005AFF0F /* playstore.png */; };
 		84CC3F37287B4211005AFF0F /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CC3F35287B4211005AFF0F /* appstore.png */; };
-		9691F4119A015A3166219E0A /* Pods_canadacitizenshipexamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 840998D732D835275330E792 /* Pods_canadacitizenshipexamTests.framework */; };
-		9FD3C5EDBB9A8821D5B113FD /* Pods_canadacitizenshipexam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 123507576D564BA91E136E98 /* Pods_canadacitizenshipexam.framework */; };
-		C5A4D410D3BC3077284BE6BC /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 464E207B50CBDE64EA5667FF /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework */; };
+		8A2C7CA17138B445532579DB /* Pods_canadacitizenshipexamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D9B0D606D3F04CAF8BC9E91 /* Pods_canadacitizenshipexamTests.framework */; };
+		D39482E5BB5BA72FE911A2BA /* Pods_canadacitizenshipexam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CD5FB5B7D58BDB7B3DEC2B1 /* Pods_canadacitizenshipexam.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,13 +100,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		123507576D564BA91E136E98 /* Pods_canadacitizenshipexam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2654EEF78C2D179CA3769E49 /* Pods-canadacitizenshipexamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexamTests.debug.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexamTests/Pods-canadacitizenshipexamTests.debug.xcconfig"; sourceTree = "<group>"; };
-		2E0199522D1F873CD32B5E91 /* Pods-canadacitizenshipexam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam.release.xcconfig"; sourceTree = "<group>"; };
-		3596294FFD5F9E6221EF9178 /* Pods-canadacitizenshipexamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexamTests.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexamTests/Pods-canadacitizenshipexamTests.release.xcconfig"; sourceTree = "<group>"; };
-		464E207B50CBDE64EA5667FF /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		662D13FA3BD7D68C42651586 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig"; sourceTree = "<group>"; };
-		840998D732D835275330E792 /* Pods_canadacitizenshipexamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D9B0D606D3F04CAF8BC9E91 /* Pods_canadacitizenshipexamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E234C90CFFC135886DDA3F4 /* Pods-canadacitizenshipexamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexamTests.debug.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexamTests/Pods-canadacitizenshipexamTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D4B472F77D57CAF8B0DFEEA /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5F3885897628B34F19A53791 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6C947B4C5C180768C5B3AD67 /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CD5FB5B7D58BDB7B3DEC2B1 /* Pods_canadacitizenshipexam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8429B31928E8D90E005ECE6E /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		8429B31C28E8E124005ECE6E /* TestsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsPresenter.swift; sourceTree = "<group>"; };
 		842F1B6A287F610000AF45C9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text; name = Base; path = "Base.lproj/60EBFD59-74CC-439B-B25A-5CB90222FAA4.txt"; sourceTree = "<group>"; };
@@ -184,8 +183,9 @@
 		84CC3F34287B4211005AFF0F /* playstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playstore.png; sourceTree = "<group>"; };
 		84CC3F35287B4211005AFF0F /* appstore.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appstore.png; sourceTree = "<group>"; };
 		84DF08B12855720F005623DC /* playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = playground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		B11E0A23345BFF5B4B1D8486 /* Pods-canadacitizenshipexam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam.debug.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam.debug.xcconfig"; sourceTree = "<group>"; };
-		D021F3C61232A3483D583E72 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE4431E46E46E9CBFE27BF1B /* Pods-canadacitizenshipexam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam.release.xcconfig"; sourceTree = "<group>"; };
+		C5E9AB26E6553AED633CEA30 /* Pods-canadacitizenshipexamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexamTests.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexamTests/Pods-canadacitizenshipexamTests.release.xcconfig"; sourceTree = "<group>"; };
+		EE0529041DF6FF434EB5FEED /* Pods-canadacitizenshipexam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam.debug.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FD3C5EDBB9A8821D5B113FD /* Pods_canadacitizenshipexam.framework in Frameworks */,
+				D39482E5BB5BA72FE911A2BA /* Pods_canadacitizenshipexam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9691F4119A015A3166219E0A /* Pods_canadacitizenshipexamTests.framework in Frameworks */,
+				8A2C7CA17138B445532579DB /* Pods_canadacitizenshipexamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +209,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5A4D410D3BC3077284BE6BC /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework in Frameworks */,
+				140BEA146EB045777E4B7847 /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +363,7 @@
 				84A184C8281D72ED0074D5AB /* canadacitizenshipexamUITests */,
 				84A184A3281D72EC0074D5AB /* Products */,
 				E0CA7DEF2B0C8892D7E131B6 /* Pods */,
-				FD78F72CB9DF668B53BFE28B /* Frameworks */,
+				E5AD1AD9E86A7DC12AC3FC3D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -526,22 +526,22 @@
 		E0CA7DEF2B0C8892D7E131B6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B11E0A23345BFF5B4B1D8486 /* Pods-canadacitizenshipexam.debug.xcconfig */,
-				2E0199522D1F873CD32B5E91 /* Pods-canadacitizenshipexam.release.xcconfig */,
-				D021F3C61232A3483D583E72 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig */,
-				662D13FA3BD7D68C42651586 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig */,
-				2654EEF78C2D179CA3769E49 /* Pods-canadacitizenshipexamTests.debug.xcconfig */,
-				3596294FFD5F9E6221EF9178 /* Pods-canadacitizenshipexamTests.release.xcconfig */,
+				EE0529041DF6FF434EB5FEED /* Pods-canadacitizenshipexam.debug.xcconfig */,
+				AE4431E46E46E9CBFE27BF1B /* Pods-canadacitizenshipexam.release.xcconfig */,
+				5F3885897628B34F19A53791 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig */,
+				5D4B472F77D57CAF8B0DFEEA /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig */,
+				4E234C90CFFC135886DDA3F4 /* Pods-canadacitizenshipexamTests.debug.xcconfig */,
+				C5E9AB26E6553AED633CEA30 /* Pods-canadacitizenshipexamTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		FD78F72CB9DF668B53BFE28B /* Frameworks */ = {
+		E5AD1AD9E86A7DC12AC3FC3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				123507576D564BA91E136E98 /* Pods_canadacitizenshipexam.framework */,
-				464E207B50CBDE64EA5667FF /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework */,
-				840998D732D835275330E792 /* Pods_canadacitizenshipexamTests.framework */,
+				7CD5FB5B7D58BDB7B3DEC2B1 /* Pods_canadacitizenshipexam.framework */,
+				6C947B4C5C180768C5B3AD67 /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework */,
+				4D9B0D606D3F04CAF8BC9E91 /* Pods_canadacitizenshipexamTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -553,12 +553,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84A184CF281D72ED0074D5AB /* Build configuration list for PBXNativeTarget "canadacitizenshipexam" */;
 			buildPhases = (
-				326AC47156564FF5094709F8 /* [CP] Check Pods Manifest.lock */,
+				40E557E9B5CB347926D61312 /* [CP] Check Pods Manifest.lock */,
 				84A1849E281D72EC0074D5AB /* Sources */,
 				84A1849F281D72EC0074D5AB /* Frameworks */,
 				84A184A0281D72EC0074D5AB /* Resources */,
-				371BBF814EAA2A1A5980A51D /* [CP] Embed Pods Frameworks */,
-				0A8AEB099DB2CE4C0EB963F8 /* [CP] Copy Pods Resources */,
+				8A6443C312D0A71512B46BFF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -573,7 +572,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84A184D2281D72ED0074D5AB /* Build configuration list for PBXNativeTarget "canadacitizenshipexamTests" */;
 			buildPhases = (
-				9BFE519A9E59E81E9C3B8CD9 /* [CP] Check Pods Manifest.lock */,
+				1D1F6DCAF3AE92D445F21F20 /* [CP] Check Pods Manifest.lock */,
 				84A184B7281D72ED0074D5AB /* Sources */,
 				84A184B8281D72ED0074D5AB /* Frameworks */,
 				84A184B9281D72ED0074D5AB /* Resources */,
@@ -592,12 +591,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 84A184D5281D72ED0074D5AB /* Build configuration list for PBXNativeTarget "canadacitizenshipexamUITests" */;
 			buildPhases = (
-				01E6F581E0C285C614A915DC /* [CP] Check Pods Manifest.lock */,
+				B640A10AB79DA9DC6A6A487F /* [CP] Check Pods Manifest.lock */,
 				84A184C1281D72ED0074D5AB /* Sources */,
 				84A184C2281D72ED0074D5AB /* Frameworks */,
 				84A184C3281D72ED0074D5AB /* Resources */,
-				F6AF801123C73443976FCCD1 /* [CP] Embed Pods Frameworks */,
-				0F4F0A627188F516EF83F299 /* [CP] Copy Pods Resources */,
+				F22B09091494570AA4592A05 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -688,102 +686,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		01E6F581E0C285C614A915DC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-canadacitizenshipexam-canadacitizenshipexamUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0A8AEB099DB2CE4C0EB963F8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		0F4F0A627188F516EF83F299 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		326AC47156564FF5094709F8 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-canadacitizenshipexam-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		371BBF814EAA2A1A5980A51D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9BFE519A9E59E81E9C3B8CD9 /* [CP] Check Pods Manifest.lock */ = {
+		1D1F6DCAF3AE92D445F21F20 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -805,7 +708,68 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6AF801123C73443976FCCD1 /* [CP] Embed Pods Frameworks */ = {
+		40E557E9B5CB347926D61312 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-canadacitizenshipexam-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A6443C312D0A71512B46BFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B640A10AB79DA9DC6A6A487F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-canadacitizenshipexam-canadacitizenshipexamUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F22B09091494570AA4592A05 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1076,7 +1040,7 @@
 		};
 		84A184D0281D72ED0074D5AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B11E0A23345BFF5B4B1D8486 /* Pods-canadacitizenshipexam.debug.xcconfig */;
+			baseConfigurationReference = EE0529041DF6FF434EB5FEED /* Pods-canadacitizenshipexam.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1105,7 +1069,7 @@
 		};
 		84A184D1281D72ED0074D5AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2E0199522D1F873CD32B5E91 /* Pods-canadacitizenshipexam.release.xcconfig */;
+			baseConfigurationReference = AE4431E46E46E9CBFE27BF1B /* Pods-canadacitizenshipexam.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1134,7 +1098,7 @@
 		};
 		84A184D3281D72ED0074D5AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2654EEF78C2D179CA3769E49 /* Pods-canadacitizenshipexamTests.debug.xcconfig */;
+			baseConfigurationReference = 4E234C90CFFC135886DDA3F4 /* Pods-canadacitizenshipexamTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1155,7 +1119,7 @@
 		};
 		84A184D4281D72ED0074D5AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3596294FFD5F9E6221EF9178 /* Pods-canadacitizenshipexamTests.release.xcconfig */;
+			baseConfigurationReference = C5E9AB26E6553AED633CEA30 /* Pods-canadacitizenshipexamTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1176,7 +1140,7 @@
 		};
 		84A184D6281D72ED0074D5AB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D021F3C61232A3483D583E72 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig */;
+			baseConfigurationReference = 5F3885897628B34F19A53791 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1195,7 +1159,7 @@
 		};
 		84A184D7281D72ED0074D5AB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 662D13FA3BD7D68C42651586 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig */;
+			baseConfigurationReference = 5D4B472F77D57CAF8B0DFEEA /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
