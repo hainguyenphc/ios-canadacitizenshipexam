@@ -10,12 +10,6 @@ import UIKit
 extension TestsVC_: UnlockPremiumFeatureProtocol {
 
   func buildTheUnlockPremiumFeatureView() -> UIView? {
-    let backgroundView = UIBuildingManager.shared.buildTheBackgroundView(
-      multiplier: DEVICE_IDIOM == .pad ? 0.33 : 0.18)
-    if let backgroundView = backgroundView {
-      view.addSubview(backgroundView)
-    }
-
     let multiplier = DEVICE_IDIOM == .pad ? 0.09 : 0.1
 
     let unlockPremiumFeaturesView = UIView()
@@ -32,6 +26,22 @@ extension TestsVC_: UnlockPremiumFeatureProtocol {
       unlockPremiumFeaturesView.heightAnchor.constraint(equalToConstant: BOUNDS.size.height * multiplier),
       unlockPremiumFeaturesView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
       unlockPremiumFeaturesView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: -(BOUNDS.size.width / 2))
+    ])
+
+    // The red background must end exactly where the banner ends, since the scroll
+    // view starts right after the banner. A height computed independently of the
+    // banner (e.g. a fixed fraction of the screen) drifts out of sync with it,
+    // leaving either a gap of bare red or having the scroll view cover its tail.
+    let backgroundView = UIView()
+    backgroundView.translatesAutoresizingMaskIntoConstraints = false
+    backgroundView.backgroundColor = APP_ACCENT_COLOR
+    view.insertSubview(backgroundView, belowSubview: unlockPremiumFeaturesView)
+
+    NSLayoutConstraint.activate([
+      backgroundView.topAnchor.constraint(equalTo: view.topAnchor),
+      backgroundView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+      backgroundView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+      backgroundView.bottomAnchor.constraint(equalTo: unlockPremiumFeaturesView.bottomAnchor)
     ])
 
     let label = UILabel()
@@ -126,7 +136,7 @@ extension TestsVC_ {
     hStack.addArrangedSubview(titleLabel)
 
     if let taglineLabel = taglineLabel {
-      view.addSubview(taglineLabel)
+      scrollView.addSubview(taglineLabel)
       NSLayoutConstraint.activate([
         taglineLabel.topAnchor.constraint(equalTo: hStack.bottomAnchor, constant: 5),
         taglineLabel.leadingAnchor.constraint(equalTo: hStack.leadingAnchor)
