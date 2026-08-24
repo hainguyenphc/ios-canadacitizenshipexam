@@ -79,7 +79,14 @@ extension HomeVC_ {
     let imageView = UIBuildingManager.shared.buildTheImageNextToTitleLabel(systemName: "square.and.arrow.up")
     let options = CompletionPercentageOptions(position: .left, textColor: UIColor.white.cgColor)
     let completionPercentageView = UIBuildingManager.shared.buildTheCompletionPercentageView(percent: 0, options: options)
-    let completionDetailsView = UIBuildingManager.shared.buildTheCompletionDetailsView()
+    // Placeholder text: "Practice Progress" / "0 Daily Questions Answered / 0 of 35
+    // Tests Completed" stand in until real progress data is wired up (see the
+    // completionCircularProgressView update snippet at the bottom of HomeVC_.swift).
+    let completionDetailsView = UIBuildingManager.shared.buildTheCompletionDetailsView(
+      textColor: .white,
+      titleText: "Practice Progress",
+      subtitleText: "0 Daily Questions Answered\n0 of 35 Tests Completed"
+    )
 
     /*
      Save the references to those views for future update.
