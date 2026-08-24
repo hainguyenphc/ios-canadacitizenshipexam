@@ -29,14 +29,16 @@ extension HomeVC_: ScrollProtocol {
     NSLayoutConstraint.activate([
       scrollView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: SCROLL_VIEW_LEFT_AND_RIGHT_SPACE),
       scrollView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -SCROLL_VIEW_LEFT_AND_RIGHT_SPACE),
-      scrollView.heightAnchor.constraint(equalToConstant: BOUNDS.height * 0.7)
+      // Fill the space actually available down to the tab bar instead of guessing
+      // a fraction of the screen height, which left a gap when the guess ran short.
+      scrollView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
     ])
-
-    // scrollView.contentSize = CGSize(width: 100, height: distanceToTop * 2)
   }
 
   func specifyScrollViewHeight() -> Void {
-    scrollView.contentSize = CGSize(width: 100, height: distanceToTop * 2)
+    // distanceToTop already tracks the real bottom of the last card added; a small
+    // fixed cushion is enough headroom, rather than doubling it into dead scroll space.
+    scrollView.contentSize = CGSize(width: 100, height: distanceToTop + 40)
   }
 
 }
