@@ -114,7 +114,8 @@ class UIBuildingManager {
   func buildTheCompletionDetailsView(
     textColor: UIColor = .white,
     titleText: String = "",
-    subtitleText: String = "") -> UIView?
+    subtitleText: String = "",
+    textAlignment: NSTextAlignment = .left) -> UIView?
   {
     let blockView = UIView()
     blockView.translatesAutoresizingMaskIntoConstraints = false
@@ -122,7 +123,7 @@ class UIBuildingManager {
     let primaryLabel = ScreenTitleLabel(
       text: titleText,
       textColor: textColor,
-      textAlignment: .left,
+      textAlignment: textAlignment,
       fontSize: 20,
       fontWeight: .bold
     )
@@ -131,14 +132,15 @@ class UIBuildingManager {
 
     NSLayoutConstraint.activate([
       primaryLabel.topAnchor.constraint(equalTo: blockView.topAnchor),
-      primaryLabel.leadingAnchor.constraint(equalTo: blockView.leadingAnchor)
+      primaryLabel.leadingAnchor.constraint(equalTo: blockView.leadingAnchor),
+      primaryLabel.trailingAnchor.constraint(equalTo: blockView.trailingAnchor)
     ])
 
     let secondaryLabel = ScreenTitleLabel(
       // text: "1 Daily Question Answered\n0 of 35 Tests Completed",
       text: subtitleText,
       textColor: textColor,
-      textAlignment: .left,
+      textAlignment: textAlignment,
       fontSize: 15,
       fontWeight: .regular
     )
@@ -146,7 +148,8 @@ class UIBuildingManager {
     blockView.addSubview(secondaryLabel)
     NSLayoutConstraint.activate([
       secondaryLabel.topAnchor.constraint(equalTo: primaryLabel.bottomAnchor, constant: 5),
-      secondaryLabel.leadingAnchor.constraint(equalTo: primaryLabel.leadingAnchor)
+      secondaryLabel.leadingAnchor.constraint(equalTo: primaryLabel.leadingAnchor),
+      secondaryLabel.trailingAnchor.constraint(equalTo: primaryLabel.trailingAnchor)
     ])
 
     return blockView

@@ -9,7 +9,8 @@ import UIKit
 
 class CardActionableItem: ActionableLabel, CardDecoratoProtocol {
 
-  var theHeight: CGFloat? = 35
+  // Always overwritten in init with a height measured from the actual content.
+  var theHeight: CGFloat?
 
   var theView: UIView?
 
@@ -19,7 +20,13 @@ class CardActionableItem: ActionableLabel, CardDecoratoProtocol {
     super.init(text: text, imageName: imageName)
     self.card = card
     self.theView = self
-    self.theHeight! += (self.card?.theHeight!)!
+    // A flat height assumes a single line, which undercounts rows whose text
+    // wraps (leaving them clipped) and overcounts short ones (leaving a gap).
+    // Measure this label's own attributed text at the width it will actually
+    // render at, so the row's contribution always matches its real content.
+    let width = BOUNDS.width * 0.85
+    let measuredHeight = self.sizeThatFits(CGSize(width: width, height: .greatestFiniteMagnitude)).height
+    self.theHeight = measuredHeight + 15 + (self.card?.theHeight ?? 0)
   }
 
   required init?(coder: NSCoder) {
@@ -33,6 +40,10 @@ class CardActionableItem: ActionableLabel, CardDecoratoProtocol {
     NSLayoutConstraint.activate([
       self.topAnchor.constraint(equalTo: blockView.bottomAnchor, constant: 15),
       self.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 0),
+      // Without an explicit width, the label has no boundary to wrap against and
+      // just grows to fit its text on one line, overflowing the card. Match the
+      // width CardPrimaryTitleLabelWithImage already uses for the same reason.
+      self.widthAnchor.constraint(equalToConstant: BOUNDS.width * 0.85),
     ])
 
     return result

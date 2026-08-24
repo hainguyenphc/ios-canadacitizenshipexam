@@ -97,11 +97,7 @@ extension TestResultVC: UITableViewDelegate {
         self.navigationController?.pushViewController(testVC, animated: true)
         break
       case SFSymbols.progress:
-        // ProgressVC was migrated from a programmatic view to a storyboard-backed one.
-        // See SceneDelegate.createProgressNC() instantiation.
-        let storyboard = UIStoryboard(name: "ProgressVC", bundle: nil)
-        let progressVC = storyboard.instantiateViewController(withIdentifier: "ProgressVC")
-        self.navigationController?.pushViewController(progressVC, animated: true)
+        self.navigationController?.pushViewController(ProgressVC_(), animated: true)
         break
       default:
         break

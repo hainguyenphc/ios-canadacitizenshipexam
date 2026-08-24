@@ -61,13 +61,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
 
   func createProgressNC() -> UINavigationController {
-    // Old way: programmatic UI
-    // let navController        = UINavigationController(rootViewController: ProgressVC())
-
-    // New way: storyboard
-    let storyboard = UIStoryboard(name: "ProgressVC", bundle: nil)
-    let navController        = UINavigationController(rootViewController: storyboard.instantiateViewController(withIdentifier: "ProgressVC"))
-
+    let navController        = UINavigationController(rootViewController: ProgressVC_())
     navController.title      = "Study Progress"
     navController.tabBarItem = UITabBarItem(title: "Progress", image: UIImage(systemName: SFSymbols.progress), tag: 3)
     return navController
