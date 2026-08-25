@@ -32,11 +32,16 @@ class CardTaglineLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
   func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol? {
     let result = self.card?.build(scrollView: scrollView, previous: nil)
+    // blockView anchors our vertical position (below the previous row);
+    // cardBackground is the actual card container every row should be a
+    // flat sibling inside, rather than nested inside one another (see
+    // CardActionableItem.build() for why that matters).
     let blockView: UIView = (self.card!).theView!
-    blockView.addSubview(self)
+    let cardBackground: UIView = result!.theView!
+    cardBackground.addSubview(self)
     NSLayoutConstraint.activate([
       self.topAnchor.constraint(equalTo: blockView.bottomAnchor, constant: 10),
-      self.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 0),
+      self.leadingAnchor.constraint(equalTo: cardBackground.leadingAnchor, constant: 15),
     ])
 
     return result

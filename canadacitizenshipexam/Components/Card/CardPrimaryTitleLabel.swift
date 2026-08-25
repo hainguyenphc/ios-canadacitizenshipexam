@@ -34,11 +34,17 @@ class CardPrimaryTitleLabel: ScreenTitleLabel, CardDecoratoProtocol {
 
   func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol? {
     let result = self.card?.build(scrollView: scrollView, previous: nil)
+    // blockView anchors our vertical position (here, always the top, since
+    // this is always the first decorator in a card); cardBackground is the
+    // actual card container every row should be a flat sibling inside,
+    // rather than nested inside one another (see CardActionableItem.build()
+    // for why that matters).
     let blockView: UIView = (self.card!).theView!
-    blockView.addSubview(self)
+    let cardBackground: UIView = result!.theView!
+    cardBackground.addSubview(self)
     NSLayoutConstraint.activate([
       self.topAnchor.constraint(equalTo: blockView.topAnchor, constant: 15),
-      self.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 15),
+      self.leadingAnchor.constraint(equalTo: cardBackground.leadingAnchor, constant: 15),
     ])
 
     return result

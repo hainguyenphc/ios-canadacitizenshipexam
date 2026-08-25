@@ -12,10 +12,18 @@ extension HomeVC_ {
   func buildTheCards() -> Void {
     var cards: [CardProtocol] = []
 
+    let remindersAlreadyOn = NotificationManager.shared.isDailyReminderEnabled
+
     var card1: CardProtocol = Card()
     card1 = CardPrimaryTitleLabel(card: card1, text: "Create a Study Schedule")
     card1 = CardTaglineLabel(card: card1, text: "Make a schedule to meet your goals.\nTurn on notifications for study reminders.")
-    card1 = CardActionableItem(card: card1, text: "Turn on Notifications", imageName: "bell")
+    card1 = CardActionableItem(
+      card: card1,
+      text: remindersAlreadyOn ? "Daily Reminders On" : "Turn on Notifications",
+      imageName: remindersAlreadyOn ? "checkmark.circle.fill" : "bell",
+      onTap: { [weak self] in self?.notificationsRowTapped() }
+    )
+    self.notificationsActionableItem = card1 as? CardActionableItem
     card1 = CardActionableItem(card: card1, text: "Schedule your Exam", imageName: "calendar")
     card1 = CardActionableItem(card: card1, text: "Practice Time: 10:00 AM", imageName: "clock")
 

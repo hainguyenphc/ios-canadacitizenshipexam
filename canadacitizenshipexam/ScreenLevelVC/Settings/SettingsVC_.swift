@@ -25,16 +25,6 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
 
   var isFirstTimeLoaded: Bool = true
 
-  // The key daily reminders are persisted under, so the switch reflects the
-  // user's last choice the next time this screen is opened.
-  static let dailyReminderDefaultsKey = "dailyRemindersEnabled"
-
-  var isDailyReminderOn: Bool {
-    get { UserDefaults.standard.bool(forKey: SettingsVC_.dailyReminderDefaultsKey) }
-    set { UserDefaults.standard.set(newValue, forKey: SettingsVC_.dailyReminderDefaultsKey) }
-  }
-
-  // Same persistence approach as the reminder toggle above.
   static let darkModeDefaultsKey = "darkModeEnabled"
 
   var isDarkModeOn: Bool {
@@ -45,6 +35,10 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
   // MARK: - Sub-views
 
   var unlockPremiumFeaturesView: UIView?
+
+  // Kept so dailyReminderSwitchToggled can reset it back to Off if the user
+  // ends up denying the notifications permission.
+  var dailyReminderSwitch: UISwitch?
 
   // The scroll view containing several cards.
   var scrollView: UIScrollView! = UIScrollView()
@@ -71,6 +65,28 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
 
       isFirstTimeLoaded = !isFirstTimeLoaded
     }
+
+    reconcileDailyReminderSwitch()
+  }
+
+  // The switch is only built once (guarded by isFirstTimeLoaded above), but
+  // the Home screen's actionable item can also flip this same
+  // NotificationManager state — re-sync every time this screen appears so
+  // the two never drift. The user can also revoke notification permission
+  // from the iOS Settings app directly, without ever touching this switch,
+  // so that's checked here too, rather than keeping "On" showing for a
+  // reminder the OS silently stopped delivering.
+  private func reconcileDailyReminderSwitch() {
+    let isOn = NotificationManager.shared.isDailyReminderEnabled
+    dailyReminderSwitch?.setOn(isOn, animated: false)
+
+    guard isOn else { return }
+
+    NotificationManager.shared.getAuthorizationStatus { [weak self] status in
+      guard let self = self, status == .denied else { return }
+      NotificationManager.shared.setDailyReminderEnabled(false)
+      self.dailyReminderSwitch?.setOn(false, animated: true)
+    }
   }
 
   override func viewDidLoad() {
@@ -96,18 +112,19 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
   }
 
   @objc func dailyReminderSwitchToggled(_ sender: UISwitch) {
-    isDailyReminderOn = sender.isOn
-    // @TODO: schedule/cancel the local notification once the notifications
-    // infrastructure lands. For now this only persists the user's choice.
+    let wantsEnabled = sender.isOn
+    NotificationManager.shared.setDailyReminderEnabled(wantsEnabled) { [weak self] granted in
+      guard let self = self, wantsEnabled, !granted else { return }
+      // Permission was denied (or just declined), so the switch shouldn't
+      // sit on "On" for a reminder that isn't actually going to fire.
+      sender.setOn(false, animated: true)
+      self.presentNotificationsPermissionDeniedAlert()
+    }
   }
 
   @objc func darkModeSwitchToggled(_ sender: UISwitch) {
     isDarkModeOn = sender.isOn
     view.window?.overrideUserInterfaceStyle = sender.isOn ? .dark : .light
-    // Most cards/scroll views still force a light appearance of their own
-    // (see Card.swift and each screen's ScrollView setup), so this mainly
-    // repaints system chrome (nav bar, tab bar, status bar) for now, until
-    // those hardcoded overrides are made theme-aware.
   }
 
 }

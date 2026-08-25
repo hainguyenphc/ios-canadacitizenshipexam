@@ -56,6 +56,10 @@ class HomeVC_: UIViewController, HomeVCDelegate {
   // The scroll view containing several cards.
   var scrollView: UIScrollView! = UIScrollView()
 
+  // Kept so notificationsRowTapped can update this row's text/icon whenever
+  // notifications are turned on or off.
+  var notificationsActionableItem: CardActionableItem?
+
   // MARK: - Life-cyle methods
 
   override func viewWillAppear(_ animated: Bool) {
@@ -78,6 +82,10 @@ class HomeVC_: UIViewController, HomeVCDelegate {
       isFirstTimeLoaded = !isFirstTimeLoaded
     }
 
+    // The row is only built once (guarded by isFirstTimeLoaded above), but
+    // the Settings screen can also flip this same NotificationManager state
+    // — re-sync every time this screen appears so the two never drift.
+    refreshNotificationsRow()
 
     tabBarController?.tabBar.isHidden = false
     navigationItem.setHidesBackButton(true, animated: false)
@@ -103,6 +111,40 @@ extension HomeVC_ {
 
   func handleErrorLoadingUsersDataFromNetworkCall(error: CCEFailure) {
     // @todo
+  }
+
+}
+
+// MARK: - Actions
+
+extension HomeVC_ {
+
+  func notificationsRowTapped() {
+    // Toggle off if already on, on otherwise — setDailyReminderEnabled(true)
+    // was being called unconditionally here before, so a second tap just
+    // re-requested already-granted permission and rescheduled the same
+    // reminder instead of turning it off.
+    let turningOn = !NotificationManager.shared.isDailyReminderEnabled
+    NotificationManager.shared.setDailyReminderEnabled(turningOn) { [weak self] granted in
+      guard let self = self else { return }
+      // Turning off always succeeds (see NotificationManager); granted only
+      // comes back false here when turning on was denied permission — in
+      // which case the preference (and this row) should stay "off".
+      if turningOn && !granted {
+        self.presentNotificationsPermissionDeniedAlert()
+      }
+      self.refreshNotificationsRow()
+    }
+  }
+
+  // Matches this row's text/icon to NotificationManager's current state,
+  // whichever screen last changed it.
+  func refreshNotificationsRow() {
+    let isOn = NotificationManager.shared.isDailyReminderEnabled
+    notificationsActionableItem?.update(
+      text: isOn ? "Daily Reminders On" : "Turn on Notifications",
+      imageName: isOn ? "checkmark.circle.fill" : "bell"
+    )
   }
 
 }

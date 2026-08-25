@@ -58,16 +58,21 @@ class CardPrimaryTitleLabelWithImage: UIStackView, CardDecoratoProtocol {
 
   func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol? {
     let result = self.card?.build(scrollView: scrollView, previous: previous)
+    // blockView anchors our vertical position; cardBackground is the actual
+    // card container every row should be a flat sibling inside, rather than
+    // nested inside one another (see CardActionableItem.build() for why
+    // that matters).
     let blockView: UIView = (self.card!).theView!
+    let cardBackground: UIView = result!.theView!
     self.addArrangedSubview(titleLabel!)
     self.addArrangedSubview(imageView!)
-    blockView.addSubview(self)
+    cardBackground.addSubview(self)
 
       // There is no precedent sibling, which means this is the first decorator in a card.
     if (!hasPrecedentSibling) {
       NSLayoutConstraint.activate([
         self.topAnchor.constraint(equalTo: blockView.topAnchor, constant: 15),
-        self.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 15),
+        self.leadingAnchor.constraint(equalTo: cardBackground.leadingAnchor, constant: 15),
         self.widthAnchor.constraint(equalToConstant: BOUNDS.width * 0.85)
       ])
     }
@@ -77,7 +82,7 @@ class CardPrimaryTitleLabelWithImage: UIStackView, CardDecoratoProtocol {
       if self.card is CardDecoratoProtocol {
         NSLayoutConstraint.activate([
           self.topAnchor.constraint(equalTo: (self.card?.theView!.bottomAnchor)!, constant: 15),
-          self.leadingAnchor.constraint(equalTo: blockView.leadingAnchor, constant: 0),
+          self.leadingAnchor.constraint(equalTo: cardBackground.leadingAnchor, constant: 15),
           self.widthAnchor.constraint(equalToConstant: BOUNDS.width * 0.85)
         ])
       }

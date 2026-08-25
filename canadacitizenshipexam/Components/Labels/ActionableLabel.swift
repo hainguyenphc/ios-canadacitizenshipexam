@@ -78,6 +78,15 @@ class ActionableLabel: UILabel {
     }
   }
 
+  // Lets a caller change this label's content after construction — e.g. once
+  // the action it represents has completed — reusing the same icon-tinting
+  // logic applyAttributedText already handles.
+  func update(text: String, imageName: String) {
+    storedText = text
+    storedImageName = imageName
+    applyAttributedText()
+  }
+
   // ===========================================================================
   // DO NOT CHANGE ANYTHING BELOW THIS LINE
   // ===========================================================================

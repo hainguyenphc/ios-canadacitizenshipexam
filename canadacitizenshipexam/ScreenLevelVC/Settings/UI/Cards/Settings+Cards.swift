@@ -100,9 +100,10 @@ extension SettingsVC_ {
 
     let reminderSwitch = UISwitch()
     reminderSwitch.translatesAutoresizingMaskIntoConstraints = false
-    reminderSwitch.isOn = isDailyReminderOn
+    reminderSwitch.isOn = NotificationManager.shared.isDailyReminderEnabled
     reminderSwitch.onTintColor = APP_ACCENT_COLOR
     reminderSwitch.addTarget(self, action: #selector(dailyReminderSwitchToggled(_:)), for: .valueChanged)
+    self.dailyReminderSwitch = reminderSwitch
 
     preferencesCardView.addSubview(reminderRow.row)
     preferencesCardView.addSubview(reminderSwitch)
