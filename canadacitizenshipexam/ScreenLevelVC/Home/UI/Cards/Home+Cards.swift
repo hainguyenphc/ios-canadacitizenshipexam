@@ -46,7 +46,12 @@ extension HomeVC_ {
     cards.append(card2)
 
     var card3: CardProtocol = Card()
-    card3 = CardPrimaryTitleLabelWithImage(card: card3, text: "Start Practicing", imageName: SFSymbols.tests)
+    card3 = CardPrimaryTitleLabelWithImage(
+      card: card3,
+      text: "Start Practicing",
+      imageName: SFSymbols.tests,
+      onTap: { [weak self] in self?.navigateToTests() }
+    )
     cards.append(card3)
 
     var card4: CardProtocol = Card()

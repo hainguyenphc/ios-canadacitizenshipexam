@@ -23,11 +23,17 @@ class CardPrimaryTitleLabelWithImage: UIStackView, CardDecoratoProtocol {
 
   var hasPrecedentSibling: Bool!
 
+  // Most of these rows are plain (no gesture attached, same as before);
+  // passing onTap opts a specific one into being tappable — e.g. Home's
+  // "Start Practicing" navigating to the Tests tab.
+  private var onTap: (() -> Void)?
+
   init(card: CardProtocol,
        text: String,
        imageName: String,
        hasPrecedentSibling: Bool = false,
-       tintColor: UIColor = APP_ACCENT_COLOR
+       tintColor: UIColor = APP_ACCENT_COLOR,
+       onTap: (() -> Void)? = nil
   ) {
     super.init(frame: .zero)
     self.configureUI()
@@ -50,10 +56,20 @@ class CardPrimaryTitleLabelWithImage: UIStackView, CardDecoratoProtocol {
     self.card = card
     self.theView = self
     self.theHeight! += (self.card?.theHeight!)!
+
+    if let onTap = onTap {
+      self.onTap = onTap
+      self.isUserInteractionEnabled = true
+      self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    }
   }
 
   required init(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
+  }
+
+  @objc private func handleTap() {
+    onTap?()
   }
 
   func build(scrollView: UIScrollView, previous: UIView?) -> CardProtocol? {

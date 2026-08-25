@@ -129,6 +129,13 @@ extension HomeVC_ {
 
 extension HomeVC_ {
 
+  // Tab order set up in SceneDelegate.createPrimaryTabBarController: Home,
+  // Tests, Book, Progress, Settings — same pattern SettingsVC_'s Log Out
+  // already uses to land back on Home (index 0).
+  func navigateToTests() {
+    tabBarController?.selectedIndex = 1
+  }
+
   func notificationsRowTapped() {
     // Toggle off if already on, on otherwise — setDailyReminderEnabled(true)
     // was being called unconditionally here before, so a second tap just
