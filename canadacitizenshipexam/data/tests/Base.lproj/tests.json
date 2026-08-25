@@ -29,7 +29,7 @@
       ],
       "correctAnswer": "The right to be educated in either official language, the right to apply for a Canadian passport, the right to vote, the right to enter and leave Canada freely",
       "explanation": "",
-      "isMultipleChoice": false,
+      "isMultipleChoice": true,
       "question": "List four additional rights Canadian citizens have under the Canadian Charter of Rights and Freedoms.",
       "stats": {
         "countA": 0,

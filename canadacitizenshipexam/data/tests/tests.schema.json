@@ -1,0 +1,95 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://canadacitizenshipexam.app/schemas/tests.schema.json",
+  "title": "Practice Tests",
+  "description": "An array of practice tests, each a named collection of questions. Mirrors canadacitizenshipexam/Models/CCETest.swift and CCEQuestion.swift, and validates canadacitizenshipexam/data/tests/Base.lproj/tests.json. For now every question is assumed to be multiple choice (isMultipleChoice is fixed to true); other question types are out of scope until that changes.",
+  "type": "array",
+  "items": { "$ref": "#/$defs/test" },
+  "$defs": {
+    "test": {
+      "type": "object",
+      "description": "A single practice test.",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Stable identifier. Not present in the current sample data — CCETest.id is filled in once a test is persisted (e.g. assigned by Firestore) — so it's optional here rather than required."
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "description": "User-facing test name, e.g. \"Rights and responsibilities\"."
+        },
+        "timeOnTest": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Expected time to complete the test, in seconds. Not present in the current sample data, so optional here — same reasoning as id."
+        },
+        "totalSubmissions": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "How many times this test has been submitted by the community."
+        },
+        "communityAverageScore": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Community average score as a percentage, matching how scores are treated elsewhere in the app (see K.passingScoreInPercent)."
+        },
+        "questions": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/question" }
+        }
+      },
+      "required": ["name", "totalSubmissions", "communityAverageScore", "questions"],
+      "additionalProperties": false
+    },
+    "question": {
+      "type": "object",
+      "description": "A single multiple-choice question.",
+      "properties": {
+        "question": {
+          "type": "string",
+          "minLength": 1
+        },
+        "answers": {
+          "type": "array",
+          "description": "The multiple-choice options. Fixed at exactly 4 for now — matches every question in the current sample data, and CCEQuestion's own (currently self-contradicting) init, which derives isMultipleChoice from answers.count == 4 rather than trusting the value on disk.",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 4,
+          "maxItems": 4,
+          "uniqueItems": true
+        },
+        "correctAnswer": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Must exactly match one entry in this question's own `answers` array. Plain JSON Schema can't express a same-object cross-field constraint like that, so it isn't enforced here — validate it separately (e.g. in a content-authoring script) when adding new questions."
+        },
+        "isMultipleChoice": {
+          "const": true,
+          "description": "Always true for now — every question is assumed to be multiple choice. Revisit this schema when other question types are introduced."
+        },
+        "explanation": {
+          "type": "string",
+          "description": "Rationale shown after answering. May be an empty string — several sample questions have none yet."
+        },
+        "stats": { "$ref": "#/$defs/stats" }
+      },
+      "required": ["question", "answers", "correctAnswer", "isMultipleChoice", "explanation", "stats"],
+      "additionalProperties": false
+    },
+    "stats": {
+      "type": "object",
+      "description": "Community answer-selection counts, one bucket per answer slot (A-D, matching the 4 fixed answers above).",
+      "properties": {
+        "countA": { "type": "integer", "minimum": 0 },
+        "countB": { "type": "integer", "minimum": 0 },
+        "countC": { "type": "integer", "minimum": 0 },
+        "countD": { "type": "integer", "minimum": 0 }
+      },
+      "required": ["countA", "countB", "countC", "countD"],
+      "additionalProperties": false
+    }
+  }
+}
