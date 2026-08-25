@@ -63,12 +63,13 @@
 		849539E9283BE15E00260E85 /* CCETest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539E8283BE15E00260E85 /* CCETest.swift */; };
 		849539EC283BE3EC00260E85 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539EB283BE3EC00260E85 /* NetworkManager.swift */; };
 		B1C9F2CA72E44F468634F0EF /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5D7E98737240078E1A75C4 /* NotificationManager.swift */; };
+		4540793BE5364B7694DACC02 /* ExamScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920A28900304AD39A14AD56 /* ExamScheduleManager.swift */; };
 		84979B6E287EF6DC002675A6 /* CCESectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B6D287EF6DC002675A6 /* CCESectionTests.swift */; };
 		849DF42B2984B77400EA3D1A /* HomeVC_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42A2984B77400EA3D1A /* HomeVC_.swift */; };
 		849DF42F2984B85F00EA3D1A /* Home+StickyHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42E2984B85F00EA3D1A /* Home+StickyHeading.swift */; };
 		849DF43529853FFF00EA3D1A /* StickyHeadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */; };
 		849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF436298544BD00EA3D1A /* CircularProgressView.swift */; };
-		7AD5CAC37374480E919B145F /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF0BCF452941CDB33657A9 /* TimePickerVC.swift */; };
+		7AD5CAC37374480E919B145F /* DateTimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF0BCF452941CDB33657A9 /* DateTimePickerVC.swift */; };
 		849DF4392985469400EA3D1A /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */; };
 		849DF43C2985CD0000EA3D1A /* HomeVM_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43B2985CD0000EA3D1A /* HomeVM_.swift */; };
 		849DF43E2985FBBE00EA3D1A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43D2985FBBE00EA3D1A /* Card.swift */; };
@@ -196,12 +197,13 @@
 		849539E8283BE15E00260E85 /* CCETest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCETest.swift; sourceTree = "<group>"; };
 		849539EB283BE3EC00260E85 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3B5D7E98737240078E1A75C4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		4920A28900304AD39A14AD56 /* ExamScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamScheduleManager.swift; sourceTree = "<group>"; };
 		84979B6D287EF6DC002675A6 /* CCESectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionTests.swift; sourceTree = "<group>"; };
 		849DF42A2984B77400EA3D1A /* HomeVC_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC_.swift; sourceTree = "<group>"; };
 		849DF42E2984B85F00EA3D1A /* Home+StickyHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+StickyHeading.swift"; sourceTree = "<group>"; };
 		849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeadingProtocol.swift; sourceTree = "<group>"; };
 		849DF436298544BD00EA3D1A /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
-		07FF0BCF452941CDB33657A9 /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
+		07FF0BCF452941CDB33657A9 /* DateTimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimePickerVC.swift; sourceTree = "<group>"; };
 		849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
 		849DF43B2985CD0000EA3D1A /* HomeVM_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM_.swift; sourceTree = "<group>"; };
 		849DF43D2985FBBE00EA3D1A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -562,6 +564,7 @@
 				8462AF7628D7440000E4A759 /* DimensionManager.swift */,
 				84267AD9298947EF00DA8157 /* UIBuildingManager.swift */,
 				3B5D7E98737240078E1A75C4 /* NotificationManager.swift */,
+				4920A28900304AD39A14AD56 /* ExamScheduleManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -764,7 +767,7 @@
 				84B8DABB285F9572008DDAFE /* CardCell.xib */,
 				846CF9E728809BB900E2A96F /* CCEProgressBar.swift */,
 				849DF436298544BD00EA3D1A /* CircularProgressView.swift */,
-				07FF0BCF452941CDB33657A9 /* TimePickerVC.swift */,
+				07FF0BCF452941CDB33657A9 /* DateTimePickerVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1171,7 +1174,7 @@
 				84A184DB281D84B70074D5AB /* HomeVC.swift in Sources */,
 				84267AD729893F0400DA8157 /* Tests+Heading.swift in Sources */,
 				849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */,
-				7AD5CAC37374480E919B145F /* TimePickerVC.swift in Sources */,
+				7AD5CAC37374480E919B145F /* DateTimePickerVC.swift in Sources */,
 				84A184F5281D96120074D5AB /* CCEScreenCollectiveMetricsView.swift in Sources */,
 				849539E5283BCD4F00260E85 /* TestVC.swift in Sources */,
 				84A184DD281D87CD0074D5AB /* TestsVC.swift in Sources */,
@@ -1191,6 +1194,7 @@
 				84A184EB281D8DB40074D5AB /* CCELevelOneTitleLabel.swift in Sources */,
 				849539EC283BE3EC00260E85 /* NetworkManager.swift in Sources */,
 				B1C9F2CA72E44F468634F0EF /* NotificationManager.swift in Sources */,
+				4540793BE5364B7694DACC02 /* ExamScheduleManager.swift in Sources */,
 				8436CBEE281F00B8007668DC /* UIView+Ext.swift in Sources */,
 				84CC3F30287B098A005AFF0F /* CCEUsersData.swift in Sources */,
 				8436CBF3281F4621007668DC /* CCESectionCompoundCell.swift in Sources */,

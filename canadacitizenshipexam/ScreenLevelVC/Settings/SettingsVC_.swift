@@ -45,6 +45,10 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
   // Practice Time row on every appearance.
   var practiceTimeValueLabel: UILabel?
 
+  // Same idea as practiceTimeValueLabel above, but for the Exam Date row —
+  // kept in sync with Home's own "Schedule your Exam" row.
+  var examDateValueLabel: UILabel?
+
   // The scroll view containing several cards.
   var scrollView: UIScrollView! = UIScrollView()
 
@@ -73,8 +77,9 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
 
     reconcileDailyReminderSwitch()
     // Same reasoning as reconcileDailyReminderSwitch above — Home's own
-    // Practice Time row can also change this value.
+    // Practice Time / Schedule your Exam rows can also change these values.
     practiceTimeValueLabel?.text = NotificationManager.shared.practiceTimeDisplayText
+    examDateValueLabel?.text = ExamScheduleManager.shared.examDateValueText
   }
 
   // The switch is only built once (guarded by isFirstTimeLoaded above), but
@@ -136,14 +141,40 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
   }
 
   @objc func practiceTimeRowTapped() {
-    let picker = TimePickerVC(
-      hour: NotificationManager.shared.practiceReminderHour,
-      minute: NotificationManager.shared.practiceReminderMinute
-    ) { [weak self] hour, minute in
+    var components = DateComponents()
+    components.hour = NotificationManager.shared.practiceReminderHour
+    components.minute = NotificationManager.shared.practiceReminderMinute
+    let initialDate = Calendar.current.date(from: components) ?? Date()
+
+    let picker = DateTimePickerVC(heading: "Practice Time", mode: .time, initialDate: initialDate) { [weak self] date in
+      let picked = Calendar.current.dateComponents([.hour, .minute], from: date)
       // Reschedules the reminder at the new time automatically if it's
       // currently on (see NotificationManager.setPracticeTime).
-      NotificationManager.shared.setPracticeTime(hour: hour, minute: minute)
+      NotificationManager.shared.setPracticeTime(
+        hour: picked.hour ?? NotificationManager.defaultReminderHour,
+        minute: picked.minute ?? NotificationManager.defaultReminderMinute
+      )
       self?.practiceTimeValueLabel?.text = NotificationManager.shared.practiceTimeDisplayText
+    }
+    present(picker, animated: true)
+  }
+
+  @objc func examDateRowTapped() {
+    let now = Date()
+    // If a past date was already saved (the app was never reopened around
+    // exam day, say), start the picker at "now" instead of a date it won't
+    // even let the user land back on.
+    let storedExamDate = ExamScheduleManager.shared.examDate
+    let initialDate = (storedExamDate.map { $0 >= now }) == true ? storedExamDate! : now
+
+    let picker = DateTimePickerVC(
+      heading: "Exam Date",
+      mode: .dateAndTime,
+      initialDate: initialDate,
+      minimumDate: now
+    ) { [weak self] date in
+      ExamScheduleManager.shared.examDate = date
+      self?.examDateValueLabel?.text = ExamScheduleManager.shared.examDateValueText
     }
     present(picker, animated: true)
   }

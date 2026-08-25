@@ -184,6 +184,24 @@ extension SettingsVC_ {
       darkModeSwitch.trailingAnchor.constraint(equalTo: preferencesCardView.trailingAnchor, constant: -15)
     ])
 
+    let examDateRow = buildDisclosureRow(
+      imageName: "calendar",
+      text: "Exam Date",
+      valueText: ExamScheduleManager.shared.examDateValueText
+    )
+    examDateRow.row.isUserInteractionEnabled = true
+    examDateRow.row.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(examDateRowTapped)))
+    self.examDateValueLabel = examDateRow.valueLabel
+
+    preferencesCardView.addSubview(examDateRow.row)
+
+    NSLayoutConstraint.activate([
+      examDateRow.row.topAnchor.constraint(equalTo: darkModeRow.row.bottomAnchor, constant: 15),
+      examDateRow.row.leadingAnchor.constraint(equalTo: preferencesCardView.leadingAnchor, constant: 15),
+      examDateRow.row.trailingAnchor.constraint(equalTo: preferencesCardView.trailingAnchor, constant: -15),
+      examDateRow.row.heightAnchor.constraint(equalToConstant: 31)
+    ])
+
     let practiceTimeRow = buildDisclosureRow(
       imageName: "clock",
       text: "Practice Time",
@@ -196,15 +214,15 @@ extension SettingsVC_ {
     preferencesCardView.addSubview(practiceTimeRow.row)
 
     NSLayoutConstraint.activate([
-      practiceTimeRow.row.topAnchor.constraint(equalTo: darkModeRow.row.bottomAnchor, constant: 15),
+      practiceTimeRow.row.topAnchor.constraint(equalTo: examDateRow.row.bottomAnchor, constant: 15),
       practiceTimeRow.row.leadingAnchor.constraint(equalTo: preferencesCardView.leadingAnchor, constant: 15),
       practiceTimeRow.row.trailingAnchor.constraint(equalTo: preferencesCardView.trailingAnchor, constant: -15),
       practiceTimeRow.row.heightAnchor.constraint(equalToConstant: 31)
     ])
 
-    // title + gap + reminder row + gap + dark mode row + gap + practice
-    // time row + bottom padding.
-    let preferencesCardHeight: CGFloat = preferencesCard.theHeight! + 15 + 31 + 15 + 31 + 15 + 31 + 15
+    // title + gap + reminder row + gap + dark mode row + gap + exam date
+    // row + gap + practice time row + bottom padding.
+    let preferencesCardHeight: CGFloat = preferencesCard.theHeight! + 15 + 31 + 15 + 31 + 15 + 31 + 15 + 31 + 15
 
     NSLayoutConstraint.activate([
       preferencesCardView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: distanceToTop),

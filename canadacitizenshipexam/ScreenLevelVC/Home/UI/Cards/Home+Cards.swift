@@ -24,7 +24,13 @@ extension HomeVC_ {
       onTap: { [weak self] in self?.notificationsRowTapped() }
     )
     self.notificationsActionableItem = card1 as? CardActionableItem
-    card1 = CardActionableItem(card: card1, text: "Schedule your Exam", imageName: "calendar")
+    card1 = CardActionableItem(
+      card: card1,
+      text: ExamScheduleManager.shared.examDateDisplayText,
+      imageName: "calendar",
+      onTap: { [weak self] in self?.examDateRowTapped() }
+    )
+    self.examDateActionableItem = card1 as? CardActionableItem
     card1 = CardActionableItem(
       card: card1,
       text: "Practice Time: \(NotificationManager.shared.practiceTimeDisplayText)",

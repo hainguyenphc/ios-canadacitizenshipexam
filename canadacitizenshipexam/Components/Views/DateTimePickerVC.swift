@@ -1,5 +1,5 @@
 //
-//  TimePickerVC.swift
+//  DateTimePickerVC.swift
 //  canadacitizenshipexam
 //
 //  Created by HAI NGUYEN on 2026-08-25.
@@ -7,20 +7,31 @@
 
 import UIKit
 
-// A small modal sheet with a wheel-style time picker, presented over a
-// dimmed background. Used by Home's "Practice Time" row to let the user
-// pick their daily practice reminder time.
-class TimePickerVC: UIViewController {
+// A small modal sheet with a wheel-style UIDatePicker, presented over a
+// dimmed background. Used by Home's "Practice Time" row (mode: .time) and
+// its "Schedule your Exam" row (mode: .dateAndTime), and by Settings'
+// "Practice Time" row.
+class DateTimePickerVC: UIViewController {
 
-  private let initialHour: Int
-  private let initialMinute: Int
-  private let onSave: (_ hour: Int, _ minute: Int) -> Void
+  private let heading: String
+  private let mode: UIDatePicker.Mode
+  private let initialDate: Date
+  private let minimumDate: Date?
+  private let onSave: (Date) -> Void
 
   private let datePicker = UIDatePicker()
 
-  init(hour: Int, minute: Int, onSave: @escaping (_ hour: Int, _ minute: Int) -> Void) {
-    self.initialHour = hour
-    self.initialMinute = minute
+  init(
+    heading: String,
+    mode: UIDatePicker.Mode,
+    initialDate: Date,
+    minimumDate: Date? = nil,
+    onSave: @escaping (Date) -> Void
+  ) {
+    self.heading = heading
+    self.mode = mode
+    self.initialDate = initialDate
+    self.minimumDate = minimumDate
     self.onSave = onSave
     super.init(nibName: nil, bundle: nil)
     self.modalPresentationStyle = .overFullScreen
@@ -46,7 +57,7 @@ class TimePickerVC: UIViewController {
     view.addSubview(panel)
 
     let titleLabel = ScreenTitleLabel(
-      text: "Practice Time",
+      text: heading,
       textColor: .label,
       textAlignment: .center,
       fontSize: 18,
@@ -54,15 +65,16 @@ class TimePickerVC: UIViewController {
     )
     panel.addSubview(titleLabel)
 
-    datePicker.datePickerMode = .time
+    datePicker.datePickerMode = mode
     datePicker.preferredDatePickerStyle = .wheels
     datePicker.translatesAutoresizingMaskIntoConstraints = false
-    var components = DateComponents()
-    components.hour = initialHour
-    components.minute = initialMinute
-    if let date = Calendar.current.date(from: components) {
-      datePicker.date = date
+    if let minimumDate = minimumDate {
+      datePicker.minimumDate = minimumDate
     }
+    // Set after minimumDate, so an initialDate that's earlier than
+    // minimumDate gets clamped forward by UIDatePicker itself rather than
+    // silently rejected.
+    datePicker.date = initialDate
     panel.addSubview(datePicker)
 
     let cancelButton = UIButton(type: .system)
@@ -107,11 +119,9 @@ class TimePickerVC: UIViewController {
   }
 
   @objc private func saveTapped() {
-    let components = Calendar.current.dateComponents([.hour, .minute], from: datePicker.date)
-    let hour = components.hour ?? initialHour
-    let minute = components.minute ?? initialMinute
+    let selectedDate = datePicker.date
     dismiss(animated: true) { [weak self] in
-      self?.onSave(hour, minute)
+      self?.onSave(selectedDate)
     }
   }
 
