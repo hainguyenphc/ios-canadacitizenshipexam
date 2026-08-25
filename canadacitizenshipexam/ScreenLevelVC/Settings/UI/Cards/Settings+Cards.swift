@@ -39,6 +39,51 @@ extension SettingsVC_ {
     return (row, icon, label)
   }
 
+  // Same leading icon + label as buildIconLabelRow, plus a trailing value +
+  // chevron, for rows that open a picker rather than toggle a switch.
+  private func buildDisclosureRow(imageName: String, text: String, valueText: String) -> (row: UIView, valueLabel: UILabel) {
+    let icon = UIImageView(image: UIImage(systemName: imageName))
+    icon.tintColor = APP_ACCENT_COLOR
+    icon.translatesAutoresizingMaskIntoConstraints = false
+
+    let label = ScreenTitleLabel(text: text, textColor: .label, textAlignment: .left, fontSize: 16, fontWeight: .regular)
+    label.setContentHuggingPriority(.defaultLow, for: .horizontal)
+
+    let valueLabel = ScreenTitleLabel(text: valueText, textColor: .secondaryLabel, textAlignment: .right, fontSize: 16, fontWeight: .regular)
+    valueLabel.setContentHuggingPriority(.required, for: .horizontal)
+
+    let chevron = UIImageView(image: UIImage(systemName: "chevron.right"))
+    chevron.tintColor = .tertiaryLabel
+    chevron.translatesAutoresizingMaskIntoConstraints = false
+
+    let row = UIView()
+    row.translatesAutoresizingMaskIntoConstraints = false
+    row.addSubview(icon)
+    row.addSubview(label)
+    row.addSubview(valueLabel)
+    row.addSubview(chevron)
+
+    NSLayoutConstraint.activate([
+      icon.leadingAnchor.constraint(equalTo: row.leadingAnchor),
+      icon.centerYAnchor.constraint(equalTo: label.centerYAnchor),
+      icon.widthAnchor.constraint(equalToConstant: 20),
+
+      label.topAnchor.constraint(equalTo: row.topAnchor),
+      label.bottomAnchor.constraint(equalTo: row.bottomAnchor),
+      label.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 10),
+
+      chevron.trailingAnchor.constraint(equalTo: row.trailingAnchor),
+      chevron.centerYAnchor.constraint(equalTo: label.centerYAnchor),
+      chevron.widthAnchor.constraint(equalToConstant: 12),
+
+      valueLabel.trailingAnchor.constraint(equalTo: chevron.leadingAnchor, constant: -6),
+      valueLabel.centerYAnchor.constraint(equalTo: label.centerYAnchor),
+      valueLabel.leadingAnchor.constraint(greaterThanOrEqualTo: label.trailingAnchor, constant: 8)
+    ])
+
+    return (row, valueLabel)
+  }
+
   func buildTheCards() {
     // The height of the heading area (title and tagline only — Settings has
     // no completion circle, unlike Tests/Book/Progress).
@@ -139,8 +184,27 @@ extension SettingsVC_ {
       darkModeSwitch.trailingAnchor.constraint(equalTo: preferencesCardView.trailingAnchor, constant: -15)
     ])
 
-    // title + gap + reminder row + gap + dark mode row + bottom padding.
-    let preferencesCardHeight: CGFloat = preferencesCard.theHeight! + 15 + 31 + 15 + 31 + 15
+    let practiceTimeRow = buildDisclosureRow(
+      imageName: "clock",
+      text: "Practice Time",
+      valueText: NotificationManager.shared.practiceTimeDisplayText
+    )
+    practiceTimeRow.row.isUserInteractionEnabled = true
+    practiceTimeRow.row.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(practiceTimeRowTapped)))
+    self.practiceTimeValueLabel = practiceTimeRow.valueLabel
+
+    preferencesCardView.addSubview(practiceTimeRow.row)
+
+    NSLayoutConstraint.activate([
+      practiceTimeRow.row.topAnchor.constraint(equalTo: darkModeRow.row.bottomAnchor, constant: 15),
+      practiceTimeRow.row.leadingAnchor.constraint(equalTo: preferencesCardView.leadingAnchor, constant: 15),
+      practiceTimeRow.row.trailingAnchor.constraint(equalTo: preferencesCardView.trailingAnchor, constant: -15),
+      practiceTimeRow.row.heightAnchor.constraint(equalToConstant: 31)
+    ])
+
+    // title + gap + reminder row + gap + dark mode row + gap + practice
+    // time row + bottom padding.
+    let preferencesCardHeight: CGFloat = preferencesCard.theHeight! + 15 + 31 + 15 + 31 + 15 + 31 + 15
 
     NSLayoutConstraint.activate([
       preferencesCardView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: distanceToTop),

@@ -68,6 +68,7 @@
 		849DF42F2984B85F00EA3D1A /* Home+StickyHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42E2984B85F00EA3D1A /* Home+StickyHeading.swift */; };
 		849DF43529853FFF00EA3D1A /* StickyHeadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */; };
 		849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF436298544BD00EA3D1A /* CircularProgressView.swift */; };
+		7AD5CAC37374480E919B145F /* TimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF0BCF452941CDB33657A9 /* TimePickerVC.swift */; };
 		849DF4392985469400EA3D1A /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */; };
 		849DF43C2985CD0000EA3D1A /* HomeVM_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43B2985CD0000EA3D1A /* HomeVM_.swift */; };
 		849DF43E2985FBBE00EA3D1A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43D2985FBBE00EA3D1A /* Card.swift */; };
@@ -200,6 +201,7 @@
 		849DF42E2984B85F00EA3D1A /* Home+StickyHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+StickyHeading.swift"; sourceTree = "<group>"; };
 		849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeadingProtocol.swift; sourceTree = "<group>"; };
 		849DF436298544BD00EA3D1A /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		07FF0BCF452941CDB33657A9 /* TimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerVC.swift; sourceTree = "<group>"; };
 		849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
 		849DF43B2985CD0000EA3D1A /* HomeVM_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM_.swift; sourceTree = "<group>"; };
 		849DF43D2985FBBE00EA3D1A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -762,6 +764,7 @@
 				84B8DABB285F9572008DDAFE /* CardCell.xib */,
 				846CF9E728809BB900E2A96F /* CCEProgressBar.swift */,
 				849DF436298544BD00EA3D1A /* CircularProgressView.swift */,
+				07FF0BCF452941CDB33657A9 /* TimePickerVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1168,6 +1171,7 @@
 				84A184DB281D84B70074D5AB /* HomeVC.swift in Sources */,
 				84267AD729893F0400DA8157 /* Tests+Heading.swift in Sources */,
 				849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */,
+				7AD5CAC37374480E919B145F /* TimePickerVC.swift in Sources */,
 				84A184F5281D96120074D5AB /* CCEScreenCollectiveMetricsView.swift in Sources */,
 				849539E5283BCD4F00260E85 /* TestVC.swift in Sources */,
 				84A184DD281D87CD0074D5AB /* TestsVC.swift in Sources */,

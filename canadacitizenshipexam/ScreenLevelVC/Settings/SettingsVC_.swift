@@ -40,6 +40,11 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
   // ends up denying the notifications permission.
   var dailyReminderSwitch: UISwitch?
 
+  // Kept so practiceTimeRowTapped can update this row's trailing value once
+  // a new time is picked, and so it can be re-synced with Home's own
+  // Practice Time row on every appearance.
+  var practiceTimeValueLabel: UILabel?
+
   // The scroll view containing several cards.
   var scrollView: UIScrollView! = UIScrollView()
 
@@ -67,6 +72,9 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
     }
 
     reconcileDailyReminderSwitch()
+    // Same reasoning as reconcileDailyReminderSwitch above — Home's own
+    // Practice Time row can also change this value.
+    practiceTimeValueLabel?.text = NotificationManager.shared.practiceTimeDisplayText
   }
 
   // The switch is only built once (guarded by isFirstTimeLoaded above), but
@@ -125,6 +133,19 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
   @objc func darkModeSwitchToggled(_ sender: UISwitch) {
     isDarkModeOn = sender.isOn
     view.window?.overrideUserInterfaceStyle = sender.isOn ? .dark : .light
+  }
+
+  @objc func practiceTimeRowTapped() {
+    let picker = TimePickerVC(
+      hour: NotificationManager.shared.practiceReminderHour,
+      minute: NotificationManager.shared.practiceReminderMinute
+    ) { [weak self] hour, minute in
+      // Reschedules the reminder at the new time automatically if it's
+      // currently on (see NotificationManager.setPracticeTime).
+      NotificationManager.shared.setPracticeTime(hour: hour, minute: minute)
+      self?.practiceTimeValueLabel?.text = NotificationManager.shared.practiceTimeDisplayText
+    }
+    present(picker, animated: true)
   }
 
 }

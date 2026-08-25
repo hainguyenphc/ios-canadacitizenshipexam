@@ -17,6 +17,9 @@ class NotificationManager {
 
   static let dailyReminderDefaultsKey = "dailyRemindersEnabled"
 
+  static let practiceHourDefaultsKey = "practiceReminderHour"
+  static let practiceMinuteDefaultsKey = "practiceReminderMinute"
+
   // Matches the "Practice Time: 10:00 AM" copy already on the Home screen.
   static let defaultReminderHour = 10
   static let defaultReminderMinute = 0
@@ -31,6 +34,44 @@ class NotificationManager {
   var isDailyReminderEnabled: Bool {
     get { UserDefaults.standard.bool(forKey: NotificationManager.dailyReminderDefaultsKey) }
     set { UserDefaults.standard.set(newValue, forKey: NotificationManager.dailyReminderDefaultsKey) }
+  }
+
+  // The user's chosen practice time, defaulting to the "Practice Time:
+  // 10:00 AM" copy until they pick their own. `.object(forKey:) as? Int`
+  // rather than `.integer(forKey:)`, since the latter returns 0 for a
+  // missing key — indistinguishable from an actual midnight (hour 0)
+  // choice — which would silently default everyone to 12:00 AM.
+  var practiceReminderHour: Int {
+    get { (UserDefaults.standard.object(forKey: NotificationManager.practiceHourDefaultsKey) as? Int) ?? NotificationManager.defaultReminderHour }
+    set { UserDefaults.standard.set(newValue, forKey: NotificationManager.practiceHourDefaultsKey) }
+  }
+
+  var practiceReminderMinute: Int {
+    get { (UserDefaults.standard.object(forKey: NotificationManager.practiceMinuteDefaultsKey) as? Int) ?? NotificationManager.defaultReminderMinute }
+    set { UserDefaults.standard.set(newValue, forKey: NotificationManager.practiceMinuteDefaultsKey) }
+  }
+
+  // "10:00 AM"-style text for the current practice time, for display on the
+  // Home screen's "Practice Time" row.
+  var practiceTimeDisplayText: String {
+    var components = DateComponents()
+    components.hour = practiceReminderHour
+    components.minute = practiceReminderMinute
+    let date = Calendar.current.date(from: components) ?? Date()
+    let formatter = DateFormatter()
+    formatter.dateFormat = "h:mm a"
+    return formatter.string(from: date)
+  }
+
+  // Updates the practice time. If the daily reminder is currently on, the
+  // scheduled notification is rescheduled to the new time right away;
+  // otherwise this is just persisted for whenever it's turned on.
+  func setPracticeTime(hour: Int, minute: Int) {
+    practiceReminderHour = hour
+    practiceReminderMinute = minute
+    if isDailyReminderEnabled {
+      scheduleDailyReminder()
+    }
   }
 
   func getAuthorizationStatus(completion: @escaping (UNAuthorizationStatus) -> Void) {
@@ -73,18 +114,15 @@ class NotificationManager {
     }
   }
 
-  private func scheduleDailyReminder(
-    hour: Int = NotificationManager.defaultReminderHour,
-    minute: Int = NotificationManager.defaultReminderMinute
-  ) {
+  private func scheduleDailyReminder() {
     let content = UNMutableNotificationContent()
     content.title = "Practice Reminder"
     content.body = "Take a few minutes to practice for your Canadian citizenship test."
     content.sound = .default
 
     var dateComponents = DateComponents()
-    dateComponents.hour = hour
-    dateComponents.minute = minute
+    dateComponents.hour = practiceReminderHour
+    dateComponents.minute = practiceReminderMinute
 
     // Matching just hour/minute (no day) with repeats: true fires this
     // every day at that time, rather than once.

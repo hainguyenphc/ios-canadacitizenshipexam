@@ -60,6 +60,10 @@ class HomeVC_: UIViewController, HomeVCDelegate {
   // notifications are turned on or off.
   var notificationsActionableItem: CardActionableItem?
 
+  // Kept so practiceTimeRowTapped can update this row's text once a new
+  // time is picked.
+  var practiceTimeActionableItem: CardActionableItem?
+
   // MARK: - Life-cyle methods
 
   override func viewWillAppear(_ animated: Bool) {
@@ -86,6 +90,7 @@ class HomeVC_: UIViewController, HomeVCDelegate {
     // the Settings screen can also flip this same NotificationManager state
     // — re-sync every time this screen appears so the two never drift.
     refreshNotificationsRow()
+    refreshPracticeTimeRow()
 
     tabBarController?.tabBar.isHidden = false
     navigationItem.setHidesBackButton(true, animated: false)
@@ -144,6 +149,26 @@ extension HomeVC_ {
     notificationsActionableItem?.update(
       text: isOn ? "Daily Reminders On" : "Turn on Notifications",
       imageName: isOn ? "checkmark.circle.fill" : "bell"
+    )
+  }
+
+  func practiceTimeRowTapped() {
+    let picker = TimePickerVC(
+      hour: NotificationManager.shared.practiceReminderHour,
+      minute: NotificationManager.shared.practiceReminderMinute
+    ) { [weak self] hour, minute in
+      // Reschedules the reminder at the new time automatically if it's
+      // currently on (see NotificationManager.setPracticeTime).
+      NotificationManager.shared.setPracticeTime(hour: hour, minute: minute)
+      self?.refreshPracticeTimeRow()
+    }
+    present(picker, animated: true)
+  }
+
+  func refreshPracticeTimeRow() {
+    practiceTimeActionableItem?.update(
+      text: "Practice Time: \(NotificationManager.shared.practiceTimeDisplayText)",
+      imageName: "clock"
     )
   }
 
