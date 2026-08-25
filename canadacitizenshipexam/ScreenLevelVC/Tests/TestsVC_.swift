@@ -24,6 +24,12 @@ class TestsVC_: UIViewController, TestsVCDelegate {
 
   var isFirstTimeLoaded: Bool = true
 
+  let testsVM = TestsVM_()
+
+  // Populated once loadTests() returns; buildTheCards() reads this to
+  // render one card per test instead of the old two hardcoded placeholders.
+  var tests: [CCETest] = []
+
   // MARK: - Sub-views
 
   var unlockPremiumFeaturesView: UIView?
@@ -52,10 +58,11 @@ class TestsVC_: UIViewController, TestsVCDelegate {
       setupScrollView()
       // Then we build the heading
       buildTheHeadingView()
-      // Next, we construct the cards which are the tests.
+      // Next, we construct the cards which are the tests. Tests load from
+      // Firestore asynchronously, so buildTheCards() establishes the scroll
+      // view height itself once it actually has content to size for —
+      // first the loading placeholder, then the real cards.
       buildTheCards()
-      // Finally, establish the scroll view height.
-      specifyScrollViewHeight()
 
       isFirstTimeLoaded = !isFirstTimeLoaded
     }
