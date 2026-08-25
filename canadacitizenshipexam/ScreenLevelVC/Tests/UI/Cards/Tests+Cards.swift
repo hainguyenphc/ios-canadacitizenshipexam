@@ -27,7 +27,7 @@ extension TestsVC_ {
       card: card2,
       text: "Discover Canada Test 1",
       imageName: "lock.fill",
-      tintColor: UIColor.lightGray
+      tintColor: UIColor.systemGray3
     )
     card2 = CardActionableItem(card: card2, text: "20 Exam Questions", imageName: "")
     cards.append(card2)
@@ -35,13 +35,8 @@ extension TestsVC_ {
     let bodyText = "After generating your fancy text symbols, you can copy and paste the \"fonts\" to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text in agario is probably generated using a fancy text converter similar to this), to generate a creative-looking instagram, facebook, tumblr, or twitter post, for showing up n00bs on Steam, or just for sending messages full of beautiful text to your buddies.\nThe only exception is if your paste destination has a font which doesn't support some unicode characters. For example, you'll might find that some websites don't use a unicode font, or if they do, the font doesn't have all the characters required. In that case, you'll see a generic \"box\" in which was created when the browser tries to create a fancy letter. This doesn't mean there's an error with this translator, it just means the website's font doesn't support that character."
     let decoratedBodyText = NSMutableAttributedString(string: "\n\(bodyText)", attributes: [
       .font: UIFont.systemFont(ofSize: 16, weight: .regular),
+      .foregroundColor: UIColor.label,
     ])
-
-    let image = UIImage(systemName: "bubble.left.and.exclamationmark.bubble.right")!
-      .withTintColor(APP_ACCENT_COLOR)
-    let attachment = NSTextAttachment()
-    attachment.image = image
-    let attributedText = NSMutableAttributedString(attachment: attachment)
 
     let titleText = "How difficult is the official test?";
     let decoratedTitleText = NSMutableAttributedString(string: " \(titleText)", attributes: [
@@ -50,11 +45,20 @@ extension TestsVC_ {
       .strokeColor: UIColor.red,
     ])
 
-    attributedText.append(decoratedTitleText)
-    attributedText.append(decoratedBodyText)
-
     var card7: CardProtocol = Card()
-    card7 = CardTextView(card: card7, text: attributedText)
+    // The bubble icon is tinted via UIImage.withTintColor, which bakes the
+    // color into a static bitmap — CardTextView re-invokes this builder with
+    // the correct icon color whenever the interface style changes.
+    card7 = CardTextView(card: card7) { iconColor in
+      let image = UIImage(systemName: "bubble.left.and.exclamationmark.bubble.right")!
+        .withTintColor(iconColor)
+      let attachment = NSTextAttachment()
+      attachment.image = image
+      let attributedText = NSMutableAttributedString(attachment: attachment)
+      attributedText.append(decoratedTitleText)
+      attributedText.append(decoratedBodyText)
+      return attributedText
+    }
 
     cards.insert(card7, at: 1)
 

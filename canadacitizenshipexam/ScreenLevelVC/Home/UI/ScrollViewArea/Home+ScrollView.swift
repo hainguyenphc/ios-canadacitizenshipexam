@@ -10,7 +10,6 @@ import UIKit
 extension HomeVC_: ScrollProtocol {
 
   func setupScrollView() {
-    scrollView.overrideUserInterfaceStyle = .light
     scrollView.translatesAutoresizingMaskIntoConstraints = false
     scrollView.isScrollEnabled = true
 

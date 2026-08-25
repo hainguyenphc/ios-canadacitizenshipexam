@@ -77,7 +77,7 @@ extension HomeVC_ {
     let titleLabel = UIBuildingManager.shared.buildTheTitleLabel(title: "Discover Canada")
     let taglineLabel = UIBuildingManager.shared.buildTheTaglineLabel(tagline: "Canada Citizenship Test 2023")
     let imageView = UIBuildingManager.shared.buildTheImageNextToTitleLabel(systemName: "square.and.arrow.up")
-    let options = CompletionPercentageOptions(position: .left, textColor: UIColor.white.cgColor)
+    let options = CompletionPercentageOptions(position: .left, textColor: UIColor.white)
     let completionPercentageView = UIBuildingManager.shared.buildTheCompletionPercentageView(percent: 0, options: options)
     // Placeholder text: "Practice Progress" / "0 Daily Questions Answered / 0 of 35
     // Tests Completed" stand in until real progress data is wired up (see the

@@ -18,8 +18,12 @@ enum HorizontalRelativePosition: String {
 struct CompletionPercentageOptions {
 
   var position: HorizontalRelativePosition
-  
-  var textColor: CGColor
+
+  // Kept as a genuine (dynamic) UIColor rather than a CGColor: a CGColor is a
+  // frozen snapshot resolved against the thread's "current" trait collection
+  // at the moment it's taken, which doesn't necessarily match this app's own
+  // light/dark setting — that's how the percentage label ended up stuck white.
+  var textColor: UIColor
 
 }
 

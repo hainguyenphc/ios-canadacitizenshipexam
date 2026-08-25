@@ -18,13 +18,15 @@ class CircularProgressView: UIView {
 
   var timeToFill = 0.1
 
-  var progressColor = UIColor.white {
+  var progressColor = UIColor.systemGray {
     didSet {
       progressLayer.strokeColor = progressColor.cgColor
     }
   }
 
-  var trackColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.3) {
+  // A semantic gray rather than a fixed RGB triple, so the (barely-visible)
+  // track keeps reading correctly against both a light and a dark card.
+  var trackColor = UIColor.systemGray4.withAlphaComponent(0.5) {
     didSet{
       trackLayer.strokeColor = trackColor.cgColor
     }
@@ -87,6 +89,16 @@ class CircularProgressView: UIView {
       progressLayer.lineCap = .round
     }
     layer.addSublayer(progressLayer)
+  }
+
+  // Like Card's shadowColor, these are frozen CGColor snapshots — re-apply
+  // them from the (dynamic) UIColor properties whenever appearance changes.
+  override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+    super.traitCollectionDidChange(previousTraitCollection)
+    if traitCollection.hasDifferentColorAppearance(comparedTo: previousTraitCollection) {
+      progressLayer.strokeColor = progressColor.cgColor
+      trackLayer.strokeColor = trackColor.cgColor
+    }
   }
 
   func trackColorToProgressColor() -> Void{

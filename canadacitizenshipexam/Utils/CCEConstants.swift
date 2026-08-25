@@ -124,7 +124,18 @@ struct Chapters {
  COLORS
  */
 
-let APP_ACCENT_COLOR = UIColor(red: 150 / 255, green: 0 / 255, blue: 10 / 255, alpha: 1.0)
+// A dynamic color: the brand's deep maroon reads well against light
+// backgrounds, but on a dark background it's nearly indistinguishable from
+// black, so Dark Mode gets a brighter, more saturated red instead — same
+// hue family, enough lift to actually stand out.
+let APP_ACCENT_COLOR = UIColor { traitCollection in
+  switch traitCollection.userInterfaceStyle {
+    case .dark:
+      return UIColor(red: 235 / 255, green: 45 / 255, blue: 55 / 255, alpha: 1.0)
+    default:
+      return UIColor(red: 150 / 255, green: 0 / 255, blue: 10 / 255, alpha: 1.0)
+  }
+}
 
 /*
  SIZES, DIMENSIONS

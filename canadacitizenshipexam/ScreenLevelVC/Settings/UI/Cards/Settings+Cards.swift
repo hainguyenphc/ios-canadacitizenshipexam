@@ -117,7 +117,29 @@ extension SettingsVC_ {
       reminderSwitch.trailingAnchor.constraint(equalTo: preferencesCardView.trailingAnchor, constant: -15)
     ])
 
-    let preferencesCardHeight: CGFloat = preferencesCard.theHeight! + 15 + 31 + 15
+    let darkModeRow = buildIconLabelRow(imageName: "moon.fill", text: "Dark Mode")
+
+    let darkModeSwitch = UISwitch()
+    darkModeSwitch.translatesAutoresizingMaskIntoConstraints = false
+    darkModeSwitch.isOn = isDarkModeOn
+    darkModeSwitch.onTintColor = APP_ACCENT_COLOR
+    darkModeSwitch.addTarget(self, action: #selector(darkModeSwitchToggled(_:)), for: .valueChanged)
+
+    preferencesCardView.addSubview(darkModeRow.row)
+    preferencesCardView.addSubview(darkModeSwitch)
+
+    NSLayoutConstraint.activate([
+      darkModeRow.row.topAnchor.constraint(equalTo: reminderRow.row.bottomAnchor, constant: 15),
+      darkModeRow.row.leadingAnchor.constraint(equalTo: preferencesCardView.leadingAnchor, constant: 15),
+      darkModeRow.row.trailingAnchor.constraint(equalTo: darkModeSwitch.leadingAnchor, constant: -10),
+      darkModeRow.row.heightAnchor.constraint(equalToConstant: 31),
+
+      darkModeSwitch.centerYAnchor.constraint(equalTo: darkModeRow.row.centerYAnchor),
+      darkModeSwitch.trailingAnchor.constraint(equalTo: preferencesCardView.trailingAnchor, constant: -15)
+    ])
+
+    // title + gap + reminder row + gap + dark mode row + bottom padding.
+    let preferencesCardHeight: CGFloat = preferencesCard.theHeight! + 15 + 31 + 15 + 31 + 15
 
     NSLayoutConstraint.activate([
       preferencesCardView.topAnchor.constraint(equalTo: scrollView.topAnchor, constant: distanceToTop),

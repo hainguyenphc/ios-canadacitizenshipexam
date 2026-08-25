@@ -65,7 +65,7 @@ class ProgressVC_: UIViewController, ProgressVCDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor = UIColor(red: 220, green: 220, blue: 220, alpha: 1.0)
+    self.view.backgroundColor = .systemGroupedBackground
   }
 
 }

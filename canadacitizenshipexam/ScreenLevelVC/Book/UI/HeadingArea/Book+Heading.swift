@@ -82,7 +82,7 @@ extension BookVC_ {
   func buildTheHeadingView() {
     let titleLabel = UIBuildingManager.shared.buildTheTitleLabel(title: "Study Book", textColor: .label)
     let taglineLabel = UIBuildingManager.shared.buildTheTaglineLabel(tagline: "35 Chapters", textColor: .secondaryLabel)
-    let options = CompletionPercentageOptions(position: .left, textColor: UIColor.label.cgColor)
+    let options = CompletionPercentageOptions(position: .left, textColor: UIColor.label)
     let completionPercentageView = UIBuildingManager.shared.buildTheCompletionPercentageView(percent: 0.5, options: options)
     let completionDetailsView = UIBuildingManager.shared.buildTheCompletionDetailsView(
       textColor: .label,
@@ -97,7 +97,7 @@ extension BookVC_ {
       .compactMap{$0 as? CircularProgressView}
       .first
 
-    (self.completionCircularProgressView)!.progressColor = .gray
+    (self.completionCircularProgressView)!.progressColor = .systemGray
 
     self.completionPercentageLabel = completionPercentageView?
       .subviews

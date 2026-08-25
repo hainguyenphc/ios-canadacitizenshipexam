@@ -10,7 +10,6 @@ import UIKit
 extension ProgressVC_: ScrollProtocol {
 
   func setupScrollView() {
-    scrollView.overrideUserInterfaceStyle = .light
     scrollView.translatesAutoresizingMaskIntoConstraints = false
     scrollView.isScrollEnabled = true
     view.addSubview(scrollView)

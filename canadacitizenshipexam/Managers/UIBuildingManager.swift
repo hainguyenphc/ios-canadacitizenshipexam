@@ -20,7 +20,9 @@ class UIBuildingManager {
     // let multiplier = DEVICE_IDIOM == .pad ? 0.33 : 0.50
     let rectangle = CGRect(x: 0, y: 0, width: BOUNDS.size.width, height: BOUNDS.height * multiplier)
     let stickyHeadingView = UIView(frame: rectangle)
-    stickyHeadingView.layer.backgroundColor = APP_ACCENT_COLOR.cgColor
+    // view.backgroundColor (unlike layer.backgroundColor, a CGColor snapshot)
+    // re-resolves APP_ACCENT_COLOR automatically on a Light/Dark Mode change.
+    stickyHeadingView.backgroundColor = APP_ACCENT_COLOR
 
     return stickyHeadingView
   }
@@ -90,7 +92,7 @@ class UIBuildingManager {
 
     let numberLabel = ScreenTitleLabel(
       text: "\(roundedPercent)%",
-      textColor: UIColor(cgColor: options.textColor),
+      textColor: options.textColor,
       textAlignment: .left,
       fontSize: 16,
       fontWeight: .semibold

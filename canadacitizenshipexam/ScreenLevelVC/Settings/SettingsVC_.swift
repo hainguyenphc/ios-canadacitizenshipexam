@@ -34,6 +34,14 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
     set { UserDefaults.standard.set(newValue, forKey: SettingsVC_.dailyReminderDefaultsKey) }
   }
 
+  // Same persistence approach as the reminder toggle above.
+  static let darkModeDefaultsKey = "darkModeEnabled"
+
+  var isDarkModeOn: Bool {
+    get { UserDefaults.standard.bool(forKey: SettingsVC_.darkModeDefaultsKey) }
+    set { UserDefaults.standard.set(newValue, forKey: SettingsVC_.darkModeDefaultsKey) }
+  }
+
   // MARK: - Sub-views
 
   var unlockPremiumFeaturesView: UIView?
@@ -67,7 +75,7 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.view.backgroundColor = UIColor(red: 220, green: 220, blue: 220, alpha: 1.0)
+    self.view.backgroundColor = .systemGroupedBackground
   }
 
   // MARK: - Actions
@@ -91,6 +99,15 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
     isDailyReminderOn = sender.isOn
     // @TODO: schedule/cancel the local notification once the notifications
     // infrastructure lands. For now this only persists the user's choice.
+  }
+
+  @objc func darkModeSwitchToggled(_ sender: UISwitch) {
+    isDarkModeOn = sender.isOn
+    view.window?.overrideUserInterfaceStyle = sender.isOn ? .dark : .light
+    // Most cards/scroll views still force a light appearance of their own
+    // (see Card.swift and each screen's ScrollView setup), so this mainly
+    // repaints system chrome (nav bar, tab bar, status bar) for now, until
+    // those hardcoded overrides are made theme-aware.
   }
 
 }

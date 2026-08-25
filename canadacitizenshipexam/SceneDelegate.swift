@@ -22,6 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     self.window = UIWindow(frame: windowScene.coordinateSpace.bounds)
     self.window?.windowScene = windowScene
     self.window?.rootViewController = self.createPrimaryTabBarController()
+    // Restore the user's Dark Mode choice from the Settings screen.
+    self.window?.overrideUserInterfaceStyle = UserDefaults.standard.bool(forKey: SettingsVC_.darkModeDefaultsKey) ? .dark : .light
     self.window?.makeKeyAndVisible()
     self.configureNavigationBar()
   }
@@ -77,7 +79,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   func createPrimaryTabBarController() -> UITabBarController {
     let tabBarController              = UITabBarController()
     tabBarController.tabBar.tintColor = .systemRed
-    tabBarController.tabBar.backgroundColor = UIColor.white
+    tabBarController.tabBar.backgroundColor = .systemBackground
     tabBarController.viewControllers  = [
       createHomeNC(),
       createTestsNC(),

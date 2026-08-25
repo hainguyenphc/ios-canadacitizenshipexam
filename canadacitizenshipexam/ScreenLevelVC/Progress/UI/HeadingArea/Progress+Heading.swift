@@ -114,7 +114,7 @@ extension ProgressVC_ {
 
     // Row 1: Practice Progress. The circle sits on the left, its details to the right,
     // mirroring the layout used by the Tests and Book screens' single heading row.
-    let practiceOptions = CompletionPercentageOptions(position: .left, textColor: UIColor.label.cgColor)
+    let practiceOptions = CompletionPercentageOptions(position: .left, textColor: UIColor.label)
     let practicePercentageView = UIBuildingManager.shared.buildTheCompletionPercentageView(percent: 0, options: practiceOptions)
     let practiceDetailsView = UIBuildingManager.shared.buildTheCompletionDetailsView(
       textColor: .label,
@@ -127,7 +127,7 @@ extension ProgressVC_ {
       .subviews
       .compactMap { $0 as? CircularProgressView }
       .first
-    self.practiceCompletionCircularProgressView?.progressColor = .gray
+    self.practiceCompletionCircularProgressView?.progressColor = .systemGray
 
     if let practicePercentageView = practicePercentageView {
       scrollView.addSubview(practicePercentageView)
@@ -151,7 +151,7 @@ extension ProgressVC_ {
 
     // Row 2: Reading Progress. Mirrored — the details sit on the left (right-aligned
     // text), with the circle on the right, matching the design.
-    let readingOptions = CompletionPercentageOptions(position: .right, textColor: UIColor.label.cgColor)
+    let readingOptions = CompletionPercentageOptions(position: .right, textColor: UIColor.label)
     let readingPercentageView = UIBuildingManager.shared.buildTheCompletionPercentageView(percent: 0, options: readingOptions)
     let readingDetailsView = UIBuildingManager.shared.buildTheCompletionDetailsView(
       textColor: .label,
@@ -165,7 +165,7 @@ extension ProgressVC_ {
       .subviews
       .compactMap { $0 as? CircularProgressView }
       .first
-    self.readingCompletionCircularProgressView?.progressColor = .gray
+    self.readingCompletionCircularProgressView?.progressColor = .systemGray
 
     if let readingPercentageView = readingPercentageView, let practicePercentageView = practicePercentageView {
       scrollView.addSubview(readingPercentageView)
