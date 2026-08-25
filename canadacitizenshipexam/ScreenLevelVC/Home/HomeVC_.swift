@@ -136,6 +136,14 @@ extension HomeVC_ {
     tabBarController?.selectedIndex = 1
   }
 
+  func navigateToBooks() {
+    tabBarController?.selectedIndex = 2
+  }
+  
+  func navigateToProgress() {
+    tabBarController?.selectedIndex = 3
+  }
+
   func notificationsRowTapped() {
     // Toggle off if already on, on otherwise — setDailyReminderEnabled(true)
     // was being called unconditionally here before, so a second tap just

@@ -13,6 +13,15 @@ class Card: UIViewController, CardProtocol {
 
   var theView: UIView?
 
+  // A card is either "one button" (this closure set, and nothing else on it
+  // is tappable) or "a list of independently-actionable rows" (each row's
+  // own onTap, e.g. CardActionableItem) — never both, so there's no
+  // gesture-recognizer conflict to reason about. Attaching the gesture to
+  // this view (sized, via the accumulated theHeight, to exactly cover every
+  // row and every gap between them) means a whole-card button has no dead
+  // zones the way stitching together several rows' individual onTaps would.
+  private var onTap: (() -> Void)?
+
   // A plain UIView's backgroundColor re-resolves automatically on a Light/Dark
   // Mode change, but layer.shadowColor is a CGColor — a frozen snapshot — so it
   // needs to be re-applied by hand whenever the interface style changes.
@@ -25,9 +34,10 @@ class Card: UIViewController, CardProtocol {
     }
   }
 
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+  init(onTap: (() -> Void)? = nil) {
     super.init(nibName: nil, bundle: nil)
     self.theView = self.view
+    self.onTap = onTap
   }
 
   required init?(coder: NSCoder) {
@@ -49,8 +59,18 @@ class Card: UIViewController, CardProtocol {
     view.layer.shadowOpacity = 0.4
     view.layer.shadowOffset = .zero
     view.layer.shadowRadius = 10
+
+    if onTap != nil {
+      view.isUserInteractionEnabled = true
+      view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+    }
+
     scrollView.addSubview(view)
     return self
+  }
+
+  @objc private func handleTap() {
+    onTap?()
   }
 
 }

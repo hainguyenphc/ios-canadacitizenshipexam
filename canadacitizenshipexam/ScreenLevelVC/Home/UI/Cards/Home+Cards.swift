@@ -45,16 +45,15 @@ extension HomeVC_ {
     card2 = CardPrimaryTitleLabelWithImage(card: card2, text: "Daily Question", imageName: SFSymbols.info)
     cards.append(card2)
 
-    var card3: CardProtocol = Card()
-    card3 = CardPrimaryTitleLabelWithImage(
-      card: card3,
-      text: "Start Practicing",
-      imageName: SFSymbols.tests,
-      onTap: { [weak self] in self?.navigateToTests() }
-    )
+    // These three are each "one button" — the whole card navigates
+    // somewhere, so the tap is on the Card itself rather than on any one
+    // row, which is what actually covers the full card (title, tagline,
+    // and the gaps between them) with no dead zones.
+    var card3: CardProtocol = Card(onTap: { [weak self] in self?.navigateToTests() })
+    card3 = CardPrimaryTitleLabelWithImage(card: card3, text: "Start Practicing", imageName: SFSymbols.tests)
     cards.append(card3)
 
-    var card4: CardProtocol = Card()
+    var card4: CardProtocol = Card(onTap: { [weak self] in self?.navigateToBooks() })
     card4 = CardPrimaryTitleLabelWithImage(card: card4, text: "Read the Study Book", imageName: SFSymbols.book)
     cards.append(card4)
 
@@ -63,10 +62,11 @@ extension HomeVC_ {
     card5 = CardTaglineLabel(card: card5, text: "Maximize your chances by practicing with premium \ntests.")
     cards.append(card5)
 
-    var card6: CardProtocol = Card()
+    var card6: CardProtocol = Card(onTap: { [weak self] in self?.navigateToProgress() })
     card6 = CardPrimaryTitleLabelWithImage(card: card6, text: "Progress Metrics", imageName: SFSymbols.progress)
     card6 = CardTaglineLabel(card: card6, text: "View past test scores and trends.")
     cards.append(card6)
+  
 
     let bodyText = "After generating your fancy text symbols, you can copy and paste the \"fonts\" to most websites and text processors. You could use it to generate a fancy Agario name (yep, weird text in agario is probably generated using a fancy text converter similar to this), to generate a creative-looking instagram, facebook, tumblr, or twitter post, for showing up n00bs on Steam, or just for sending messages full of beautiful text to your buddies.\nThe only exception is if your paste destination has a font which doesn't support some unicode characters. For example, you'll might find that some websites don't use a unicode font, or if they do, the font doesn't have all the characters required. In that case, you'll see a generic \"box\" in which was created when the browser tries to create a fancy letter. This doesn't mean there's an error with this translator, it just means the website's font doesn't support that character."
     let decoratedBodyText = NSMutableAttributedString(string: "\n\(bodyText)", attributes: [
