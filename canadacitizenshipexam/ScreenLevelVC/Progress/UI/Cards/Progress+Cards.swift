@@ -99,11 +99,31 @@ extension ProgressVC_ {
 
     // MARK: - Improve your score (card)
 
+    let remindersAlreadyOn = NotificationManager.shared.isDailyReminderEnabled
+
     var improveCard: CardProtocol = Card()
     improveCard = CardPrimaryTitleLabel(card: improveCard, text: "Improve your score")
-    improveCard = CardActionableItem(card: improveCard, text: "Take practice tests.", imageName: SFSymbols.tests)
-    improveCard = CardActionableItem(card: improveCard, text: "Study by reading the official handbook. Tap here to start.", imageName: SFSymbols.book)
-    improveCard = CardActionableItem(card: improveCard, text: "Turn on notifications in Settings to get daily practice reminders.", imageName: "alarm")
+    improveCard = CardActionableItem(
+      card: improveCard,
+      text: "Take practice tests.",
+      imageName: SFSymbols.tests,
+      onTap: { [weak self] in self?.navigateToTests() }
+    )
+    improveCard = CardActionableItem(
+      card: improveCard,
+      text: "Study by reading the official handbook. Tap here to start.",
+      imageName: SFSymbols.book,
+      onTap: { [weak self] in self?.navigateToBooks() }
+    )
+    improveCard = CardActionableItem(
+      card: improveCard,
+      text: remindersAlreadyOn
+        ? "Daily practice reminders are on."
+        : "Turn on notifications in Settings to get daily practice reminders.",
+      imageName: remindersAlreadyOn ? "checkmark.circle.fill" : "alarm",
+      onTap: { [weak self] in self?.notificationsRowTapped() }
+    )
+    self.notificationsActionableItem = improveCard as? CardActionableItem
 
     let x = improveCard.build(scrollView: scrollView, previous: nil)
     NSLayoutConstraint.activate([

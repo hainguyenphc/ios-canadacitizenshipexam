@@ -39,6 +39,10 @@ class ProgressVC_: UIViewController, ProgressVCDelegate {
   // The scroll view containing several cards.
   var scrollView: UIScrollView! = UIScrollView()
 
+  // Kept so notificationsRowTapped can update this row's text/icon whenever
+  // notifications are turned on or off.
+  var notificationsActionableItem: CardActionableItem?
+
   // MARK: - Life-cyle methods
 
   override func viewWillAppear(_ animated: Bool) {
@@ -50,6 +54,12 @@ class ProgressVC_: UIViewController, ProgressVCDelegate {
     // instead, so it needs to restore the tab bar itself too, same as
     // HomeVC_ already does on its own appearance.
     tabBarController?.tabBar.isHidden = false
+
+    // The row is only built once (guarded by isFirstTimeLoaded below), but
+    // Home's and Settings' own reminders rows can also flip this same
+    // NotificationManager state — re-sync every time this screen appears so
+    // they never drift.
+    refreshNotificationsRow()
 
     if isFirstTimeLoaded {
       // Build the Unlock view first since other views depend on it.
@@ -73,6 +83,49 @@ class ProgressVC_: UIViewController, ProgressVCDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     self.view.backgroundColor = .systemGroupedBackground
+  }
+
+}
+
+// MARK: - Actions
+
+extension ProgressVC_ {
+
+  // Tab order set up in SceneDelegate.createPrimaryTabBarController: Home,
+  // Tests, Book, Progress, Settings.
+  func navigateToTests() {
+    tabBarController?.selectedIndex = 1
+  }
+
+  func navigateToBooks() {
+    tabBarController?.selectedIndex = 2
+  }
+
+  func notificationsRowTapped() {
+    // Toggle off if already on, on otherwise — same as Home's own
+    // notifications row.
+    let turningOn = !NotificationManager.shared.isDailyReminderEnabled
+    NotificationManager.shared.setDailyReminderEnabled(turningOn) { [weak self] granted in
+      guard let self = self else { return }
+      // Turning off always succeeds (see NotificationManager); granted only
+      // comes back false here when turning on was denied permission.
+      if turningOn && !granted {
+        self.presentNotificationsPermissionDeniedAlert()
+      }
+      self.refreshNotificationsRow()
+    }
+  }
+
+  // Matches this row's text/icon to NotificationManager's current state,
+  // whichever screen last changed it.
+  func refreshNotificationsRow() {
+    let isOn = NotificationManager.shared.isDailyReminderEnabled
+    notificationsActionableItem?.update(
+      text: isOn
+        ? "Daily practice reminders are on."
+        : "Turn on notifications in Settings to get daily practice reminders.",
+      imageName: isOn ? "checkmark.circle.fill" : "alarm"
+    )
   }
 
 }
