@@ -57,7 +57,7 @@ class TestVC: UIViewController {
   var answersButtonsHeights = [21, 21, 21, 21]
 
   /* The Next button. */
-  var nextButton = CCEButton(backgroundColor: .secondaryLabel, title: "Next")
+  var nextButton = CCEButton(backgroundColor: APP_ACCENT_COLOR, title: "Next")
 
   // ===========================================================================
   // Initializer
@@ -220,6 +220,7 @@ class TestVC: UIViewController {
       self.userHasAnswered = true
       sender.backgroundColor = (self.userAnswer == correctAnswer)
         ? .systemGreen : .systemRed
+      self.nextButton.isHidden = false
     }
     //
     self.updateDirtyQuestions()
@@ -236,6 +237,9 @@ class TestVC: UIViewController {
     self.questionLabel.text = self.cceTest.questions[self.counter].question
     // User has not answered the next question yet.
     self.userHasAnswered = false
+    // The Next button only makes sense once an answer is picked (see
+    // answerButtonPressed), so it starts each question hidden.
+    self.nextButton.isHidden = true
     // Updates the next answer labels and colors.
     for i in 0...3 {
       let text = self.cceTest.questions[self.counter].answers[i]
@@ -310,6 +314,10 @@ class TestVC: UIViewController {
       self.view.addSubview(each)
     }
 
+    // Hidden until an answer is picked (see answerButtonPressed) — starting
+    // hidden here too, not just in prepareForNextQuestion(), covers the gap
+    // before the first question's data has even loaded.
+    self.nextButton.isHidden = true
     self.view.addSubview(self.nextButton)
 
     NSLayoutConstraint.activate([
@@ -363,16 +371,16 @@ class TestVC: UIViewController {
       self.answerButtons[0].trailingAnchor.constraint(
         equalTo: self.view.trailingAnchor,
         constant: -Dimensions.defaultPadding),
-      // The "Next" button.
-      self.nextButton.topAnchor.constraint(
-        equalTo: self.questionLabel.bottomAnchor,
-        constant: Dimensions.defaultPadding),
-      self.nextButton.leadingAnchor.constraint(
-        equalTo: self.view.leadingAnchor,
-        constant: Dimensions.defaultPadding),
+      // The "Next" button — small, right-aligned, sitting just above the
+      // answer buttons rather than spanning full width under the question.
+      self.nextButton.bottomAnchor.constraint(
+        equalTo: self.answerButtons[0].topAnchor,
+        constant: -20),
       self.nextButton.trailingAnchor.constraint(
         equalTo: self.view.trailingAnchor,
         constant: -Dimensions.defaultPadding),
+      self.nextButton.widthAnchor.constraint(equalToConstant: 90),
+      self.nextButton.heightAnchor.constraint(equalToConstant: 40),
     ])
   }
 
