@@ -44,6 +44,13 @@ class ProgressVC_: UIViewController, ProgressVCDelegate {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
 
+    // TestVC hides the tab bar for the duration of a test (see its
+    // configureUI) and only ever un-hides it if the user lands back on
+    // Home — TestResultVC's "How am I doing?" pushes this screen directly
+    // instead, so it needs to restore the tab bar itself too, same as
+    // HomeVC_ already does on its own appearance.
+    tabBarController?.tabBar.isHidden = false
+
     if isFirstTimeLoaded {
       // Build the Unlock view first since other views depend on it.
       unlockPremiumFeaturesView = buildTheUnlockPremiumFeatureView()
