@@ -1223,6 +1223,9 @@ PODS:
   - Firebase/Firestore (12.17.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 12.17.0)
+  - Firebase/Functions (12.17.0):
+    - Firebase/CoreOnly
+    - FirebaseFunctions (~> 12.17.0)
   - FirebaseAnalytics (12.17.0):
     - FirebaseAnalytics/Default (= 12.17.0)
     - FirebaseCore (~> 12.17.0)
@@ -1294,6 +1297,14 @@ PODS:
     - gRPC-Core (~> 1.69.0)
     - leveldb-library (~> 1.22)
     - nanopb (~> 3.30910.0)
+  - FirebaseFunctions (12.17.0):
+    - FirebaseAppCheckInterop (~> 12.17.0)
+    - FirebaseAuthInterop (~> 12.17.0)
+    - FirebaseCore (~> 12.17.0)
+    - FirebaseCoreExtension (~> 12.17.0)
+    - FirebaseMessagingInterop (~> 12.17.0)
+    - FirebaseSharedSwift (~> 12.17.0)
+    - GTMSessionFetcher/Core (< 6.0, >= 3.4)
   - FirebaseGoogleAuthUI (15.1.0):
     - FirebaseAuth
     - FirebaseAuthUI (~> 15.0)
@@ -1304,6 +1315,7 @@ PODS:
     - GoogleUtilities/Environment (~> 8.1)
     - GoogleUtilities/UserDefaults (~> 8.1)
     - PromisesObjC (~> 2.4)
+  - FirebaseMessagingInterop (12.17.0)
   - FirebaseSharedSwift (12.17.0)
   - FirebaseUI/Auth (15.1.0):
     - FirebaseAuthUI (~> 15.0)
@@ -1495,6 +1507,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - Firebase/Firestore
+  - Firebase/Functions
   - FirebaseUI/Auth
   - FirebaseUI/Email
   - FirebaseUI/Google
@@ -1520,8 +1533,10 @@ SPEC REPOS:
     - FirebaseEmailAuthUI
     - FirebaseFirestore
     - FirebaseFirestoreInternal
+    - FirebaseFunctions
     - FirebaseGoogleAuthUI
     - FirebaseInstallations
+    - FirebaseMessagingInterop
     - FirebaseSharedSwift
     - FirebaseUI
     - GoogleAdsOnDeviceConversion
@@ -1563,8 +1578,10 @@ SPEC CHECKSUMS:
   FirebaseEmailAuthUI: b6c80ac6ae42bacf2fece92762fa79bc4ee736ed
   FirebaseFirestore: dfebd53ce603c93a8514102c9a0b688d2be2bfc2
   FirebaseFirestoreInternal: 99cccc955349efee1652cbe132cf206915e6923d
+  FirebaseFunctions: e2eb75689fe581f80f4a834cb9658b94e97d24a0
   FirebaseGoogleAuthUI: 740a15519a36b4d15802c4ef1db4aaeb7f7bad0b
   FirebaseInstallations: bd8e80f51d4c8bdc6c872011dede0b800c5b49ea
+  FirebaseMessagingInterop: d4e6a61aae51b00e5964bd1361cc1848c7bdad05
   FirebaseSharedSwift: 983820e9aa55d2acd6af77f9a1f252ba0afb3150
   FirebaseUI: 1dfcf45d4bb4073380091394c9c555d697ecca11
   GoogleAdsOnDeviceConversion: e3b71da24ff4cf01cf520756ac1c2b93c07b86ff
@@ -1586,6 +1603,6 @@ SPEC CHECKSUMS:
   RxRelay: 6b0c930e5cef57d5fe2032571e5e65b78e3cbdb1
   RxSwift: 31649ace6aceeb422e16ff71c60804f9c3281ed9
 
-PODFILE CHECKSUM: 2c4ffb075a8c502b800f62e80c58dcb3917d4e7d
+PODFILE CHECKSUM: 2311344560e47bd464d8d08b91fc72bb7640baa1
 
 COCOAPODS: 1.17.0

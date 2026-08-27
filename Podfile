@@ -15,6 +15,7 @@ target 'canadacitizenshipexam' do
   pod 'FirebaseUI/Google'
   pod 'Firebase/Database'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Functions'
   pod 'CardParts'
 
   target 'canadacitizenshipexamTests' do

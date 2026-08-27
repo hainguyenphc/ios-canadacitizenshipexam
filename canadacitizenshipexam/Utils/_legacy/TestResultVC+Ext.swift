@@ -65,17 +65,26 @@ extension TestResultVC: UITableViewDataSource {
 
   /* Scrolling down hides its heading view. Scrolling up to the top shows it. */
   func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    // messageLabel/circularProgressLabel don't exist until the server has
+    // scored the attempt (see TestResultVC.finishConfiguringUI()) — the
+    // table can fire scroll events before then (e.g. from its own initial
+    // layout while the loading indicator is still showing), so this has to
+    // tolerate that gap instead of force-unwrapping into it.
+    guard let messageLabel = self.messageLabel,
+          let circularProgressLabel = self.circularProgressLabel else {
+      return
+    }
     let offsetY = scrollView.contentOffset.y
     if offsetY > -340 {
-      self.messageLabel.isHidden = true
-      self.circularProgressLabel.isHidden = true
+      messageLabel.isHidden = true
+      circularProgressLabel.isHidden = true
       for x in self.summaryLabels {
         x.isHidden = true
       }
     }
     else {
-      self.messageLabel.isHidden = false
-      self.circularProgressLabel.isHidden = false
+      messageLabel.isHidden = false
+      circularProgressLabel.isHidden = false
       for x in self.summaryLabels {
         x.isHidden = false
       }

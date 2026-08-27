@@ -8,10 +8,13 @@
 import UIKit
 import FirebaseCore
 import FirebaseFirestore
+import FirebaseFunctions
 
 class NetworkManager {
 
   private let firestore = Firestore.firestore()
+
+  private let functions = Functions.functions()
 
   // Singleton pattern.
   static let shared = NetworkManager()
@@ -195,6 +198,45 @@ class NetworkManager {
       else {
         completed(.failure(.questionsMissingFailure))
       }
+    }
+  }
+
+  /* Submits a finished test's answers to be scored server-side, and records
+   the result — see score_quiz_attempt in the ios-canadacitizenshipexam-cloud-functions
+   repo. Nothing about correctness or the resulting score is computed on
+   this side; the client only ever reports what the user picked. */
+  func submitQuizAttempt(
+    testID: String,
+    answers: [(questionIndex: Int, selectedAnswer: String)],
+    completed: @escaping(Result<CCEQuizAttemptResult, CCEFailure>) -> Void
+  ) {
+    let answersPayload = answers.map {
+      ["questionIndex": $0.questionIndex, "selectedAnswer": $0.selectedAnswer] as [String: Any]
+    }
+    self.functions.httpsCallable("score_quiz_attempt").call([
+      "testId": testID,
+      "answers": answersPayload
+    ]) { result, error in
+      if let error = error {
+        print("Error calling score_quiz_attempt: \(error)")
+        completed(.failure(.submitQuizAttemptFailure))
+        return
+      }
+      guard let data = result?.data as? [String: Any],
+            let correctCount = data["correctCount"] as? Int,
+            let totalQuestions = data["totalQuestions"] as? Int,
+            let scorePercent = data["scorePercent"] as? Double,
+            let finishedAt = data["finishedAt"] as? Double
+      else {
+        completed(.failure(.parseQuizAttemptResultFailure))
+        return
+      }
+      completed(.success(CCEQuizAttemptResult(
+        correctCount: correctCount,
+        totalQuestions: totalQuestions,
+        scorePercent: Float(scorePercent),
+        finishedAt: Date(timeIntervalSince1970: finishedAt)
+      )))
     }
   }
 

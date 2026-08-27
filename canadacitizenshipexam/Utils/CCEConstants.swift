@@ -103,6 +103,10 @@ enum CCEFailure: String, Error {
   case finishedTestsMissingFailure = "Problem getting finished tests."
   case readChaptersMissingFailure = "Problem getting read chapters."
 
+  // Server-authoritative scoring failures (score_quiz_attempt Cloud Function)
+  case submitQuizAttemptFailure = "There was a problem submitting your test. Check your connection and try again."
+  case parseQuizAttemptResultFailure = "There was a problem reading your test result from the server."
+
 }
 
 struct Chapters {
