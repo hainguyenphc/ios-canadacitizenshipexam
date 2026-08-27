@@ -24,7 +24,7 @@ class ProgressVC_: UIViewController, ProgressVCDelegate {
 
   // MARK: - Sub-views
 
-  var unlockPremiumFeaturesView: UIView?
+  var unlockPremiumFeaturesView: PremiumBannerView?
 
   // The circular progress + details pair for the Practice Progress row.
   var practiceCompletionPercentageView: UIView? = nil
@@ -60,6 +60,7 @@ class ProgressVC_: UIViewController, ProgressVCDelegate {
     // NotificationManager state — re-sync every time this screen appears so
     // they never drift.
     refreshNotificationsRow()
+    refreshPremiumBannerIfNeeded()
 
     if isFirstTimeLoaded {
       // Build the Unlock view first since other views depend on it.

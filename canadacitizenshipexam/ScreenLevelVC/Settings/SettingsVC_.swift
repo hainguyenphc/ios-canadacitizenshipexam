@@ -34,7 +34,7 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
 
   // MARK: - Sub-views
 
-  var unlockPremiumFeaturesView: UIView?
+  var unlockPremiumFeaturesView: PremiumBannerView?
 
   // Kept so dailyReminderSwitchToggled can reset it back to Off if the user
   // ends up denying the notifications permission.
@@ -80,6 +80,7 @@ class SettingsVC_: UIViewController, SettingsVCDelegate {
     // Practice Time / Schedule your Exam rows can also change these values.
     practiceTimeValueLabel?.text = NotificationManager.shared.practiceTimeDisplayText
     examDateValueLabel?.text = ExamScheduleManager.shared.examDateValueText
+    refreshPremiumBannerIfNeeded()
   }
 
   // The switch is only built once (guarded by isFirstTimeLoaded above), but

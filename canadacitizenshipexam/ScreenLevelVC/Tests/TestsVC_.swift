@@ -32,7 +32,7 @@ class TestsVC_: UIViewController, TestsVCDelegate {
 
   // MARK: - Sub-views
 
-  var unlockPremiumFeaturesView: UIView?
+  var unlockPremiumFeaturesView: PremiumBannerView?
 
   var completionPercentageView: UIView? = nil
 
@@ -73,6 +73,8 @@ class TestsVC_: UIViewController, TestsVCDelegate {
 
       isFirstTimeLoaded = !isFirstTimeLoaded
     }
+
+    refreshPremiumBannerIfNeeded()
   }
 
   override func viewDidLoad() {

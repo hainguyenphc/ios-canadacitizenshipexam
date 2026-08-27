@@ -57,8 +57,8 @@ extension HomeVC_ {
     card4 = CardPrimaryTitleLabelWithImage(card: card4, text: "Read the Study Book", imageName: SFSymbols.book)
     cards.append(card4)
 
-    var card5: CardProtocol = Card()
-    card5 = CardPrimaryTitleLabelWithImage(card: card5, text: "Unlock Premimum Features", imageName: SFSymbols.premium)
+    var card5: CardProtocol = Card(onTap: { [weak self] in self?.presentPremiumPaywall() })
+    card5 = CardPrimaryTitleLabelWithImage(card: card5, text: "Unlock Premium Features", imageName: SFSymbols.premium)
     card5 = CardTaglineLabel(card: card5, text: "Maximize your chances by practicing with premium \ntests.")
     cards.append(card5)
 

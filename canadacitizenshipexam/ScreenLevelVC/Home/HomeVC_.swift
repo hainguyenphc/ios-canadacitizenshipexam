@@ -20,7 +20,7 @@ protocol HomeVCDelegate {
 
 // MARK: - View/View Controller
 
-class HomeVC_: UIViewController, HomeVCDelegate {
+class HomeVC_: UIViewController, HomeVCDelegate, UnlockPremiumFeatureProtocol {
 
   // MARK: - View Model & Logic variables
 
@@ -39,8 +39,7 @@ class HomeVC_: UIViewController, HomeVCDelegate {
 
   // MARK: - Sub-views
 
-  // @todo: payment
-  var unlockPremiumFeaturesView: UIView?
+  var unlockPremiumFeaturesView: PremiumBannerView?
 
   // This is the container housing both `completionCircularProgressView`
   // and `completionPercentageLabel` views.
@@ -96,6 +95,7 @@ class HomeVC_: UIViewController, HomeVCDelegate {
     refreshNotificationsRow()
     refreshPracticeTimeRow()
     refreshExamDateRow()
+    refreshPremiumBannerIfNeeded()
 
     tabBarController?.tabBar.isHidden = false
     navigationItem.setHidesBackButton(true, animated: false)

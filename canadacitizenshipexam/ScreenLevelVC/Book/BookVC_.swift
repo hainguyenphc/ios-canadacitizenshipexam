@@ -24,7 +24,7 @@ class BookVC_: UIViewController, BookVCDelegate {
 
   // MARK: - Sub-views
 
-  var unlockPremiumFeaturesView: UIView?
+  var unlockPremiumFeaturesView: PremiumBannerView?
 
   var completionPercentageView: UIView? = nil
 
@@ -57,6 +57,8 @@ class BookVC_: UIViewController, BookVCDelegate {
 
       isFirstTimeLoaded = !isFirstTimeLoaded
     }
+
+    refreshPremiumBannerIfNeeded()
   }
 
   override func viewDidLoad() {
