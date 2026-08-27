@@ -181,8 +181,12 @@ class PremiumManager {
         switch result {
           case .success(let verification):
             switch verification {
-              case .verified(let transaction):
-                await unlock(using: transaction)
+              case .verified:
+                // Reuses the same entitlement-granting logic
+                // Transaction.updates/currentEntitlements drive (tier
+                // matching, expiration check, finish()) rather than
+                // duplicating it here.
+                await handle(transactionResult: verification)
                 await MainActor.run { completion(.success(())) }
               case .unverified:
                 await MainActor.run { completion(.failure(.verificationFailed)) }
