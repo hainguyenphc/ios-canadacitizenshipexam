@@ -68,8 +68,17 @@ extension HomeVC_ {
     // The Unlock Premium view (if any — see UnlockPremiumFeatureProtocol)
     // is already added to `view` and fully constrained by
     // PremiumBannerView's own initializer by the time this runs
-    // (viewWillAppear builds it before calling buildTheHeadingView) — only
-    // its bottomAnchor is still needed below, to hang the title/image
+    // (viewWillAppear builds it before calling buildTheHeadingView) — but
+    // the background just added above landed on top of it (addSubview
+    // always places a view at the front), hiding it completely. Home is
+    // the only one of the 5 screens using this banner that has a separate
+    // full-header background at all, so this z-order fix-up is only
+    // needed here.
+    if let unlockPremiumFeaturesView = unlockPremiumFeaturesView {
+      view.bringSubviewToFront(unlockPremiumFeaturesView)
+    }
+
+    // Only its bottomAnchor is still needed below, to hang the title/image
     // hStack beneath it.
 
     /*
