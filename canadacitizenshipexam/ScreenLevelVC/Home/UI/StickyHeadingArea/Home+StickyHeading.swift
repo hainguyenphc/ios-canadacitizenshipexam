@@ -158,6 +158,11 @@ extension HomeVC_ {
         imageView.trailingAnchor.constraint(equalTo: hStack.trailingAnchor),
         imageView.widthAnchor.constraint(equalTo: hStack.heightAnchor, multiplier: 0.9),
       ])
+      // A plain UIImageView ignores touches by default — opt in, then wire
+      // up the share sheet (see HomeVC_.shareAppTapped()).
+      imageView.isUserInteractionEnabled = true
+      imageView.addGestureRecognizer(
+        UITapGestureRecognizer(target: self, action: #selector(shareAppTapped)))
     }
 
     /*

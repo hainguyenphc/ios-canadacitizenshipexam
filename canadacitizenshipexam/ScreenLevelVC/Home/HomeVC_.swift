@@ -222,6 +222,22 @@ extension HomeVC_ {
     examDateActionableItem?.update(text: ExamScheduleManager.shared.examDateDisplayText, imageName: "calendar")
   }
 
+  // The share icon next to "Discover Canada" in the sticky heading (see
+  // Home+StickyHeading.buildTheHeadingView) — @objc since it's wired up as
+  // a UITapGestureRecognizer target/action there.
+  @objc func shareAppTapped(_ sender: UITapGestureRecognizer) {
+    // @todo: append the App Store link once this app is actually published.
+    let shareText = "Check out Discover Canada — a free app to help you study for the Canadian citizenship test!"
+    let activityVC = UIActivityViewController(activityItems: [shareText], applicationActivities: nil)
+    // iPads present share sheets as a popover, which crashes at runtime
+    // without an anchor — anchor it to the tapped icon itself.
+    if let popover = activityVC.popoverPresentationController {
+      popover.sourceView = sender.view
+      popover.sourceRect = sender.view?.bounds ?? .zero
+    }
+    present(activityVC, animated: true)
+  }
+
 }
 
 // MARK: - Code snippets
