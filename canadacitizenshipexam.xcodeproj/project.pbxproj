@@ -9,9 +9,15 @@
 /* Begin PBXBuildFile section */
 		020558D4E9CBBF541122144F /* ProgressVC_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BB1AB1FB496EBA6D8D313E /* ProgressVC_.swift */; };
 		0890105F8BD91C01FD6E46D8 /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02AD4553F7D60B55A9739E35 /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework */; };
-		140BEA146EB045777E4B7847 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		140BEA146EB045777E4B7847 /* (null) in Frameworks */ = {isa = PBXBuildFile; };
+		1E30B3A9D2B521AF405BC567 /* PremiumPaywallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FEAB15520933E55A9779D6 /* PremiumPaywallVC.swift */; };
+		274C3B1A290C4F2B99902847 /* TestsVM_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F64E4022754C6CACEEB8DA /* TestsVM_.swift */; };
+		4540793BE5364B7694DACC02 /* ExamScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920A28900304AD39A14AD56 /* ExamScheduleManager.swift */; };
 		4C70F72A09D85662F8805BAB /* Progress+Heading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6EB76CCD31C4C9F86E4D313 /* Progress+Heading.swift */; };
+		520048BC92423ABCA9F24164 /* PremiumBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A631072DE8A8FF1D704527 /* PremiumBannerView.swift */; };
 		5871CD8235910D688362AACF /* Progress+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113C368984452056B4C86C69 /* Progress+ScrollView.swift */; };
+		7AD5CAC37374480E919B145F /* DateTimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF0BCF452941CDB33657A9 /* DateTimePickerVC.swift */; };
+		810DA66CAA1337B4C0A43AD3 /* CCEQuizAttemptResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED29AAEE6E35F07023F5938 /* CCEQuizAttemptResult.swift */; };
 		8402A91D2986C3B40053E476 /* Home+ScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402A91C2986C3B40053E476 /* Home+ScrollView.swift */; };
 		8402A9202986C4B60053E476 /* ScrollProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402A91F2986C4B60053E476 /* ScrollProtocol.swift */; };
 		8402A9222986CB350053E476 /* ActionableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8402A9212986CB350053E476 /* ActionableLabel.swift */; };
@@ -50,10 +56,6 @@
 		846A77E629885FB500FE7EA3 /* UIDevice+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846A77E529885FB500FE7EA3 /* UIDevice+Ext.swift */; };
 		846CF9E828809BB900E2A96F /* CCEProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846CF9E728809BB900E2A96F /* CCEProgressBar.swift */; };
 		847CA1DE288104FD003CC661 /* CCEFinishedTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CA1DD288104FD003CC661 /* CCEFinishedTest.swift */; };
-		810DA66CAA1337B4C0A43AD3 /* CCEQuizAttemptResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ED29AAEE6E35F07023F5938 /* CCEQuizAttemptResult.swift */; };
-		9B2473C4B3AEDD2C59372A0C /* PremiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453DACBFEBE5E4877CB350B /* PremiumManager.swift */; };
-		520048BC92423ABCA9F24164 /* PremiumBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A631072DE8A8FF1D704527 /* PremiumBannerView.swift */; };
-		1E30B3A9D2B521AF405BC567 /* PremiumPaywallVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FEAB15520933E55A9779D6 /* PremiumPaywallVC.swift */; };
 		847CA1E0288108CA003CC661 /* ScoreStatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847CA1DF288108CA003CC661 /* ScoreStatsManager.swift */; };
 		847DDCA5287E55DF00A77199 /* TestsVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCA4287E55DF00A77199 /* TestsVC+Ext.swift */; };
 		847DDCA7287E570B00A77199 /* BookVC+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DDCA6287E570B00A77199 /* BookVC+Ext.swift */; };
@@ -66,17 +68,13 @@
 		849539E7283BDABC00260E85 /* CCEButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539E6283BDABC00260E85 /* CCEButton.swift */; };
 		849539E9283BE15E00260E85 /* CCETest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539E8283BE15E00260E85 /* CCETest.swift */; };
 		849539EC283BE3EC00260E85 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849539EB283BE3EC00260E85 /* NetworkManager.swift */; };
-		B1C9F2CA72E44F468634F0EF /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5D7E98737240078E1A75C4 /* NotificationManager.swift */; };
-		4540793BE5364B7694DACC02 /* ExamScheduleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920A28900304AD39A14AD56 /* ExamScheduleManager.swift */; };
 		84979B6E287EF6DC002675A6 /* CCESectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84979B6D287EF6DC002675A6 /* CCESectionTests.swift */; };
 		849DF42B2984B77400EA3D1A /* HomeVC_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42A2984B77400EA3D1A /* HomeVC_.swift */; };
 		849DF42F2984B85F00EA3D1A /* Home+StickyHeading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF42E2984B85F00EA3D1A /* Home+StickyHeading.swift */; };
 		849DF43529853FFF00EA3D1A /* StickyHeadingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */; };
 		849DF437298544BD00EA3D1A /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF436298544BD00EA3D1A /* CircularProgressView.swift */; };
-		7AD5CAC37374480E919B145F /* DateTimePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FF0BCF452941CDB33657A9 /* DateTimePickerVC.swift */; };
 		849DF4392985469400EA3D1A /* ScreenTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */; };
 		849DF43C2985CD0000EA3D1A /* HomeVM_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43B2985CD0000EA3D1A /* HomeVM_.swift */; };
-		274C3B1A290C4F2B99902847 /* TestsVM_.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92F64E4022754C6CACEEB8DA /* TestsVM_.swift */; };
 		849DF43E2985FBBE00EA3D1A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849DF43D2985FBBE00EA3D1A /* Card.swift */; };
 		84A184A6281D72EC0074D5AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184A5281D72EC0074D5AB /* AppDelegate.swift */; };
 		84A184A8281D72EC0074D5AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A184A7281D72EC0074D5AB /* SceneDelegate.swift */; };
@@ -118,11 +116,14 @@
 		84CC3F33287B41FB005AFF0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84CC3F32287B41FB005AFF0F /* Assets.xcassets */; };
 		84CC3F36287B4211005AFF0F /* playstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CC3F34287B4211005AFF0F /* playstore.png */; };
 		84CC3F37287B4211005AFF0F /* appstore.png in Resources */ = {isa = PBXBuildFile; fileRef = 84CC3F35287B4211005AFF0F /* appstore.png */; };
-		8A2C7CA17138B445532579DB /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		8A2C7CA17138B445532579DB /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		906B1F4F0D5B1779851B3D9D /* Pods_canadacitizenshipexam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 908B742FC9718DA6EC0C81A0 /* Pods_canadacitizenshipexam.framework */; };
+		9B2473C4B3AEDD2C59372A0C /* PremiumManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0453DACBFEBE5E4877CB350B /* PremiumManager.swift */; };
+		B1C9F2CA72E44F468634F0EF /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5D7E98737240078E1A75C4 /* NotificationManager.swift */; };
+		C2AE54B830403C00006E6058 /* Configuration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = C2AE54B730403C00006E6058 /* Configuration.storekit */; };
 		C2E823A2303D1FD400BADD18 /* SettingsVC_.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2E823A1303D1FCD00BADD18 /* SettingsVC_.swift */; };
 		C65993526B1A6E8DCA581973 /* Progress+Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B6526035D9A60C7FEE2C56 /* Progress+Cards.swift */; };
-		D39482E5BB5BA72FE911A2BA /* BuildFile in Frameworks */ = {isa = PBXBuildFile; };
+		D39482E5BB5BA72FE911A2BA /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		D3B2460310F6FEF002D6B4D8 /* Pods_canadacitizenshipexamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 182BDFA2CD43BC183FF1B05A /* Pods_canadacitizenshipexamTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -145,9 +146,14 @@
 
 /* Begin PBXFileReference section */
 		02AD4553F7D60B55A9739E35 /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0453DACBFEBE5E4877CB350B /* PremiumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumManager.swift; sourceTree = "<group>"; };
+		07FF0BCF452941CDB33657A9 /* DateTimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimePickerVC.swift; sourceTree = "<group>"; };
 		113C368984452056B4C86C69 /* Progress+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Progress+ScrollView.swift"; sourceTree = "<group>"; };
 		182BDFA2CD43BC183FF1B05A /* Pods_canadacitizenshipexamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C345F28A23B447B669275C5 /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3B5D7E98737240078E1A75C4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
+		4920A28900304AD39A14AD56 /* ExamScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamScheduleManager.swift; sourceTree = "<group>"; };
+		6ED29AAEE6E35F07023F5938 /* CCEQuizAttemptResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEQuizAttemptResult.swift; sourceTree = "<group>"; };
 		73B6526035D9A60C7FEE2C56 /* Progress+Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Progress+Cards.swift"; sourceTree = "<group>"; };
 		8402A91C2986C3B40053E476 /* Home+ScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+ScrollView.swift"; sourceTree = "<group>"; };
 		8402A91F2986C4B60053E476 /* ScrollProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollProtocol.swift; sourceTree = "<group>"; };
@@ -189,10 +195,6 @@
 		846A77E529885FB500FE7EA3 /* UIDevice+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+Ext.swift"; sourceTree = "<group>"; };
 		846CF9E728809BB900E2A96F /* CCEProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEProgressBar.swift; sourceTree = "<group>"; };
 		847CA1DD288104FD003CC661 /* CCEFinishedTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEFinishedTest.swift; sourceTree = "<group>"; };
-		6ED29AAEE6E35F07023F5938 /* CCEQuizAttemptResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEQuizAttemptResult.swift; sourceTree = "<group>"; };
-		0453DACBFEBE5E4877CB350B /* PremiumManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumManager.swift; sourceTree = "<group>"; };
-		F8A631072DE8A8FF1D704527 /* PremiumBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumBannerView.swift; sourceTree = "<group>"; };
-		C1FEAB15520933E55A9779D6 /* PremiumPaywallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPaywallVC.swift; sourceTree = "<group>"; };
 		847CA1DF288108CA003CC661 /* ScoreStatsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStatsManager.swift; sourceTree = "<group>"; };
 		847DDCA4287E55DF00A77199 /* TestsVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TestsVC+Ext.swift"; sourceTree = "<group>"; };
 		847DDCA6287E570B00A77199 /* BookVC+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookVC+Ext.swift"; sourceTree = "<group>"; };
@@ -205,17 +207,13 @@
 		849539E6283BDABC00260E85 /* CCEButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCEButton.swift; sourceTree = "<group>"; };
 		849539E8283BE15E00260E85 /* CCETest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCETest.swift; sourceTree = "<group>"; };
 		849539EB283BE3EC00260E85 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		3B5D7E98737240078E1A75C4 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
-		4920A28900304AD39A14AD56 /* ExamScheduleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamScheduleManager.swift; sourceTree = "<group>"; };
 		84979B6D287EF6DC002675A6 /* CCESectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCESectionTests.swift; sourceTree = "<group>"; };
 		849DF42A2984B77400EA3D1A /* HomeVC_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC_.swift; sourceTree = "<group>"; };
 		849DF42E2984B85F00EA3D1A /* Home+StickyHeading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+StickyHeading.swift"; sourceTree = "<group>"; };
 		849DF43429853FFF00EA3D1A /* StickyHeadingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeadingProtocol.swift; sourceTree = "<group>"; };
 		849DF436298544BD00EA3D1A /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
-		07FF0BCF452941CDB33657A9 /* DateTimePickerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimePickerVC.swift; sourceTree = "<group>"; };
 		849DF4382985469400EA3D1A /* ScreenTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTitleLabel.swift; sourceTree = "<group>"; };
 		849DF43B2985CD0000EA3D1A /* HomeVM_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVM_.swift; sourceTree = "<group>"; };
-		92F64E4022754C6CACEEB8DA /* TestsVM_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsVM_.swift; sourceTree = "<group>"; };
 		849DF43D2985FBBE00EA3D1A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		84A184A2281D72EC0074D5AB /* canadacitizenshipexam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = canadacitizenshipexam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A184A5281D72EC0074D5AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -265,37 +263,21 @@
 		908B742FC9718DA6EC0C81A0 /* Pods_canadacitizenshipexam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_canadacitizenshipexam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		914C4D07AB14241C94062F8B /* Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		92BB1AB1FB496EBA6D8D313E /* ProgressVC_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressVC_.swift; sourceTree = "<group>"; };
+		92F64E4022754C6CACEEB8DA /* TestsVM_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestsVM_.swift; sourceTree = "<group>"; };
 		AE4431E46E46E9CBFE27BF1B /* Pods-canadacitizenshipexam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam.release.xcconfig"; sourceTree = "<group>"; };
 		B6EB76CCD31C4C9F86E4D313 /* Progress+Heading.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Progress+Heading.swift"; sourceTree = "<group>"; };
+		C1FEAB15520933E55A9779D6 /* PremiumPaywallVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumPaywallVC.swift; sourceTree = "<group>"; };
+		C2AE54B730403C00006E6058 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = canadacitizenshipexam/Configuration.storekit; sourceTree = "<group>"; };
 		C2E823A1303D1FCD00BADD18 /* SettingsVC_.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsVC_.swift; sourceTree = "<group>"; };
 		C5E9AB26E6553AED633CEA30 /* Pods-canadacitizenshipexamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexamTests.release.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexamTests/Pods-canadacitizenshipexamTests.release.xcconfig"; sourceTree = "<group>"; };
 		C8B52FC980F20D28A9B6B0AC /* Pods-canadacitizenshipexamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexamTests.debug.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexamTests/Pods-canadacitizenshipexamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		EE0529041DF6FF434EB5FEED /* Pods-canadacitizenshipexam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-canadacitizenshipexam.debug.xcconfig"; path = "Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam.debug.xcconfig"; sourceTree = "<group>"; };
+		F8A631072DE8A8FF1D704527 /* PremiumBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumBannerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		C2E823A0303D1FBB00BADD18 /* UI */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
-		C2E823A3303D21F200BADD18 /* _legacy */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-			);
-			explicitFileTypes = {
-			};
-			explicitFolders = (
-			);
-			path = _legacy;
-			sourceTree = "<group>";
-		};
+		C2E823A0303D1FBB00BADD18 /* UI */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = UI; sourceTree = "<group>"; };
+		C2E823A3303D21F200BADD18 /* _legacy */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = _legacy; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,7 +285,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D39482E5BB5BA72FE911A2BA /* BuildFile in Frameworks */,
+				D39482E5BB5BA72FE911A2BA /* (null) in Frameworks */,
 				906B1F4F0D5B1779851B3D9D /* Pods_canadacitizenshipexam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,7 +294,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A2C7CA17138B445532579DB /* BuildFile in Frameworks */,
+				8A2C7CA17138B445532579DB /* (null) in Frameworks */,
 				D3B2460310F6FEF002D6B4D8 /* Pods_canadacitizenshipexamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,7 +303,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				140BEA146EB045777E4B7847 /* BuildFile in Frameworks */,
+				140BEA146EB045777E4B7847 /* (null) in Frameworks */,
 				0890105F8BD91C01FD6E46D8 /* Pods_canadacitizenshipexam_canadacitizenshipexamUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,6 +625,7 @@
 		84A18499281D72EC0074D5AB = {
 			isa = PBXGroup;
 			children = (
+				C2AE54B730403C00006E6058 /* Configuration.storekit */,
 				84DF08B12855720F005623DC /* playground.playground */,
 				84AE1BC428280F9300075F53 /* GoogleService-Info.plist */,
 				84A184D8281D73CA0074D5AB /* README.md */,
@@ -1032,6 +1015,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				842F1B6E287F65C300AF45C9 /* ProgressVC.storyboard in Resources */,
+				C2AE54B830403C00006E6058 /* Configuration.storekit in Resources */,
 				84B182222884EE2700903FF6 /* tests.json in Resources */,
 				84A184D9281D73CA0074D5AB /* README.md in Resources */,
 				84B8DABD285F9572008DDAFE /* CardCell.xib in Resources */,
@@ -1114,9 +1098,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam/Pods-canadacitizenshipexam-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1153,9 +1141,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-canadacitizenshipexam-canadacitizenshipexamUITests/Pods-canadacitizenshipexam-canadacitizenshipexamUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
